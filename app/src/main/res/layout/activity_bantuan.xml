@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundorange2normal"
+    tools:context=".Bantuan">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/bottomnavigator">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <RelativeLayout
+                android:id="@+id/bantuanatas"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/lazisbantuan"
+                    android:layout_width="109dp"
+                    android:layout_height="69dp"
+                    android:layout_marginVertical="3dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/lazismukabpekalonganicon" />
+
+                <TextView
+                    android:id="@+id/judulbantuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="sans-serif"
+                    android:text="BANTUAN"
+                    android:textAlignment="center"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txttanggal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:paddingHorizontal="10dp"
+                    android:text="@string/app_name"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/txtjam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txttanggal"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginEnd="10dp"
+                    android:paddingHorizontal="10dp"
+                    android:text="@string/app_name"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="15dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txtjudulbantuan"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/bantuanatas"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingTop="5dp"
+                android:text="BANTUAN"
+                android:textAlignment="center"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txttentangbantuan"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtjudulbantuan"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="-15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:text="LAZISMU adalah lembaga zakat nasional dengan SK Menag No. 90 Tahun 2022, yang berkhidmat dalam pemberdayaan masyarakat melalui pendayagunaan dana zakat, infaq, wakaf dan dana kedermawanan lainnya baik dari perseorangan, lembaga, perusahaan dan instansi lainnya. Lazismu tidak menerima segala bentuk dana yang bersumber dari kejahatan. UU RI No. 8 Tahun 2010 Tentang Pencegahan dan Pemberantasan Tindak Pidana Pencucian Uang"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomnavigator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cardview_light_background"
+        app:backgroundTint="@color/white"
+        app:menu="@menu/menu"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

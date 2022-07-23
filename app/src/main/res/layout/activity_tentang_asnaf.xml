@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundorange2normal"
+    tools:context=".TentangAsnaf">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <RelativeLayout
+                android:id="@+id/tentangasnafatas"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/judultentangasnaf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="sans-serif"
+                    android:text="ASNAF"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/kembalitentangasnaf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/kembaliicondark" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txtjudulfakir"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/tentangasnafatas"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/backgroundhijaunormal"
+                android:paddingTop="5dp"
+                android:text="Fakir"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtfakir"
+                android:layout_width="350dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/tentangasnafatas"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="85dp"
+                android:background="@drawable/backgroundhijaunormal"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="10dp"
+                android:text="Orang yang hampir tidak memiliki apa-apa
+                sehingga tidak mampu memenuhi kebutuhan pokok hidup."
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtjudulmiskin"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txtfakir"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/backgroundorangenormal"
+                android:paddingTop="5dp"
+                android:text="Miskin"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtmiskin"
+                android:layout_width="350dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/txtfakir"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="85dp"
+                android:background="@drawable/backgroundorangenormal"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="10dp"
+                android:text="Orang yang memiliki harta namun tidak cukup
+                untuk memenuhi kebutuhan dasar untuk hidup."
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtjudulamil"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txtmiskin"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/backgroundhijaupress"
+                android:paddingTop="5dp"
+                android:text="Amil"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtamil"
+                android:layout_width="350dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/txtmiskin"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="85dp"
+                android:background="@drawable/backgroundhijaupress"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="10dp"
+                android:text="Orang yang mengumpulkan dan mendistribusikan zakat."
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtjudulmualaf"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txtamil"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/backgroundorangepress"
+                android:paddingTop="5dp"
+                android:textAlignment="center"
+                android:text="Mu'allaf"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtmualaf"
+                android:layout_width="350dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/txtamil"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="85dp"
+                android:background="@drawable/backgroundorangepress"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="10dp"
+                android:text="Orang yang baru masuk Islam dan
+                membutuhkan bantuan untuk menguatkan dalam tauhid dan syariah."
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtjudulhambasahaya"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txtmualaf"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/backgroundorange"
+                android:paddingTop="5dp"
+                android:text="Hamba Sahaya"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txthambasahaya"
+                android:layout_width="350dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/txtmualaf"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="85dp"
+                android:background="@drawable/backgroundorange"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="10dp"
+                android:text="Budak yang ingin memerdekakan dirinya."
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtjudulgharimin"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txthambasahaya"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/backgroundhijau"
+                android:paddingTop="5dp"
+                android:text="Gharimin"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtgharimin"
+                android:layout_width="350dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/txthambasahaya"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="85dp"
+                android:background="@drawable/backgroundhijau"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="10dp"
+                android:text="Orang yang berhutang untuk kebutuhan hidup
+                dalam mempertahankan jiwa dan izzahnya."
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtjudulfisabilillah"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txtgharimin"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/backgroundorangepress"
+                android:paddingTop="5dp"
+                android:text="Fisabilillah"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtfisabilillah"
+                android:layout_width="350dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/txtgharimin"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="85dp"
+                android:background="@drawable/backgroundorangepress"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="10dp"
+                android:text="Orang yang berjuang di jalan Allah
+                dalam bentuk kegiatan dakwah, jihad dan sebagainya."
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtjudulibnussabil"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/txtfisabilillah"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/backgroundhijaupress"
+                android:paddingTop="5dp"
+                android:text="Ibnus Sabil"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtibnussabil"
+                android:layout_width="350dp"
+                android:layout_height="80dp"
+                android:layout_below="@id/txtfisabilillah"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="85dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/backgroundhijaupress"
+                android:paddingHorizontal="10dp"
+                android:paddingTop="10dp"
+                android:text="Orang yang kehabisan biaya di perjalanan dalam ketaatan kepada Allah."
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

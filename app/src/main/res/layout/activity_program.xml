@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundorange2normal"
+    tools:context=".Program">
+
+    <RelativeLayout
+        android:id="@+id/programatas"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/lazisprogram"
+            android:layout_width="109dp"
+            android:layout_height="69dp"
+            android:layout_marginVertical="3dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/lazismukabpekalonganicon" />
+
+        <TextView
+            android:id="@+id/judulprogram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif"
+            android:text="PROGRAM"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txttanggal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:paddingHorizontal="10dp"
+            android:text="@string/app_name"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/txtjam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txttanggal"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="10dp"
+            android:paddingHorizontal="10dp"
+            android:text="@string/app_name"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txtprogrampendidikan"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_below="@id/programatas"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/backgroundwhite"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="65dp"
+        android:text="PROGRAM PENDIDIKAN"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/pendidikanicon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/programatas"
+        android:layout_marginLeft="98dp"
+        android:layout_marginTop="75dp"
+        android:background="@drawable/backgroundwhite"
+        android:src="@drawable/pendidikanicon" />
+
+    <TextView
+        android:id="@+id/txtprogramkesehatan"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_below="@id/programatas"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="60dp"
+        android:layout_toRightOf="@id/txtprogrampendidikan"
+        android:background="@drawable/backgroundwhite"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="65dp"
+        android:text="PROGRAM KESEHATAN"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/kesehatanicon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/programatas"
+        android:layout_marginLeft="93dp"
+        android:layout_marginTop="75dp"
+        android:layout_toRightOf="@id/txtprogrampendidikan"
+        android:src="@drawable/kesehatanicon" />
+
+    <TextView
+        android:id="@+id/txtprogramekonomi"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_below="@id/txtprogrampendidikan"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/backgroundwhite"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="65dp"
+        android:text="PROGRAM EKONOMI"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/ekonomiicon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/txtprogramkesehatan"
+        android:layout_marginLeft="98dp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/backgroundwhite"
+        android:src="@drawable/ekonomiicon" />
+
+    <TextView
+        android:id="@+id/txtprogramkemanusiaan"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_below="@id/txtprogramkesehatan"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_toRightOf="@id/txtprogramekonomi"
+        android:background="@drawable/backgroundwhite"
+        android:paddingHorizontal="8dp"
+        android:paddingTop="65dp"
+        android:text="PROGRAM\tKEMANUSIAAN"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/kemanusiaanicon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/txtprogramkesehatan"
+        android:layout_marginLeft="93dp"
+        android:layout_marginTop="55dp"
+        android:layout_toRightOf="@id/txtprogramekonomi"
+        android:src="@drawable/kemanusiaanicon" />
+
+    <TextView
+        android:id="@+id/txtprogramsosialdakwah"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_below="@id/txtprogramekonomi"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/backgroundwhite"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="60dp"
+        android:text="PROGRAM SOSIAL DAKWAH"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/sosialdakwahicon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/txtprogramekonomi"
+        android:layout_marginLeft="98dp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/backgroundwhite"
+        android:src="@drawable/sosialdakwahicon" />
+
+    <TextView
+        android:id="@+id/txtprogramlingkungan"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_below="@id/txtprogramkemanusiaan"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="40dp"
+        android:layout_toRightOf="@id/txtprogramsosialdakwah"
+        android:background="@drawable/backgroundwhite"
+        android:paddingHorizontal="8dp"
+        android:paddingTop="65dp"
+        android:text="PROGRAM LINGKUNGAN"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="13dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/lingkunganicon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/txtprogramkemanusiaan"
+        android:layout_marginLeft="93dp"
+        android:layout_marginTop="55dp"
+        android:layout_toRightOf="@id/txtprogramsosialdakwah"
+        android:src="@drawable/lingkunganicon" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomnavigator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/cardview_light_background"
+        app:backgroundTint="@color/white"
+        app:menu="@menu/menu" />
+
+</RelativeLayout>

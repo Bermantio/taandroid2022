@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="15dp"
+    android:layout_marginVertical="5dp"
+    android:background="@drawable/backgroundwhite">
+
+    <ImageView
+        android:id="@+id/tutupinfozakat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/tutupiconorange2" />
+
+    <TextView
+        android:id="@+id/txtinfozakat"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp"
+        android:text="Menurut Peraturan Menteri Agama No 52 Tahun 2014, Zakat adalah harta yang wajib dikeluarkan oleh seorang muslim atau badan usaha yang dimiliki oleh orang Islam untuk diberikan kepada yang berhak menerimanya sesuai dengan syariat Islam. Zakat dikeluarkan dari harta yang dimiliki. Akan tetapi, tidak semua harta terkena kewajiban zakat. Syarat dikenakannya zakat atas harta di antaranya:
+        \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t 1) Harta tersebut merupakan barang halal dan diperoleh dengan cara yang halal;
+        \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t2) Harta tersebut dimiliki penuh oleh pemiliknya;
+        \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t3) Harta tersebut merupakan harta yang dapat berkembang;
+        \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t4) Harta tersebut mencapai nishab sesuai jenis hartanya;
+        \t\t\t\t\t\t\t\t\t\t\t\t\t\t5) Harta tersebut melewati haul;
+        \t\t\t6) Pemilik harta tidak memiliki hutang jangka pendek yang harus dilunasi."
+        android:textColor="#F49F36"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

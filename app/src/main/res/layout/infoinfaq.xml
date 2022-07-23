@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="15dp"
+    android:layout_gravity="center"
+    android:background="@drawable/backgroundwhite">
+
+    <ImageView
+        android:id="@+id/tutupinfoinfaq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/tutupiconorange2" />
+
+    <TextView
+        android:id="@+id/txtinfoinfaq"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp"
+        android:text="Menurut Undang-Undang Republik Indonesia No. 23 Tahun 2011 Tentang Pengelolaan Zakat, Infak adalah harta yang dikeluarkan oleh seseorang atau badan usaha di luar zakat untuk kemaslahatan umum. Infaq berasal dari Bahasa Arab, yang berarti membelanjakan harta atau memberikan harta. Sedangkan infaq berarti keluarkanlah harta. Infaq dikeluarkan untuk membantu fakir miskin, orang yang sedang terkena bencana, atau hal lainnya yang termasuk dalam ajaran islam. Bentuk pemberian yang diterima oleh kaum tersebut terbatas pada harta benda kekayaan yang telah disisihkan."
+        android:textColor="#F49F36"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

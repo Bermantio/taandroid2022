@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_light_background"
+    tools:context=".BantuanLogin">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+
+                        <RelativeLayout
+                            android:id="@+id/bantuanloginatas"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#DA8B03"
+                            android:paddingVertical="5dp">
+
+                                <TextView
+                                    android:id="@+id/judulbantuanlogin"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:fontFamily="sans-serif"
+                                    android:text="BANTUAN"
+                                    android:textColor="@color/white"
+                                    android:textSize="25dp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/kembalibantuanlogin"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="10dp"
+                                    android:layout_marginRight="95dp"
+                                    android:layout_toLeftOf="@+id/judulbantuanlogin"
+                                    android:src="@drawable/kembaliiconwhite" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/txtjudulbantuan"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_below="@id/bantuanloginatas"
+                            android:layout_marginHorizontal="30dp"
+                            android:layout_marginTop="50dp"
+                            android:background="@drawable/backgroundorange"
+                            android:paddingTop="5dp"
+                            android:text="BANTUAN"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="23dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/txtbantuanlogin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtjudulbantuan"
+                            android:layout_marginHorizontal="30dp"
+                            android:layout_marginTop="-15dp"
+                            android:background="@drawable/backgroundorange"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="10dp"
+                            android:text="LAZISMU adalah lembaga zakat nasional dengan SK Menag No. 90 Tahun 2022, yang berkhidmat dalam pemberdayaan masyarakat melalui pendayagunaan dana zakat, infaq, wakaf dan dana kedermawanan lainnya baik dari perseorangan, lembaga, perusahaan dan instansi lainnya. Lazismu tidak menerima segala bentuk dana yang bersumber dari kejahatan. UU RI No. 8 Tahun 2010 Tentang Pencegahan dan Pemberantasan Tindak Pidana Pencucian Uang"
+                            android:textColor="@color/white"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/copyright"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtbantuanlogin"
+                            android:layout_marginVertical="20dp"
+                            android:layout_alignParentBottom="true"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="10dp"
+                            android:layout_centerHorizontal="true"
+                            android:text="copyright"
+                            android:textColor="@color/cardview_dark_background"
+                            android:textSize="15dp" />
+
+                </RelativeLayout>
+
+        </ScrollView>
+
+</RelativeLayout>

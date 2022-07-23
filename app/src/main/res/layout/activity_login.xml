@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Login">
+
+    <RelativeLayout
+        android:id="@+id/selamatdatanglogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#DA8B03">
+
+        <TextView
+            android:id="@+id/judulselamatdatang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="SELAMAT DATANG"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="23dp"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/lazislogin"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/selamatdatanglogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="20dp"
+        android:src="@drawable/lazismukabpekalonganicon" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lazislogin"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:background="@drawable/kotakisi"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp" />
+
+    <EditText
+        android:id="@+id/katasandi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/kotakisi"
+        android:drawableRight="@drawable/visibility_off"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:longClickable="false"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp" />
+
+    <TextView
+        android:id="@+id/lupalogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_below="@id/katasandi"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:text="Lupa detail login Anda?"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/lupapassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/katasandi"
+        android:layout_marginHorizontal="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:text="Dapatkan bantuan untuk login"
+        android:textColor="#DA8B03"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/masuk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lupapassword"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/backgroundorange"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp"
+        android:text="MASUK"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/atau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/masuk"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="ATAU"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="3dp"
+        android:layout_below="@id/masuk"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_toLeftOf="@id/atau"
+        android:background="@color/black" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="3dp"
+        android:layout_below="@id/masuk"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@id/atau"
+        android:background="@color/black" />
+
+    <TextView
+        android:id="@+id/buatakunbaru"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/atau"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="30dp"
+        android:text="Buat Akun Baru"
+        android:textColor="#DA8B03"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/copyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buatakunbaru"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp"
+        android:text="Copyright"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="15dp" />
+
+</RelativeLayout>

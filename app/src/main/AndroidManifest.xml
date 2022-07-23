@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.lazismu">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Lazismu">
+        <activity
+            android:name=".KalkulatorZakatTabungan"
+            android:exported="false" />
+        <activity
+            android:name=".KalkulatorZakatPenghasilan"
+            android:exported="false" />
+        <activity
+            android:name=".FormZakatPenghasilan"
+            android:exported="false" />
+        <activity
+            android:name=".KalkulatorZakat"
+            android:exported="false" />
+        <activity
+            android:name=".Bantuan"
+            android:exported="false" />
+        <activity
+            android:name=".ProgramLingkungan"
+            android:exported="false" />
+        <activity
+            android:name=".ProgramSosialDakwah"
+            android:exported="false" />
+        <activity
+            android:name=".ProgramKemanusiaan"
+            android:exported="false" />
+        <activity
+            android:name=".ProgramEkonomi"
+            android:exported="false" />
+        <activity
+            android:name=".ProgramKesehatan"
+            android:exported="false" />
+        <activity
+            android:name=".ProgramPendidikan"
+            android:exported="false" />
+        <activity
+            android:name=".TentangPembayaran"
+            android:exported="false" />
+        <activity
+            android:name=".TentangLazismu"
+            android:exported="false" />
+        <activity
+            android:name=".Tentang"
+            android:exported="false" />
+        <activity
+            android:name=".Riwayat"
+            android:exported="false" />
+        <activity
+            android:name=".Profil"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Layanan"
+            android:exported="false" />
+        <activity
+            android:name=".TentangAsnaf"
+            android:exported="false" />
+        <activity
+            android:name=".FormZakat"
+            android:exported="false" />
+        <activity
+            android:name=".FormShadaqah"
+            android:exported="false" />
+        <activity
+            android:name=".FormInfaq"
+            android:exported="false" />
+        <activity
+            android:name=".BantuanLogin"
+            android:exported="false" />
+        <activity
+            android:name=".Program"
+            android:exported="false" />
+        <activity
+            android:name=".Donasi"
+            android:exported="false" />
+        <activity
+            android:name=".Register"
+            android:exported="false" />
+        <activity
+            android:name=".UbahProfil"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Login" />
+    </application>
+
+</manifest>

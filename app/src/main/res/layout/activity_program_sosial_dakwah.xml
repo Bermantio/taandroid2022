@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundorange2normal"
+    tools:context=".ProgramSosialDakwah">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <RelativeLayout
+                android:id="@+id/programsosialdakwahatas"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/judulprogramsosialdakwah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="sans-serif"
+                    android:text="PROGRAM SOSIAL DAKWAH"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/kembaliprogramsosialdakwah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/kembaliicondark" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txtjudulsosialdakwah"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/programsosialdakwahatas"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingTop="5dp"
+                android:text="PROGRAM SOSIAL DAKWAH"
+                android:textAlignment="center"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtprogramsosialdakwaha"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/programsosialdakwahatas"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="85dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:text="Pilar Dakwah memiliki fungsi menguatkan sisi ruhani dan pemenuhan kebutuhan untuk kegiatan dakwah dengan tujuan kemandirian para da’i serta institusi dakwah. Selain itu, memberikan fasilitasi kepada orang yang sudah lanjut usia serta pemberdayaan muallaf dengan pendampingan serta pembinaan. Program Sosial Dakwah antara lain :"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtprogramsosialdakwahb"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtprogramsosialdakwaha"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="-15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:text="1. Pemberdayaan Disabilitas"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtprogramsosialdakwahc"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtprogramsosialdakwahb"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="-15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:text="2. Sayangi Lansia"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtprogramsosialdakwahd"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtprogramsosialdakwahc"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="-15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:text="3. Pemberdayaan Muallaf"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtprogramsosialdakwahe"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtprogramsosialdakwahd"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="-15dp"
+                android:background="@drawable/backgroundwhite"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:text="4. Bedah Rumah"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtprogramsosialdakwahf"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtprogramsosialdakwahe"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="-15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:text="5. Back to Masjid"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtprogramsosialdakwahg"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtprogramsosialdakwahf"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="-15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:text="6. Indonesia Terang"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

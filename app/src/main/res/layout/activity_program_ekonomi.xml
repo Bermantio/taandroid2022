@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundorange2normal"
+    tools:context=".ProgramEkonomi">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <RelativeLayout
+                android:id="@+id/programekonomiatas"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/white">
+
+                <TextView
+                    android:id="@+id/judulprogramekonomi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="sans-serif"
+                    android:text="PROGRAM EKONOMI"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/kembaliprogramekonomi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:src="@drawable/kembaliicondark" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/txtjudulekonomi"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/programekonomiatas"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingTop="5dp"
+                android:text="PROGRAM EKONOMI"
+                android:textAlignment="center"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtprogramekonomia"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/programekonomiatas"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="85dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:text="Program ekonomi bertujuan untuk meningkatkan kesejahteraan penerima manfaat Zakat ataupun donasi lainnya. Dalam program ini melaksanakan pola pemberdayaan, pelatihan serta pendampingan wirausaha. Tidak hanya UMKM, tetapi program ekonomi menyasar kepada pemberian modal serta akses pasar baik di peternakan, pertanian serta akses pasar lainnya. Program yang menjadi bagian dari Pilar Ekonomi adalah :"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtprogramekonomib"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtprogramekonomia"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="-15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:text="1. Pemberdayaan UMKM"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtprogramekonomic"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtprogramekonomib"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="-15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:text="2. Peternakan Masyarakat Mandiri"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtprogramekonomid"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtprogramekonomic"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="-15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:text="3. Tani Bangkit"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtprogramekonomie"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtprogramekonomid"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="-15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:text="4. Ketahanan Pangan"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtprogramekonomif"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtprogramekonomie"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="-15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:text="5. Keuangan Mikro"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
