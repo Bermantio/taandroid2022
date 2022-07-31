@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -22,17 +23,20 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     TextView txtdonasi, txtprogram, txtlayanan, txttentang, txtkalkulatorzakat, txtbantuan, txtjam, txttanggal;
     ImageView donasiicon, programicon, layananicon, kalkulatorzakaticon, bantuanicon, tentangicon, keluaricon;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mAuth = FirebaseAuth.getInstance();
+
         keluaricon = (ImageView) findViewById(R.id.kembalimenu);
         keluaricon.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Login.class));
+            public void onClick(View v) {
+                cekstatus();
             }
         });
 
@@ -168,5 +172,10 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    private void cekstatus() {
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(getApplicationContext(),Login.class));
     }
 }
