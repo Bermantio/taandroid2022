@@ -11,30 +11,41 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class FormShadaqah extends AppCompatActivity {
 
     ImageView batalarah;
     Button batalbutton;
-    Spinner pilihdonasisebagai, shadaqahsebagai;
+    Spinner pilihdonasisebagai, txtberupa;
     ArrayAdapter<CharSequence> adapter;
+    TextView txttanggaltransaksi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_shadaqah);
 
+        txttanggaltransaksi = (TextView)findViewById(R.id.txttanggaltransaksi);
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat simpleDateTanggal = new SimpleDateFormat("dd MMMM yyyy");
+        String dateTanggal = simpleDateTanggal.format(calendar.getTime());
+        txttanggaltransaksi.setText(dateTanggal);
+
         pilihdonasisebagai = (Spinner) findViewById(R.id.pilihdonasisebagai);
         adapter = ArrayAdapter.createFromResource(this, R.array.donasisebagai, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         pilihdonasisebagai.setAdapter(adapter);
 
-        shadaqahsebagai = (Spinner) findViewById(R.id.pilihshadaqah);
-        adapter = ArrayAdapter.createFromResource(this, R.array.pilihshadaqah, android.R.layout.simple_spinner_item);
+        txtberupa = (Spinner) findViewById(R.id.txtberupa);
+        adapter = ArrayAdapter.createFromResource(this, R.array.txtberupa, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        shadaqahsebagai.setAdapter(adapter);
+        txtberupa.setAdapter(adapter);
 
         batalbutton = (Button) findViewById(R.id.batal);
         batalbutton.setOnClickListener(new View.OnClickListener() {

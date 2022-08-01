@@ -5,10 +5,10 @@
         <item>Perempuan</item>
     </string-array>
     <string-array name="donasisebagai">
-        <item>Nama asli</item>
-        <item>Hamba Allah</item>
+        <item>Sebagai Nama Asli</item>
+        <item>Sebagai Hamba Allah</item>
     </string-array>
-    <string-array name="pilihshadaqah">
+    <string-array name="txtberupa">
         <item>Uang</item>
         <item>Barang</item>
     </string-array>

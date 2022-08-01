@@ -44,8 +44,8 @@ public class Riwayat extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId())
                 {
-                    case R.id.donasinavigasi:
-                        startActivity(new Intent(getApplicationContext(),Donasi.class));
+                    case R.id.laporannavigasi:
+                        startActivity(new Intent(getApplicationContext(),Laporan.class));
                         break;
                     case R.id.beranda:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));

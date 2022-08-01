@@ -96,15 +96,15 @@ public class Donasi extends AppCompatActivity {
         });
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomnavigator);
-        bottomNavigationView.setSelectedItemId(R.id.donasinavigasi);
+        bottomNavigationView.setSelectedItemId(R.id.beranda);
 
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId())
                 {
-                    case R.id.donasinavigasi:
-                        startActivity(new Intent(getApplicationContext(),Donasi.class));
+                    case R.id.laporannavigasi:
+                        startActivity(new Intent(getApplicationContext(),Laporan.class));
                         break;
                     case R.id.beranda:
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));

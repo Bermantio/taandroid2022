@@ -11,8 +11,8 @@ import android.widget.TextView;
 
 public class FormZakat extends AppCompatActivity {
 
-    ImageView batalarah, zakatpenghasilanicon;
-    TextView txtzakatpenghasilan;
+    ImageView batalarah, zakatpenghasilanicon, zakatfitrahicon;
+    TextView txtzakatpenghasilan, txtzakatfitrah;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,22 @@ public class FormZakat extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),FormZakatPenghasilan.class));
+            }
+        });
+
+        txtzakatfitrah = (TextView)findViewById(R.id.txtzakatfitrah);
+        txtzakatfitrah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),FormZakatFitrah.class));
+            }
+        });
+
+        zakatfitrahicon = (ImageView)findViewById(R.id.zakatfitrahicon);
+        zakatfitrahicon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),FormZakatFitrah.class));
             }
         });
 

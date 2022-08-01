@@ -9,6 +9,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class FormZakatPenghasilan extends AppCompatActivity {
 
@@ -16,11 +20,18 @@ public class FormZakatPenghasilan extends AppCompatActivity {
     Button batalbutton;
     Spinner pilihdonasisebagai;
     ArrayAdapter<CharSequence> adapter;
+    TextView txttanggaltransaksi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_zakat_penghasilan);
+
+        txttanggaltransaksi = (TextView)findViewById(R.id.txttanggaltransaksi);
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat simpleDateTanggal = new SimpleDateFormat("dd MMMM yyyy");
+        String dateTanggal = simpleDateTanggal.format(calendar.getTime());
+        txttanggaltransaksi.setText(dateTanggal);
 
         pilihdonasisebagai = (Spinner) findViewById(R.id.pilihdonasisebagai);
         adapter = ArrayAdapter.createFromResource(this, R.array.donasisebagai, android.R.layout.simple_spinner_item);

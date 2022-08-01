@@ -11,6 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lazismu">
         <activity
+            android:name=".FormZakatFitrah"
+            android:exported="false" />
+        <activity
+            android:name=".Laporan"
+            android:exported="false" />
+        <activity
             android:name=".KalkulatorZakatTabungan"
             android:exported="false" />
         <activity

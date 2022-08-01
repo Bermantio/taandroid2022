@@ -55,10 +55,54 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/namalengkap"
+                android:id="@+id/kodetransaksi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/datadirishadaqah"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Kode Transaksi\t\t:"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/txtkodetransaksi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/kodetransaksi"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:textSize="15dp"
+                android:text="Kode"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tanggaltransaksi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtkodetransaksi"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Tanggal Transaksi\t\t:"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/txttanggaltransaksi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tanggaltransaksi"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:textSize="15dp"
+                android:text="@string/app_name"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/namalengkap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txttanggaltransaksi"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 android:text="Nama Lengkap\t\t:"
@@ -186,10 +230,35 @@
                 android:text="Profesi"/>
 
             <TextView
-                android:id="@+id/donasisebagai"
+                android:id="@+id/program"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprofesi"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Program\t\t:"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/txtprogram"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_below="@id/program"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:hint="Program"
+                android:inputType="text|number"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/donasisebagai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtprogram"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 android:textColor="@color/white"
@@ -208,7 +277,7 @@
                 tools:ignore="RtlHardcoded"></Spinner>
 
             <TextView
-                android:id="@+id/shadaqahdengan"
+                android:id="@+id/berupa"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/pilihdonasisebagai"
@@ -218,10 +287,10 @@
                 android:textColor="@color/white" />
 
             <Spinner
-                android:id="@+id/pilihshadaqah"
+                android:id="@+id/txtberupa"
                 android:layout_width="match_parent"
                 android:layout_height="43dp"
-                android:layout_below="@id/shadaqahdengan"
+                android:layout_below="@id/berupa"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/backgroundwhitenormal"
@@ -233,7 +302,7 @@
                 android:id="@+id/nominal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/pilihshadaqah"
+                android:layout_below="@id/txtberupa"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 android:text="Dengan Nilai\t\t:"
