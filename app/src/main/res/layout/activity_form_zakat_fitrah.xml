@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundorange2normal"
+    tools:context=".FormZakatFitrah">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <RelativeLayout
+                android:id="@+id/zakatfitrahatas"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/kembalizakatfitrah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/kembaliicondark" />
+
+                <TextView
+                    android:id="@+id/judulzakatfitrah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="sans-serif"
+                    android:text="ZAKAT FITRAH"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/datadirizakatfitrah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/zakatfitrahatas"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Data Penyetor :"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/kodetransaksi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/datadirizakatfitrah"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Kode Transaksi\t\t:"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/txtkodetransaksi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/kodetransaksi"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:textSize="15dp"
+                android:text="Kode"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tanggaltransaksi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtkodetransaksi"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Tanggal Transaksi\t\t:"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/txttanggaltransaksi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tanggaltransaksi"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:textSize="15dp"
+                android:text="@string/app_name"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/namalengkap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txttanggaltransaksi"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Nama Lengkap\t\t:"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/txtnamalengkap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/namalengkap"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:textSize="15dp"
+                android:text="Nama Lengkap"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/jeniskelamin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtnamalengkap"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:textSize="15dp"
+                android:textColor="@color/white"
+                android:text="Jenis Kelamin\t\t:" />
+
+            <TextView
+                android:id="@+id/pilihjeniskelamin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/jeniskelamin"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:textSize="15dp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/alamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pilihjeniskelamin"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Alamat\t\t:"
+                android:textSize="15dp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/txtalamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_below="@id/alamat"
+                android:layout_marginTop="15dp"
+                android:text="Alamat"
+                android:textSize="15dp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtalamat"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Email\t\t:"
+                android:textSize="15dp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/txtemail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_below="@id/email"
+                android:layout_marginTop="15dp"
+                android:text="Email"
+                android:textSize="15dp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/telepon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtemail"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Nomor Telepon/HP/WhatsApp \t\t:"
+                android:textSize="15dp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/txttelepon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_below="@id/telepon"
+                android:layout_marginTop="15dp"
+                android:text="Nomor"
+                android:textSize="15dp"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/profesi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txttelepon"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Profesi \t\t:"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/txtprofesi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profesi"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Profesi"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/program"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtprofesi"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Program\t\t:"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/txtprogram"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_below="@id/program"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:hint="Program"
+                android:inputType="text|number"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/keterangan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtprogram"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Anggota Keluarga\t\t:"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/txtketerangan"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_below="@id/keterangan"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:hint="Masukkan Nama Anggota Keluarga"
+                android:inputType="textLongMessage"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/anggota"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtketerangan"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Jumlah Anggota Keluarga\t\t:"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/txtanggota"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_below="@id/anggota"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:inputType="text|number"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:text="0"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/berupa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtanggota"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Berupa\t\t:"
+                android:textColor="@color/white" />
+
+            <Spinner
+                android:id="@+id/txtberupa"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_below="@id/berupa"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                tools:ignore="RtlHardcoded"></Spinner>
+
+            <TextView
+                android:id="@+id/hargaberas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtberupa"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Harga Beras di Tempat Penyetor\t\t:"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/txthargaberas"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_below="@id/hargaberas"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:text="Rp."
+                android:inputType="text|number"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/nominal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txthargaberas"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Dengan Nilai\t\t:"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/txtnominal"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_below="@id/nominal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:text="Rp."
+                android:inputType="text|number"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/uploadbukti"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtnominal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/white"
+                android:text="Upload Bukti Transaksi\t\t:"
+                android:textSize="15dp"/>
+
+            <EditText
+                android:id="@+id/buktizakatfitrah"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_below="@id/uploadbukti"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:hint="Upload Bukti Transaksis"
+                android:inputType="textPersonName"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp" />
+
+            <Button
+                android:id="@+id/confirmzakatfitrah"
+                android:layout_width="138dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buktizakatfitrah"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:background="@drawable/backgroundwhite"
+                android:text="KONFIRMASI"
+                android:textColor="#DA8B03"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/batal"
+                android:layout_width="138dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buktizakatfitrah"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/backgroundwhite"
+                android:text="BATAL"
+                android:textColor="#DA8B03"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

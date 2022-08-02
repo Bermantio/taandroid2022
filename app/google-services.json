@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1048920353919",
+    "project_id": "lazismu-a81c8",
+    "storage_bucket": "lazismu-a81c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048920353919:android:c64bfe88d5cf0665bba34a",
+        "android_client_info": {
+          "package_name": "com.example.lazismu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1048920353919-c9us49s13rtrlejmtotd4u16f4cufkfm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBP5O3IMKAasAL6t4SYRotgWYPDrTBo_IQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1048920353919-c9us49s13rtrlejmtotd4u16f4cufkfm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
