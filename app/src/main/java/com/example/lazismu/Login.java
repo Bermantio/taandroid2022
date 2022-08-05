@@ -107,7 +107,7 @@ public class Login extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(Login.this,"Username atau Password Anda salah!",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this,"Username atau Password Anda salah",Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

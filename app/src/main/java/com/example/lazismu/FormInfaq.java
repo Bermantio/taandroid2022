@@ -13,6 +13,9 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -23,6 +26,8 @@ public class FormInfaq extends AppCompatActivity {
     Spinner pilihdonasisebagai;
     ArrayAdapter<CharSequence> adapter;
     TextView txttanggaltransaksi;
+    DatabaseReference database = FirebaseDatabase.getInstance().getReference();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

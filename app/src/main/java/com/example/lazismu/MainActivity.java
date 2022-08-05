@@ -176,6 +176,5 @@ public class MainActivity extends AppCompatActivity {
 
     private void cekstatus() {
         FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(),Login.class));
     }
 }
