@@ -8,6 +8,14 @@
     android:background="@drawable/backgroundorange2"
     tools:context=".Donasi">
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
     <RelativeLayout
         android:id="@+id/donasiatas"
         android:layout_width="match_parent"
@@ -165,6 +173,10 @@
         android:onClick="infoshadaqah"
         android:src="@drawable/infoicondark" />
 
+        </RelativeLayout>
+
+    </ScrollView>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnavigator"
         android:layout_width="match_parent"
@@ -173,5 +185,7 @@
         app:backgroundTint="@color/white"
         app:menu="@menu/menu"
         android:layout_alignParentBottom="true"/>
+
+
 
 </RelativeLayout>
