@@ -58,32 +58,10 @@
                 android:background="@drawable/profiliconorange" />
 
             <TextView
-                android:id="@+id/namapengguna"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/fotoprofil"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:text="Nama Pengguna\t\t:" />
-
-            <EditText
-                android:id="@+id/txtnamapengguna"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/namapengguna"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/kotakisi"
-                android:hint="Masukkan Nama User"
-                android:inputType="textPersonName"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="10dp" />
-
-            <TextView
                 android:id="@+id/namalengkap"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtnamapengguna"
+                android:layout_below="@id/fotoprofil"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 android:text="Nama Lengkap\t\t:" />
@@ -179,14 +157,14 @@
                 android:id="@+id/txttelepon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="10dp"
                 android:layout_below="@id/telepon"
+                android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/kotakisi"
                 android:hint="Masukkan Nomor"
-                android:inputType="text|number"/>
+                android:inputType="text|number"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp" />
 
             <TextView
                 android:id="@+id/password"

@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.util.Patterns;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,14 +25,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Register extends AppCompatActivity {
 
-    EditText username, inputpassword1, inputpassword2, namapengguna, namalengkap, alamat, inputemail, no, profesi;
-    String email, password1, password2;
+    private EditText txtpassword, txtulangipassword, txtnamalengkap, txtalamat, txtemail, txttelepon, txtprofesi;
     Button daftar, batal;
     Spinner spinner;
-    private FirebaseAuth mAuth;
     ArrayAdapter<CharSequence> adapter;
     boolean passwordVisible;
 
@@ -39,33 +40,37 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        mAuth = FirebaseAuth.getInstance();
+        txtnamalengkap = (EditText) findViewById(R.id.txtnamalengkap);
+        txtalamat = (EditText) findViewById(R.id.txtalamat);
+        txttelepon = (EditText) findViewById(R.id.txttelepon);
+        txtprofesi = (EditText) findViewById(R.id.txtprofesi);
+        txtemail = (EditText) findViewById(R.id.txtemail);
+        txtpassword = (EditText) findViewById(R.id.txtpassword);
+        txtulangipassword = (EditText) findViewById(R.id.txtulangipassword);
 
-        inputemail = (EditText) findViewById(R.id.email);
-        inputpassword1 = (EditText) findViewById(R.id.txtpassword);
-        inputpassword1.setOnTouchListener(new View.OnTouchListener() {
+        txtpassword.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 final int Right=2;
                 if(event.getAction()==MotionEvent.ACTION_UP){
-                    if(event.getRawX()>=inputpassword1.getRight()-inputpassword1.getCompoundDrawables()[Right].getBounds().width())
+                    if(event.getRawX()>=txtpassword.getRight()-txtpassword.getCompoundDrawables()[Right].getBounds().width())
                     {
-                        int selection=inputpassword1.getSelectionEnd();
+                        int selection=txtpassword.getSelectionEnd();
                         if(passwordVisible){
                             //set drawable image here
-                            inputpassword1.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.visibility_off,0);
+                            txtpassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.visibility_off,0);
                             //for hide password
-                            inputpassword1.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            txtpassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
                             passwordVisible=false;
                         }
                         else{
                             //set drawable image here
-                            inputpassword1.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.visibility_on,0);
+                            txtpassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.visibility_on,0);
                             //for hide password
-                            inputpassword1.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            txtpassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                             passwordVisible=true;
                         }
-                        inputpassword1.setSelection(selection);
+                        txtpassword.setSelection(selection);
                         return true;
                     }
                 }
@@ -73,30 +78,29 @@ public class Register extends AppCompatActivity {
             }
         });
 
-        inputpassword2 = (EditText) findViewById(R.id.txtulangipassword);
-        inputpassword2.setOnTouchListener(new View.OnTouchListener() {
+        txtulangipassword.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 final int Right=2;
                 if(event.getAction()==MotionEvent.ACTION_UP){
-                    if(event.getRawX()>=inputpassword2.getRight()-inputpassword2.getCompoundDrawables()[Right].getBounds().width())
+                    if(event.getRawX()>=txtulangipassword.getRight()-txtulangipassword.getCompoundDrawables()[Right].getBounds().width())
                     {
-                        int selection=inputpassword2.getSelectionEnd();
+                        int selection=txtulangipassword.getSelectionEnd();
                         if(passwordVisible){
                             //set drawable image here
-                            inputpassword2.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.visibility_off,0);
+                            txtulangipassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.visibility_off,0);
                             //for hide password
-                            inputpassword2.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            txtulangipassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
                             passwordVisible=false;
                         }
                         else{
                             //set drawable image here
-                            inputpassword2.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.visibility_on,0);
+                            txtulangipassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.visibility_on,0);
                             //for hide password
-                            inputpassword2.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            txtulangipassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                             passwordVisible=true;
                         }
-                        inputpassword2.setSelection(selection);
+                        txtulangipassword.setSelection(selection);
                         return true;
                     }
                 }
@@ -113,7 +117,71 @@ public class Register extends AppCompatActivity {
         daftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registrasi();
+                String namalengkap = txtnamalengkap.getText().toString();
+                String alamat = txtalamat.getText().toString();
+                String telepon = txttelepon.getText().toString();
+                String profesi = txtprofesi.getText().toString();
+                String email = txtemail.getText().toString();
+                String password = txtpassword.getText().toString();
+                String ulangipassword = txtulangipassword.getText().toString();
+
+                if (TextUtils.isEmpty(namalengkap)){
+                    txtnamalengkap.setError("Nama Lengkap belum diisi");
+                    txtnamalengkap.requestFocus();
+                }
+                else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                    txtemail.setError("Email belum diisi");
+                    txtemail.requestFocus();
+                }
+                else if (TextUtils.isEmpty(alamat)){
+                    txtalamat.setError("Alamat belum diisi");
+                    txtalamat.requestFocus();
+                }
+                else if (TextUtils.isEmpty(email)){
+                    txtemail.setError("Email belum diisi");
+                    txtemail.requestFocus();
+                }
+                else if (TextUtils.isEmpty(telepon)){
+                    txttelepon.setError("Telepon belum diisi");
+                    txttelepon.requestFocus();
+                }
+                else if (telepon.length() < 10){
+                    txttelepon.setError("Telepon minimal 10 digit");
+                    txttelepon.requestFocus();
+                }
+                else if (telepon.length() >= 14){
+                    txttelepon.setError("Telepon maksimal 13 digit");
+                    txttelepon.requestFocus();
+                }
+                else if (TextUtils.isEmpty(password)){
+                    txtpassword.setError("Password belum diisi");
+                    txtpassword.requestFocus();
+                }
+                else if (password.length()<8){
+                    txtpassword.setError("Kata sandi antara 8-12 digit");
+                    txtpassword.requestFocus();
+                }
+                else if (password.length()>=13){
+                    txtpassword.setError("Kata sandi antara 8-12 digit");
+                    txtpassword.requestFocus();
+                }
+                else if (TextUtils.isEmpty(ulangipassword)){
+                    txtulangipassword.setError("Ulangi kata sandi");
+                    txtulangipassword.requestFocus();
+                }
+                else if (!password.equals(ulangipassword)){
+                    txtulangipassword.setError("Ulangi kata sandi");
+                    txtulangipassword.requestFocus();
+                    txtpassword.clearComposingText();
+                    txtulangipassword.clearComposingText();
+                }
+                else if (TextUtils.isEmpty(profesi)){
+                    txtprofesi.setError("Profesi belum diisi");
+                    txtprofesi.requestFocus();
+                }
+                else {
+                    registerUser(password, ulangipassword, namalengkap, alamat, email, telepon, profesi);
+                }
             }
         });
 
@@ -126,23 +194,21 @@ public class Register extends AppCompatActivity {
         });
     }
 
-    private void registrasi() {
-        email = inputemail.getText().toString();
-        password1 = inputpassword1.getText().toString();
-        password2 = inputpassword2.getText().toString();
+    private void registerUser(String password, String ulangipassword, String namalengkap, String alamat, String email, String telepon, String profesi) {
+    FirebaseAuth auth = FirebaseAuth.getInstance();
+    auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
+        @Override
+        public void onComplete(@NonNull Task<AuthResult> task) {
+            if (task.isSuccessful()){
+                FirebaseUser firebaseUser = auth.getCurrentUser();
+                firebaseUser.sendEmailVerification();
 
-        mAuth.createUserWithEmailAndPassword(email,password2)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(Register.this,"Username atau Password Anda salah!",Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+                Intent intent = new Intent(Register.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+            }
+        }
+    });
     }
 }

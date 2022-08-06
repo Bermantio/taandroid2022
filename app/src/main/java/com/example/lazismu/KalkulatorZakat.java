@@ -18,13 +18,29 @@ import java.util.Calendar;
 public class KalkulatorZakat extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    TextView txtjam, txttanggal, txtzakatpenghasilan, txtzakattabungan, txtzakatemasperak;
-    ImageView zakatpenghasilanicon, zakattabunganicon, zakatemasperakicon;
+    TextView txtjam, txttanggal, txtzakatpenghasilan, txtzakattabungan, txtzakatemasperak, txtzakatperdagangan;
+    ImageView zakatpenghasilanicon, zakattabunganicon, zakatemasperakicon, zakatperdaganganicon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kalkulator_zakat);
+
+        txtzakatperdagangan = (TextView)findViewById(R.id.txtzakatperdagangan);
+        txtzakatperdagangan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),KalkulatorZakatPerdagangan.class));
+            }
+        });
+
+        zakatperdaganganicon = (ImageView)findViewById(R.id.zakatperdaganganicon);
+        zakatperdaganganicon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),KalkulatorZakatPerdagangan.class));
+            }
+        });
 
         txtzakatemasperak = (TextView)findViewById(R.id.txtzakatemasperak);
         txtzakatemasperak.setOnClickListener(new View.OnClickListener() {
