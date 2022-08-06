@@ -89,32 +89,7 @@
                 android:layout_below="@id/datadiripengguna"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/profilmenu"/>
-
-            <TextView
-                android:id="@+id/noid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/datadiripengguna"
-                android:layout_toRightOf="@id/fotoprofil"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
-                android:text="No ID"
-                android:textSize="20dp"
-                android:paddingVertical="5dp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:id="@+id/namapengguna"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/noid"
-                android:layout_toRightOf="@id/fotoprofil"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="3dp"
-                android:text="Username"
-                android:textSize="20dp"
-                android:textColor="@color/white" />
+                android:background="@drawable/profilmenu" />
 
             <TextView
                 android:id="@+id/namalengkap"
@@ -134,9 +109,9 @@
                 android:layout_below="@id/namalengkap"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
-                android:textSize="20dp"
-                android:text="Nama Lengkap"
-                android:textColor="@color/white" />
+                android:hint="Nama Lengkap"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/jeniskelamin"
@@ -177,7 +152,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_below="@id/alamat"
                 android:layout_marginTop="15dp"
-                android:text="Alamat"
+                android:hint="Alamat"
                 android:textSize="20dp"
                 android:textColor="@color/white"/>
 
@@ -199,7 +174,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_below="@id/email"
                 android:layout_marginTop="15dp"
-                android:text="Email"
+                android:hint="Email"
                 android:textSize="20dp"
                 android:textColor="@color/white"/>
 
@@ -221,7 +196,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_below="@id/telepon"
                 android:layout_marginTop="15dp"
-                android:text="Nomor"
+                android:hint="Nomor"
                 android:textSize="20dp"
                 android:textColor="@color/white"/>
 
@@ -245,7 +220,7 @@
                 android:layout_marginTop="15dp"
                 android:textSize="20dp"
                 android:textColor="@color/white"
-                android:text="Profesi"/>
+                android:hint="Profesi"/>
 
             <Button
                 android:id="@+id/edit"

@@ -5,9 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -19,14 +21,15 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
 
     TextView daftar, bantuan;
     Button masuk;
-    EditText inputemail, inputpassword;
+    private EditText inputemail, inputpassword;
     String email, password;
-    private FirebaseAuth mAuth;
+    private FirebaseAuth authProfil;
     boolean passwordVisible;
 
     @Override
@@ -34,7 +37,7 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mAuth = FirebaseAuth.getInstance();
+        authProfil = FirebaseAuth.getInstance();
 
         daftar = (TextView)findViewById(R.id.buatakunbaru);
         daftar.setOnClickListener(new View.OnClickListener() {
@@ -89,20 +92,36 @@ public class Login extends AppCompatActivity {
         masuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cekLogin();
+
+                String email = inputemail.getText().toString();
+                String password = inputpassword.getText().toString();
+
+                if (TextUtils.isEmpty(email)){
+                    inputemail.setError("Email belum diisi");
+                    inputemail.requestFocus();
+                }
+                else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                    inputemail.setError("Email belum diisi");
+                    inputemail.requestFocus();
+                }
+                else if (TextUtils.isEmpty(password)){
+                    inputpassword.setError("Password belum diisi");
+                    inputpassword.requestFocus();
+                }
+                else {
+                    LoginUser(password, email);
+                }
             }
         });
     }
 
-    private void cekLogin() {
-        email = inputemail.getText().toString();
-        password = inputpassword.getText().toString();
-
-        mAuth.signInWithEmailAndPassword(email,password)
+    private void LoginUser(String password, String email) {
+        authProfil.signInWithEmailAndPassword(email,password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
+                            FirebaseUser firebaseUser = authProfil.getCurrentUser();
                             // Sign in success, update UI with the signed-in user's information
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         } else {
@@ -111,5 +130,6 @@ public class Login extends AppCompatActivity {
                         }
                     }
                 });
+
     }
 }

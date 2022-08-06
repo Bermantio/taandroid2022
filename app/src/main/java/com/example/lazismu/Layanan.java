@@ -4,12 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -31,11 +33,16 @@ public class Layanan extends AppCompatActivity {
         whatsappicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "https://api.whatsapp.com/send?phone=6285865422220";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setPackage("com.whatsapp");
-                i.setData(Uri.parse(url));
-                startActivity(i);
+                boolean installed = appInstalledOrNot("com.whatsapp");
+
+                if (installed){
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=+6285865422220"));
+                    startActivity(intent);
+                }
+                else{
+                    Toast.makeText(Layanan.this,"Whatsapp belum terinstall",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -76,11 +83,17 @@ public class Layanan extends AppCompatActivity {
             }
         });
     }
-    public void txtviawhatsapp(View view) {
-        String url = "https://api.whatsapp.com/send?phone=6285865422220";
-        Intent i = new Intent(Intent.ACTION_VIEW);
-        i.setPackage("com.whatsapp");
-        i.setData(Uri.parse(url));
-        startActivity(i);
+
+    private boolean appInstalledOrNot(String url) {
+        PackageManager packageManager = getPackageManager();
+        boolean app_installed;
+        try{
+            packageManager.getPackageInfo(url,PackageManager.GET_ACTIVITIES);
+            app_installed=true;
+        }
+        catch(PackageManager.NameNotFoundException e){
+        app_installed=false;
+        }
+            return app_installed;
     }
 }

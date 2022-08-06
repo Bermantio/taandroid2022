@@ -38,7 +38,8 @@ public class MainActivity extends AppCompatActivity {
         keluaricon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cekstatus();
+                mAuth.signOut();
+                signOutUser();
             }
         });
 
@@ -191,8 +192,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void cekstatus() {
-        FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(),Login.class));
+    private void signOutUser() {
+        Intent login = new Intent(MainActivity.this, Login.class);
+        login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(login);
+        finish();
     }
 }
