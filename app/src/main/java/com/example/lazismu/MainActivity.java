@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -21,7 +22,8 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    TextView txtdonasi, txtprogram, txtlayanan, txttentang, txtkalkulatorzakat, txtbantuan, txtjam, txttanggal;
+    TextView txtdonasi, txtprogram, txtlayanan, txttentang, txtkalkulatorzakat, txtbantuan, txtjam, txttanggal,
+            selamatdatanguser;
     ImageView donasiicon, programicon, layananicon, kalkulatorzakaticon, bantuanicon, tentangicon, keluaricon;
     private FirebaseAuth mAuth;
 
@@ -39,6 +41,21 @@ public class MainActivity extends AppCompatActivity {
                 cekstatus();
             }
         });
+
+        selamatdatanguser = (TextView)findViewById(R.id.selamatdatanguser);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // Name, email address, and profile photo Url
+            String name = user.getDisplayName();
+
+            // Check if user's email is verified
+            boolean emailVerified = user.isEmailVerified();
+
+            // The user's ID, unique to the Firebase project. Do NOT use this value to
+            // authenticate with your backend server, if you have one. Use
+            // FirebaseUser.getIdToken() instead.
+            String uid = user.getUid();
+        }
 
         txttanggal = (TextView)findViewById(R.id.txttanggal);
         Calendar calendar = Calendar.getInstance();
@@ -176,5 +193,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void cekstatus() {
         FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(getApplicationContext(),Login.class));
     }
 }
