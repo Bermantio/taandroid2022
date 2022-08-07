@@ -128,6 +128,7 @@ public class Register extends AppCompatActivity {
                 String alamat = txtalamat.getText().toString();
                 String telepon = txttelepon.getText().toString();
                 String profesi = txtprofesi.getText().toString();
+                String jeniskelamin = spinner.getSelectedItem().toString();
                 String email = txtemail.getText().toString();
                 String password = txtpassword.getText().toString();
                 String ulangipassword = txtulangipassword.getText().toString();
@@ -139,6 +140,9 @@ public class Register extends AppCompatActivity {
                 else if (TextUtils.isEmpty(alamat)){
                     txtalamat.setError("Alamat belum diisi");
                     txtalamat.requestFocus();
+                }
+                else if (TextUtils.isEmpty(jeniskelamin)){
+                    spinner.requestFocus();
                 }
                 else if (TextUtils.isEmpty(email)){
                     txtemail.setError("Email belum diisi");
@@ -187,7 +191,7 @@ public class Register extends AppCompatActivity {
                     txtprofesi.requestFocus();
                 }
                 else {
-                    registerUser(password, namalengkap, alamat, email, telepon, profesi);
+                    registerUser(password, namalengkap, alamat, email, jeniskelamin, telepon, profesi);
                 }
             }
         });
@@ -201,15 +205,15 @@ public class Register extends AppCompatActivity {
         });
     }
 
-    private void registerUser(String password, String namalengkap, String alamat, String email, String telepon, String profesi) {
+    private void registerUser(String password, String namalengkap, String alamat, String email, String telepon, String profesi, String jeniskelamin) {
     FirebaseAuth auth = FirebaseAuth.getInstance();
     auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
         @Override
         public void onComplete(@NonNull Task<AuthResult> task) {
             if (task.isSuccessful()){
                 FirebaseUser firebaseUser = auth.getCurrentUser();
-                
-                ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails ( namalengkap, alamat, telepon, profesi);
+
+                ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails ( namalengkap, alamat, telepon, profesi, jeniskelamin);
 
                 DatabaseReference referenceProfil = FirebaseDatabase.getInstance().getReference("Registered Users");
 

@@ -32,8 +32,8 @@ public class Profil extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     Button edit;
     ArrayAdapter<CharSequence> adapter;
-    private TextView txtjam, txttanggal, txtnamalengkap, txtalamat, txtemail, txttelepon, txtprofesi;
-    private String namalengkap,alamat,profesi,email,telepon;
+    private TextView txtjam, txttanggal, txtnamalengkap, txtalamat, txtemail, txttelepon, txtprofesi, txtjeniskelamin;
+    private String namalengkap,alamat,profesi,email,telepon,jeniskelamin;
     private FirebaseAuth authProfil;
     private ImageView fotoprofil;
 
@@ -47,6 +47,7 @@ public class Profil extends AppCompatActivity {
         txttelepon = findViewById(R.id.txttelepon);
         txtprofesi = findViewById(R.id.txtprofesi);
         txtemail = findViewById(R.id.txtemail);
+        txtjeniskelamin = findViewById(R.id.pilihjeniskelamin);
 
         authProfil = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = authProfil.getCurrentUser();
@@ -110,17 +111,19 @@ public class Profil extends AppCompatActivity {
         referenceProfil.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ReadWriteUserDetails readUserDetails = snapshot.getValue(ReadWriteUserDetails.class);
+                ReadUserDetails readUserDetails = snapshot.getValue(ReadUserDetails.class);
                 if (readUserDetails != null){
-                    namalengkap = firebaseUser.getDisplayName();
+                    namalengkap = readUserDetails.namalengkap;
                     email = firebaseUser.getEmail();
                     alamat = readUserDetails.alamat;
+                    jeniskelamin = readUserDetails.jeniskelamin;
                     profesi = readUserDetails.profesi;
                     telepon= readUserDetails.telepon;
 
                     txtnamalengkap.setText(namalengkap);
                     txtalamat.setText(alamat);
                     txtemail.setText(email);
+                    txtjeniskelamin.setText(jeniskelamin);
                     txttelepon.setText(telepon);
                     txtprofesi.setText(profesi);
                 }

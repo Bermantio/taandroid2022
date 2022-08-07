@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/berandaatas"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="3dp"
         android:layout_marginTop="10dp"
         android:paddingHorizontal="10dp"
         android:text="Selamat Datang"
@@ -50,13 +50,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/selamatdatang"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="1dp"
         android:paddingHorizontal="10dp"
         android:text="Nama Lengkap"
         android:textColor="@color/white"
-        android:textSize="20dp"
-        android:textStyle="italic" />
+        android:textSize="20dp"/>
 
     <TextView
         android:id="@+id/txttanggal"

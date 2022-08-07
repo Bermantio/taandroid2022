@@ -10,10 +10,16 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -24,21 +30,30 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     TextView txtdonasi, txtprogram, txtlayanan, txttentang, txtkalkulatorzakat, txtbantuan, txtjam, txttanggal,
             selamatdatanguser;
+    private String namalengkap;
     ImageView donasiicon, programicon, layananicon, kalkulatorzakaticon, bantuanicon, tentangicon, keluaricon;
-    private FirebaseAuth mAuth;
+    private FirebaseAuth authProfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mAuth = FirebaseAuth.getInstance();
+        authProfil = FirebaseAuth.getInstance();
+        FirebaseUser firebaseUser = authProfil.getCurrentUser();
+
+        if (firebaseUser==null){
+            Toast.makeText(MainActivity.this,"Ada galat", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            showUserProfil(firebaseUser);
+        }
 
         keluaricon = (ImageView) findViewById(R.id.kembalimenu);
         keluaricon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mAuth.signOut();
+                authProfil.signOut();
                 signOutUser();
             }
         });
@@ -188,6 +203,27 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
                 return false;
+            }
+        });
+    }
+
+    private void showUserProfil(FirebaseUser firebaseUser) {
+        String userID = firebaseUser.getUid();
+        DatabaseReference referenceProfil = FirebaseDatabase.getInstance().getReference("Registered Users");
+        referenceProfil.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ReadUserDetails readUserDetails = snapshot.getValue(ReadUserDetails.class);
+                if (readUserDetails != null){
+                    namalengkap = readUserDetails.namalengkap;
+
+                    selamatdatanguser.setText(namalengkap);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(MainActivity.this,"Ada galat", Toast.LENGTH_SHORT).show();
             }
         });
     }

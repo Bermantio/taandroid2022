@@ -37,7 +37,7 @@ public class Layanan extends AppCompatActivity {
 
                 if (installed){
                     Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=+6285865422220"));
+                    intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=6285865422220"));
                     startActivity(intent);
                 }
                 else{

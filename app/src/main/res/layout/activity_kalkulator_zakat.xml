@@ -230,33 +230,6 @@
                 android:layout_toRightOf="@id/txtzakattabungan"
                 android:src="@drawable/zakatsahamicon" />
 
-            <TextView
-                android:id="@+id/txtzakatfitrah"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
-                android:layout_below="@id/txtzakattabungan"
-                android:layout_marginLeft="25dp"
-                android:layout_marginTop="60dp"
-                android:layout_toRightOf="@id/txtzakatpertanian"
-                android:background="@drawable/backgroundwhite"
-                android:paddingHorizontal="10dp"
-                android:paddingTop="58dp"
-                android:text="ZAKAT FITRAH"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="10dp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/zakatfitrahicon"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_below="@id/txtzakattabungan"
-                android:layout_marginLeft="48dp"
-                android:layout_marginTop="70dp"
-                android:layout_toRightOf="@id/txtzakatpertanian"
-                android:src="@drawable/zakatfirahicon" />
-
         </RelativeLayout>
 
     </ScrollView>

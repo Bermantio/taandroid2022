@@ -55,32 +55,10 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/kodetransaksi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/datadirishadaqah"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:text="Kode Transaksi\t\t:"
-                android:textColor="@color/white"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/txtkodetransaksi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/kodetransaksi"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:textSize="15dp"
-                android:text="Kode"
-                android:textColor="@color/white" />
-
-            <TextView
                 android:id="@+id/tanggaltransaksi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtkodetransaksi"
+                android:layout_below="@id/datadirishadaqah"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 android:text="Tanggal Transaksi\t\t:"
