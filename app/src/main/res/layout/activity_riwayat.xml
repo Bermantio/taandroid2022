@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundorange2normal"
+    android:background="#F49F36"
     tools:context=".Riwayat">
 
     <ScrollView
@@ -82,11 +82,11 @@
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/tampil"
+                android:id="@+id/daftarriwayat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/namalengkap"
-                tools:listitem="@layout/laporan_item"
+                tools:listitem="@layout/riwayatitem"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundorange2normal"
+    android:background="#F49F36"
     tools:context=".FormInfaq">
 
     <ScrollView
@@ -94,36 +94,15 @@
                 android:layout_below="@id/namalengkap"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
-                android:textSize="15dp"
                 android:text="Nama Lengkap"
-                android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/jeniskelamin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txtnamalengkap"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:textSize="15dp"
                 android:textColor="@color/white"
-                android:text="Jenis Kelamin\t\t:" />
-
-            <TextView
-                android:id="@+id/pilihjeniskelamin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/jeniskelamin"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:textSize="15dp"
-                android:textColor="@color/white"/>
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/alamat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/pilihjeniskelamin"
+                android:layout_below="@id/txtnamalengkap"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 android:text="Alamat\t\t:"
@@ -142,32 +121,10 @@
                 android:textColor="@color/white"/>
 
             <TextView
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txtalamat"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:text="Email\t\t:"
-                android:textSize="15dp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:id="@+id/txtemail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_below="@id/email"
-                android:layout_marginTop="15dp"
-                android:text="Email"
-                android:textSize="15dp"
-                android:textColor="@color/white"/>
-
-            <TextView
                 android:id="@+id/telepon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtemail"
+                android:layout_below="@id/txtalamat"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 android:text="Nomor Telepon/HP/WhatsApp \t\t:"

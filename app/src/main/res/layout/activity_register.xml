@@ -242,15 +242,15 @@
                 android:id="@+id/batal"
                 android:layout_width="138dp"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/txtprofesi"
+                android:layout_alignParentEnd="true"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginVertical="20dp"
-                android:layout_below="@id/txtprofesi"
                 android:background="@drawable/backgroundorange"
                 android:text="BATAL"
                 android:textColor="@color/white"
                 android:textSize="20dp"
-                android:textStyle="bold"
-                android:layout_alignParentEnd="true"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/copyright"

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cardview_light_background"
+    android:background="#F49F36"
     tools:context=".BantuanLogin">
 
         <ScrollView
@@ -19,8 +19,8 @@
                         <RelativeLayout
                             android:id="@+id/bantuanloginatas"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#DA8B03"
+                            android:layout_height="80dp"
+                            android:background="@color/white"
                             android:paddingVertical="5dp">
 
                                 <TextView
@@ -30,64 +30,100 @@
                                     android:layout_centerInParent="true"
                                     android:fontFamily="sans-serif"
                                     android:text="BANTUAN"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/cardview_dark_background"
                                     android:textSize="25dp"
                                     android:textStyle="bold" />
-
-                                <ImageView
-                                    android:id="@+id/kembalibantuanlogin"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginVertical="10dp"
-                                    android:layout_marginRight="95dp"
-                                    android:layout_toLeftOf="@+id/judulbantuanlogin"
-                                    android:src="@drawable/kembaliiconwhite" />
 
                         </RelativeLayout>
 
                         <TextView
-                            android:id="@+id/txtjudulbantuan"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
+                            android:id="@+id/txtviatatapmuka"
+                            android:layout_width="350dp"
+                            android:layout_height="100dp"
                             android:layout_below="@id/bantuanloginatas"
                             android:layout_marginHorizontal="30dp"
-                            android:layout_marginTop="50dp"
-                            android:background="@drawable/backgroundorange"
-                            android:paddingTop="5dp"
-                            android:text="BANTUAN"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textSize="23dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/txtbantuanlogin"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/txtjudulbantuan"
-                            android:layout_marginHorizontal="30dp"
-                            android:layout_marginTop="-15dp"
-                            android:background="@drawable/backgroundorange"
-                            android:paddingHorizontal="10dp"
-                            android:paddingVertical="10dp"
-                            android:text="LAZISMU adalah lembaga zakat nasional dengan SK Menag No. 90 Tahun 2022, yang berkhidmat dalam pemberdayaan masyarakat melalui pendayagunaan dana zakat, infaq, wakaf dan dana kedermawanan lainnya baik dari perseorangan, lembaga, perusahaan dan instansi lainnya. Lazismu tidak menerima segala bentuk dana yang bersumber dari kejahatan. UU RI No. 8 Tahun 2010 Tentang Pencegahan dan Pemberantasan Tindak Pidana Pencucian Uang"
-                            android:textColor="@color/white"
-                            android:textSize="18dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/copyright"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/txtbantuanlogin"
-                            android:layout_marginVertical="20dp"
-                            android:layout_alignParentBottom="true"
-                            android:paddingHorizontal="10dp"
-                            android:paddingVertical="10dp"
-                            android:layout_centerHorizontal="true"
-                            android:text="copyright"
+                            android:layout_marginTop="60dp"
+                            android:background="@drawable/backgroundwhite"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="30dp"
+                            android:text="TATAP MUKA"
                             android:textColor="@color/cardview_dark_background"
-                            android:textSize="15dp" />
+                            android:textSize="30dp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/viatatapmukaicon"
+                            android:layout_width="80dp"
+                            android:layout_height="75dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_below="@id/bantuanloginatas"
+                            android:layout_marginRight="50dp"
+                            android:layout_marginTop="68dp"
+                            android:background="@drawable/faceicon" />
+
+                        <TextView
+                            android:id="@+id/txtviatelepon"
+                            android:layout_width="350dp"
+                            android:layout_height="100dp"
+                            android:layout_below="@id/txtviatatapmuka"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="60dp"
+                            android:background="@drawable/backgroundwhite"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="30dp"
+                            android:text="TELEPON"
+                            android:textColor="#F49F36"
+                            android:textSize="30dp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/teleponicon"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:layout_below="@id/txtviatatapmuka"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginRight="50dp"
+                            android:layout_marginTop="68dp"
+                            android:src="@drawable/teleponicon" />
+
+                        <TextView
+                            android:id="@+id/txtviawhatsapp"
+                            android:layout_width="350dp"
+                            android:layout_height="100dp"
+                            android:layout_below="@id/txtviatelepon"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="60dp"
+                            android:background="@drawable/backgroundwhite"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="30dp"
+                            android:text="WHATSAPP"
+                            android:textColor="#7CAA3C"
+                            android:textSize="30dp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/whatsappicon"
+                            android:layout_width="90dp"
+                            android:layout_height="75dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_below="@id/txtviatelepon"
+                            android:layout_marginRight="40dp"
+                            android:layout_marginTop="70dp"
+                            android:src="@drawable/whatsappicon" />
+
+                        <Button
+                            android:id="@+id/kembali"
+                            android:layout_width="138dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtviawhatsapp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_marginVertical="20dp"
+                            android:background="@drawable/backgroundwhite"
+                            android:text="KEMBALI"
+                            android:textColor="#F49F36"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
 
                 </RelativeLayout>
 

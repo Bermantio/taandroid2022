@@ -14,6 +14,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,8 +34,9 @@ public class UbahDetailAkun extends AppCompatActivity {
     private String password;
     private String ulangipassword;
     boolean passwordVisible;
-    private Button simpan, batal;
+    private Button updateemail, updatepassword;
     private EditText txtemail, txtpassword, txtulangipassword;
+    ImageView kembalieditakun;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +46,10 @@ public class UbahDetailAkun extends AppCompatActivity {
         txtemail = findViewById(R.id.txtemail);
         txtpassword = findViewById(R.id.txtpassword);
         txtulangipassword = findViewById(R.id.txtulangipassword);
-        simpan = findViewById(R.id.simpan);
-        batal = (Button) findViewById(R.id.batal);
-        batal.setOnClickListener(new View.OnClickListener() {
+        updateemail = findViewById(R.id.updateemail);
+        updatepassword = findViewById(R.id.updatepassword);
+        kembalieditakun = (ImageView) findViewById(R.id.kembalieditakun);
+        kembalieditakun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(UbahDetailAkun.this, Profil.class));
@@ -116,12 +119,10 @@ public class UbahDetailAkun extends AppCompatActivity {
             }
         });
 
-        simpan.setOnClickListener(new View.OnClickListener() {
+        updateemail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 email = txtemail.getText().toString();
-                password = txtpassword.getText().toString();
-                ulangipassword = txtulangipassword.getText().toString();
                 if (TextUtils.isEmpty(email)){
                     txtemail.setError("Email belum diisi");
                     txtemail.requestFocus();
@@ -130,8 +131,18 @@ public class UbahDetailAkun extends AppCompatActivity {
                     txtemail.setError("Email belum diisi");
                     txtemail.requestFocus();
                 }
+                else{
+                    updateEmail(firebaseUser);
+                }
+            }
+        });
 
-                else if (TextUtils.isEmpty(password)){
+        updatepassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                password = txtpassword.getText().toString();
+                ulangipassword = txtulangipassword.getText().toString();
+                if (TextUtils.isEmpty(password)){
                     txtpassword.setError("Password belum diisi");
                     txtpassword.requestFocus();
                 }
@@ -154,18 +165,38 @@ public class UbahDetailAkun extends AppCompatActivity {
                     txtulangipassword.clearComposingText();
                 }
                 else{
-                    updateAkun(firebaseUser);
+                    updatePassword(firebaseUser);
                 }
             }
         });
     }
 
-    private void updateAkun(FirebaseUser firebaseUser) {
+    private void updateEmail(FirebaseUser firebaseUser) {
         firebaseUser.updateEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
-                    Toast.makeText(UbahDetailAkun.this,"Email atau Password telah diubah",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UbahDetailAkun.this,"Email telah diubah",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(UbahDetailAkun.this,Profil.class);
+                    startActivity(intent);
+                    finish();
+                }else{
+                    try{
+                        throw task.getException();
+                    }
+                    catch (Exception e){
+                        Toast.makeText(UbahDetailAkun.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                };
+            }
+        });
+    }
+    private void updatePassword(FirebaseUser firebaseUser) {
+        firebaseUser.updatePassword(password).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(UbahDetailAkun.this,"Password telah diubah",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(UbahDetailAkun.this,Profil.class);
                     startActivity(intent);
                     finish();

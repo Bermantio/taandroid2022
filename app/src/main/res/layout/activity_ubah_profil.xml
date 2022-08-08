@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundorange2normal"
+    android:background="#F49F36"
     tools:context=".UbahProfil">
 
     <ScrollView
@@ -147,58 +147,10 @@
                 android:paddingVertical="10dp" />
 
             <TextView
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txttelepon"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:text="Password\t\t:"
-                android:textColor="@color/white" />
-
-            <EditText
-                android:id="@+id/txtpassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/password"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/backgroundwhitenormal"
-                android:drawableRight="@drawable/visibility_off"
-                android:hint="Masukkan Password"
-                android:inputType="textPassword"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="10dp" />
-
-            <TextView
-                android:id="@+id/ulangipassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txtpassword"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:text="Ulangi Password \t\t:"
-                android:textColor="@color/white" />
-
-            <EditText
-                android:id="@+id/txtulangipassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ulangipassword"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/backgroundwhitenormal"
-                android:drawableRight="@drawable/visibility_off"
-                android:hint="Masukkan Password"
-                android:inputType="textPassword"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="10dp" />
-
-            <TextView
                 android:id="@+id/profesi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtulangipassword"
+                android:layout_below="@id/txttelepon"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 android:text="Profesi\t\t:"
