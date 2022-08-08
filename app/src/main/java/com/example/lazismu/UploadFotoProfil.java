@@ -31,6 +31,8 @@ public class UploadFotoProfil extends AppCompatActivity {
     private FirebaseUser firebaseUser;
     private StorageReference storageReference;
     private static final int PICK_IMAGE_REQUEST=1;
+    Button batal;
+
     private Uri uriImage;
 
     @Override
@@ -54,6 +56,14 @@ public class UploadFotoProfil extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openFileChooser();
+            }
+        });
+
+        batal = (Button) findViewById(R.id.batal);
+        batal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(UploadFotoProfil.this, Profil.class));
             }
         });
 

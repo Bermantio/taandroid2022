@@ -48,20 +48,11 @@
                 android:textStyle="bold"
                 android:fontFamily="sans-serif"/>
 
-            <ImageView
-                android:id="@+id/fotoprofil"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:layout_below="@id/datadiripendaftar"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/profiliconorange" />
-
             <TextView
                 android:id="@+id/namalengkap"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/fotoprofil"
+                android:layout_below="@id/datadiripendaftar"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 android:text="Nama Lengkap\t\t:" />

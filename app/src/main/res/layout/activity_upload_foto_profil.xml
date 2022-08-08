@@ -56,10 +56,25 @@
             android:layout_width="138dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/fotoprofil"
-            android:layout_marginHorizontal="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="5dp"
             android:layout_marginVertical="20dp"
             android:background="@drawable/backgroundorangenormal"
             android:text="SIMPAN"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/batal"
+            android:layout_alignParentRight="true"
+            android:layout_width="138dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fotoprofil"
+            android:layout_marginLeft="5dp"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/backgroundorangenormal"
+            android:text="BATAL"
             android:textColor="@color/white"
             android:textSize="20dp"
             android:textStyle="bold" />

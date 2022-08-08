@@ -90,6 +90,14 @@ public class Profil extends AppCompatActivity {
             }
         });
 
+        akun = (Button) findViewById(R.id.akun);
+        akun.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Profil.this, UbahDetailAkun.class));
+            }
+        });
+
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomnavigator);
         bottomNavigationView.setSelectedItemId(R.id.profilnavigasi);
 
