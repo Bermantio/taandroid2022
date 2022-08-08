@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundorange2normal"
+    android:background="#F49F36"
     tools:context=".Profil">
 
     <ScrollView
@@ -90,20 +90,6 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/profilmenu" />
-
-            <Button
-                android:id="@+id/editfoto"
-                android:layout_width="138dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/datadiripengguna"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginVertical="25dp"
-                android:layout_toRightOf="@id/fotoprofil"
-                android:background="@drawable/backgroundwhite"
-                android:text="EDIT FOTO"
-                android:textColor="#DA8B03"
-                android:textSize="20dp"
-                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/namalengkap"
@@ -237,18 +223,33 @@
                 android:hint="Profesi"/>
 
             <Button
-                android:id="@+id/edit"
-                android:layout_width="match_parent"
+                android:id="@+id/profil"
+                android:layout_width="138dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtprofesi"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_below="@id/txtprofesi"
+                android:layout_marginVertical="20dp"
                 android:layout_marginBottom="50dp"
-                android:background="@drawable/backgroundwhite"
-                android:text="EDIT"
-                android:textColor="#DA8B03"
+                android:background="@color/white"
+                android:text="PROFIL"
+                android:textColor="#F49F36"
                 android:textSize="20dp"
                 android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/akun"
+                android:layout_width="138dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:layout_marginBottom="50dp"
+                android:layout_below="@id/txtprofesi"
+                android:background="@color/white"
+                android:text="AKUN"
+                android:textColor="#F49F36"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_alignParentEnd="true"/>
 
         </RelativeLayout>
 

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +24,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -30,7 +32,7 @@ import java.util.Calendar;
 public class Profil extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    Button profil;
+    Button profil, akun;
     ArrayAdapter<CharSequence> adapter;
     private TextView txtjam, txttanggal, txtnamalengkap, txtalamat, txtemail, txttelepon, txtprofesi, txtjeniskelamin;
     private String namalengkap,alamat,profesi,email,telepon,jeniskelamin;
@@ -80,11 +82,11 @@ public class Profil extends AppCompatActivity {
             }
         });
 
-        profil = (Button) findViewById(R.id.editfoto);
+        profil = (Button) findViewById(R.id.profil);
         profil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Profil.this, UploadFotoProfil.class));
+                startActivity(new Intent(Profil.this, UbahProfil.class));
             }
         });
 
@@ -135,6 +137,13 @@ public class Profil extends AppCompatActivity {
                     txtjeniskelamin.setText(jeniskelamin);
                     txttelepon.setText(telepon);
                     txtprofesi.setText(profesi);
+
+                    Uri uri = firebaseUser.getPhotoUrl();
+
+                    Picasso.with(Profil.this).load(uri).into(fotoprofil);
+                }
+                else{
+                    Toast.makeText(Profil.this,"Ada galat", Toast.LENGTH_SHORT).show();
                 }
             }
 
