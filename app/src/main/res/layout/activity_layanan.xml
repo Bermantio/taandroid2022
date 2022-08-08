@@ -76,7 +76,7 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/vitatapmukaicon"
+        android:id="@+id/viatatapmukaicon"
         android:layout_width="80dp"
         android:layout_height="75dp"
         android:layout_alignParentEnd="true"
@@ -112,7 +112,6 @@
 
     <TextView
         android:id="@+id/txtviawhatsapp"
-        android:onClick="txtviawhatsapp"
         android:layout_width="350dp"
         android:layout_height="100dp"
         android:layout_below="@id/txtviatelepon"

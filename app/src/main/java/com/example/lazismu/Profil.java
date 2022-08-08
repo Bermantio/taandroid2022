@@ -30,7 +30,7 @@ import java.util.Calendar;
 public class Profil extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    Button edit;
+    Button akun,profil;
     ArrayAdapter<CharSequence> adapter;
     private TextView txtjam, txttanggal, txtnamalengkap, txtalamat, txtemail, txttelepon, txtprofesi, txtjeniskelamin;
     private String namalengkap,alamat,profesi,email,telepon,jeniskelamin;
@@ -71,8 +71,8 @@ public class Profil extends AppCompatActivity {
         String dateTime = simpleDateTime.format(jam.getTime());
         txtjam.setText(dateTime);
 
-        edit = (Button) findViewById(R.id.edit);
-        edit.setOnClickListener(new View.OnClickListener() {
+        profil = (Button) findViewById(R.id.profil);
+        profil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Profil.this, UbahProfil.class));

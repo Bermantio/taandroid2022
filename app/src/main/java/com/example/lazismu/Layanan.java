@@ -21,8 +21,8 @@ import java.util.Calendar;
 public class Layanan extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    TextView txtjam, txttanggal;
-    ImageView whatsappicon;
+    TextView txtjam, txttanggal, txtviatatapmuka,txtviatelepon,txtviawhatsapp;
+    ImageView whatsappicon, viatatapmukaicon, teleponicon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,23 @@ public class Layanan extends AppCompatActivity {
 
         whatsappicon = (ImageView)findViewById(R.id.whatsappicon);
         whatsappicon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                boolean installed = appInstalledOrNot("com.whatsapp");
+
+                if (installed){
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=6285865422220"));
+                    startActivity(intent);
+                }
+                else{
+                    Toast.makeText(Layanan.this,"Whatsapp belum terinstall",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        txtviawhatsapp = (TextView) findViewById(R.id.txtviawhatsapp);
+        txtviawhatsapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 boolean installed = appInstalledOrNot("com.whatsapp");
