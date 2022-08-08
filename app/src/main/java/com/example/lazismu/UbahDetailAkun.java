@@ -177,9 +177,9 @@ public class UbahDetailAkun extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
                     Toast.makeText(UbahDetailAkun.this,"Email telah diubah",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(UbahDetailAkun.this,Profil.class);
-                    startActivity(intent);
-                    finish();
+                    //Intent intent = new Intent(UbahDetailAkun.this,Profil.class);
+                    //startActivity(intent);
+                    //finish();
                 }else{
                     try{
                         throw task.getException();
@@ -197,9 +197,9 @@ public class UbahDetailAkun extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
                     Toast.makeText(UbahDetailAkun.this,"Password telah diubah",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(UbahDetailAkun.this,Profil.class);
-                    startActivity(intent);
-                    finish();
+                    //Intent intent = new Intent(UbahDetailAkun.this,Profil.class);
+                    //startActivity(intent);
+                    //finish();
                 }else{
                     try{
                         throw task.getException();
