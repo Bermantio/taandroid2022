@@ -34,12 +34,14 @@ import com.google.firebase.database.ValueEventListener;
 
 public class UbahProfil extends AppCompatActivity {
 
-    private EditText txtnamalengkap, txtalamat,txttelepon, txtprofesi;
-    private String namalengkap,alamat,profesi,telepon,jeniskelamin;
+    private EditText txtpassword, txtulangipassword, txtnamalengkap, txtalamat, txtemail, txttelepon, txtprofesi;
+    private String namalengkap,alamat,profesi,email,telepon,jeniskelamin,password,ulangipassword;
     Button simpan, batal;
     Spinner spinner;
     ArrayAdapter<CharSequence> adapter;
+    boolean passwordVisible;
     private FirebaseAuth authProfil;
+    private FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,69 @@ public class UbahProfil extends AppCompatActivity {
         txtalamat = (EditText) findViewById(R.id.txtalamat);
         txttelepon = (EditText) findViewById(R.id.txttelepon);
         txtprofesi = (EditText) findViewById(R.id.txtprofesi);
+        txtemail = (EditText) findViewById(R.id.txtemail);
+        txtpassword = (EditText) findViewById(R.id.txtpassword);
+        txtulangipassword = (EditText) findViewById(R.id.txtulangipassword);
+
+        txtpassword.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                final int Right=2;
+                if(event.getAction()==MotionEvent.ACTION_UP){
+                    if(event.getRawX()>=txtpassword.getRight()-txtpassword.getCompoundDrawables()[Right].getBounds().width())
+                    {
+                        int selection=txtpassword.getSelectionEnd();
+                        if(passwordVisible){
+                            //set drawable image here
+                            txtpassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.visibility_off,0);
+                            //for hide password
+                            txtpassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            passwordVisible=false;
+                        }
+                        else{
+                            //set drawable image here
+                            txtpassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.visibility_on,0);
+                            //for hide password
+                            txtpassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            passwordVisible=true;
+                        }
+                        txtpassword.setSelection(selection);
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+
+        txtulangipassword.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                final int Right=2;
+                if(event.getAction()==MotionEvent.ACTION_UP){
+                    if(event.getRawX()>=txtulangipassword.getRight()-txtulangipassword.getCompoundDrawables()[Right].getBounds().width())
+                    {
+                        int selection=txtulangipassword.getSelectionEnd();
+                        if(passwordVisible){
+                            //set drawable image here
+                            txtulangipassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.visibility_off,0);
+                            //for hide password
+                            txtulangipassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            passwordVisible=false;
+                        }
+                        else{
+                            //set drawable image here
+                            txtulangipassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.visibility_on,0);
+                            //for hide password
+                            txtulangipassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            passwordVisible=true;
+                        }
+                        txtulangipassword.setSelection(selection);
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
 
         spinner = (Spinner) findViewById(R.id.pilihjeniskelamin);
         adapter = ArrayAdapter.createFromResource(this, R.array.jeniskelamin, android.R.layout.simple_spinner_item);
@@ -90,6 +155,14 @@ public class UbahProfil extends AppCompatActivity {
         else if (TextUtils.isEmpty(jeniskelamin)){
             spinner.requestFocus();
         }
+        else if (TextUtils.isEmpty(email)){
+            txtemail.setError("Email belum diisi");
+            txtemail.requestFocus();
+        }
+        else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            txtemail.setError("Email belum diisi");
+            txtemail.requestFocus();
+        }
         else if (TextUtils.isEmpty(telepon)){
             txttelepon.setError("Telepon belum diisi");
             txttelepon.requestFocus();
@@ -102,6 +175,28 @@ public class UbahProfil extends AppCompatActivity {
             txttelepon.setError("Telepon maksimal 13 digit");
             txttelepon.requestFocus();
         }
+        else if (TextUtils.isEmpty(password)){
+            txtpassword.setError("Password belum diisi");
+            txtpassword.requestFocus();
+        }
+        else if (password.length()<8){
+            txtpassword.setError("Kata sandi antara 8-12 digit");
+            txtpassword.requestFocus();
+        }
+        else if (password.length()>=13){
+            txtpassword.setError("Kata sandi antara 8-12 digit");
+            txtpassword.requestFocus();
+        }
+        else if (TextUtils.isEmpty(ulangipassword)){
+            txtulangipassword.setError("Ulangi kata sandi");
+            txtulangipassword.requestFocus();
+        }
+        else if (!password.equals(ulangipassword)){
+            txtulangipassword.setError("Ulangi kata sandi");
+            txtulangipassword.requestFocus();
+            txtpassword.clearComposingText();
+            txtulangipassword.clearComposingText();
+        }
         else if (TextUtils.isEmpty(profesi)){
             txtprofesi.setError("Profesi belum diisi");
             txtprofesi.requestFocus();
@@ -112,6 +207,9 @@ public class UbahProfil extends AppCompatActivity {
             telepon = txttelepon.getText().toString();
             profesi = txtprofesi.getText().toString();
             jeniskelamin = spinner.getSelectedItem().toString();
+            email = txtemail.getText().toString();
+            password = txtpassword.getText().toString();
+            ulangipassword = txtulangipassword.getText().toString();
 
             ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails ( namalengkap, alamat, telepon, profesi, jeniskelamin);
 
@@ -157,13 +255,16 @@ public class UbahProfil extends AppCompatActivity {
                 ReadUserDetails readUserDetails = snapshot.getValue(ReadUserDetails.class);
                 if (readUserDetails != null){
                     namalengkap = readUserDetails.namalengkap;
+                    email = firebaseUser.getEmail();
                     alamat = readUserDetails.alamat;
                     jeniskelamin = readUserDetails.jeniskelamin;
                     profesi = readUserDetails.profesi;
                     telepon= readUserDetails.telepon;
 
                     txtnamalengkap.setText(namalengkap);
-                    spinner.setText(jeniskelamin);
+                    txtalamat.setText(alamat);
+                    txtemail.setText(email);
+                    spinner.setSelection(Integer.parseInt(jeniskelamin));
                     txttelepon.setText(telepon);
                     txtprofesi.setText(profesi);
                 }

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundorange2normal"
+    tools:context=".UploadFotoProfil">
+
+    <RelativeLayout
+        android:id="@+id/fotoatas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="15dp"
+        android:background="@color/white"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="10dp">
+
+        <TextView
+            android:id="@+id/unggahfoto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="UNGGAH FOTO ANDA"
+            android:textAlignment="center"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/pilihfoto"
+            android:layout_width="138dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/unggahfoto"
+            android:layout_marginHorizontal="100dp"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/backgroundorangenormal"
+            android:text="PILIH"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/fotoprofil"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_below="@id/pilihfoto"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="15dp"
+            android:background="@drawable/profilmenu" />
+
+        <Button
+            android:id="@+id/simpanfoto"
+            android:layout_width="138dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fotoprofil"
+            android:layout_marginHorizontal="100dp"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/backgroundorangenormal"
+            android:text="SIMPAN"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

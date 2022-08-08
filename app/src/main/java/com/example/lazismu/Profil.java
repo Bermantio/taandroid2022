@@ -30,7 +30,7 @@ import java.util.Calendar;
 public class Profil extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    Button akun,profil;
+    Button profil;
     ArrayAdapter<CharSequence> adapter;
     private TextView txtjam, txttanggal, txtnamalengkap, txtalamat, txtemail, txttelepon, txtprofesi, txtjeniskelamin;
     private String namalengkap,alamat,profesi,email,telepon,jeniskelamin;
@@ -48,6 +48,7 @@ public class Profil extends AppCompatActivity {
         txtprofesi = findViewById(R.id.txtprofesi);
         txtemail = findViewById(R.id.txtemail);
         txtjeniskelamin = findViewById(R.id.pilihjeniskelamin);
+        fotoprofil = findViewById(R.id.fotoprofil);
 
         authProfil = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = authProfil.getCurrentUser();
@@ -71,11 +72,19 @@ public class Profil extends AppCompatActivity {
         String dateTime = simpleDateTime.format(jam.getTime());
         txtjam.setText(dateTime);
 
-        profil = (Button) findViewById(R.id.profil);
+        fotoprofil = (ImageView) findViewById(R.id.fotoprofil);
+        fotoprofil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(Profil.this, UploadFotoProfil.class));
+            }
+        });
+
+        profil = (Button) findViewById(R.id.editfoto);
         profil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Profil.this, UbahProfil.class));
+                startActivity(new Intent(Profil.this, UploadFotoProfil.class));
             }
         });
 
