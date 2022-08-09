@@ -48,26 +48,26 @@ public class KalkulatorZakatPertanian extends AppCompatActivity {
 
     public void hitung(View view) {
         jumlahhasilpanen = Double.parseDouble(txtjumlahhasilpanen.getText().toString());
-        nishab = Double.parseDouble(txtjumlahhasilpanen.getText().toString());
+        nishab = Double.parseDouble(txtnishab.getText().toString());
         String jenispengairan = txtjenispengairan.getSelectedItem().toString();
-        if (jenispengairan == "Dengan Biaya") {
+        if (jenispengairan != "Dengan Biaya") {
             hasil = jumlahhasilpanen * 0.005;
             if (nishab < hasil) {
                 txtstatuszakat.setText("WAJIB MEMBAYAR ZAKAT");
-                txthasil.setText("Rp. " + hasil);
+                txthasil.setText("" + hasil);
             } else {
                 txtstatuszakat.setText("TIDAK WAJIB MEMBAYAR ZAKAT");
-                txthasil.setText("Rp. " + hasil);
+                txthasil.setText("" + hasil);
             }
         }
         else {
             hasil = jumlahhasilpanen * 0.1;
             if (nishab < hasil) {
                 txtstatuszakat.setText("WAJIB MEMBAYAR ZAKAT");
-                txthasil.setText("Rp. " + hasil);
+                txthasil.setText("" + hasil);
             } else {
                 txtstatuszakat.setText("TIDAK WAJIB MEMBAYAR ZAKAT");
-                txthasil.setText("Rp. " + hasil);
+                txthasil.setText("" + hasil);
             }
         }
     }

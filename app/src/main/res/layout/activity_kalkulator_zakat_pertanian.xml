@@ -183,7 +183,7 @@
                 android:layout_below="@id/txtstatuszakat"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
-                android:text="Zakat yang harus dikeluarkan\t\t:"
+                android:text="Zakat yang harus dikeluarkan (per kg)\t\t:"
                 android:textColor="@color/white"
                 android:textSize="15dp" />
 
