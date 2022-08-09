@@ -23,6 +23,7 @@
         android:layout_marginVertical="10dp"
         android:paddingHorizontal="10dp"
         android:paddingVertical="10dp"
+        android:textAlignment="center"
         android:text="Menurut Undang-Undang Republik Indonesia No. 23 Tahun 2011 Tentang Pengelolaan Zakat, Infak adalah harta yang dikeluarkan oleh seseorang atau badan usaha di luar zakat untuk kemaslahatan umum. Infaq berasal dari Bahasa Arab, yang berarti membelanjakan harta atau memberikan harta. Sedangkan infaq berarti keluarkanlah harta. Infaq dikeluarkan untuk membantu fakir miskin, orang yang sedang terkena bencana, atau hal lainnya yang termasuk dalam ajaran islam. Bentuk pemberian yang diterima oleh kaum tersebut terbatas pada harta benda kekayaan yang telah disisihkan."
         android:textColor="#F49F36"
         android:textSize="18dp"

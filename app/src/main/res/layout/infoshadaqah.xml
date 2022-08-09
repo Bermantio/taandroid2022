@@ -24,6 +24,7 @@
         android:paddingHorizontal="10dp"
         android:paddingVertical="10dp"
         android:text="Menurut Undang-Undang Republik Indonesia No. 23 Tahun 2011 Tentang Pengelolaan Zakat, Shadaqah adalah harta atau nonharta yang dikeluarkan oleh seseorang atau badan usaha di luar zakat untuk kebermanfaatan umum. Shadaqah memiliki bentuk pemberian yang lebih luas, bisa dalam bentuk harta benda maupun nonharta. Yang dimaksud nonharta adalah seperti tutur kata yang baik, senyuman yang tulus, dan lain-lain yang bisa digolongkan ke dalam perbuatan yang baik."
+        android:textAlignment="center"
         android:textColor="#F49F36"
         android:textSize="18dp"
         android:textStyle="bold" />

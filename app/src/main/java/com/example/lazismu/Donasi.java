@@ -22,8 +22,8 @@ import java.util.Calendar;
 public class Donasi extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    TextView txtdonasizakat, txtdonasiinfaq, txtdonasishadaqah, txtjam, txttanggal;
-    ImageView infaqicon, zakaticon, shadaqahicon;
+    TextView txtdonasizakat, txtdonasiinfaq, txtdonasishadaqah;
+    ImageView batalarah, infaqicon, zakaticon, shadaqahicon;
     Dialog infoinfaq, infoshadaqah, infozakat;
 
     @Override
@@ -31,21 +31,17 @@ public class Donasi extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donasi);
 
+        batalarah = (ImageView)findViewById(R.id.kembalidonasi);
+        batalarah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
+
         infozakat = new Dialog(this);
         infoinfaq = new Dialog(this);
         infoshadaqah = new Dialog(this);
-
-        txttanggal = (TextView)findViewById(R.id.txttanggal);
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat simpleDateTanggal = new SimpleDateFormat("dd MMMM yyyy");
-        String dateTanggal = simpleDateTanggal.format(calendar.getTime());
-        txttanggal.setText(dateTanggal);
-
-        txtjam = (TextView)findViewById(R.id.txtjam);
-        Calendar jam = Calendar.getInstance();
-        SimpleDateFormat simpleDateTime = new SimpleDateFormat("hh:mm a");
-        String dateTime = simpleDateTime.format(jam.getTime());
-        txtjam.setText(dateTime);
 
         txtdonasizakat = (TextView)findViewById(R.id.txtdonasizakat);
         txtdonasizakat.setOnClickListener(new View.OnClickListener() {

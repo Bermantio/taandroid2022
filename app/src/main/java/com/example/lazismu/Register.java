@@ -137,12 +137,12 @@ public class Register extends AppCompatActivity {
                     txtnamalengkap.setError("Nama Lengkap belum diisi");
                     txtnamalengkap.requestFocus();
                 }
+                else if (TextUtils.isEmpty(jeniskelamin)){
+                    spinner.requestFocus();
+                }
                 else if (TextUtils.isEmpty(alamat)){
                     txtalamat.setError("Alamat belum diisi");
                     txtalamat.requestFocus();
-                }
-                else if (TextUtils.isEmpty(jeniskelamin)){
-                    spinner.requestFocus();
                 }
                 else if (TextUtils.isEmpty(email)){
                     txtemail.setError("Email belum diisi");

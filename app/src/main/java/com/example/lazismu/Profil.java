@@ -133,16 +133,16 @@ public class Profil extends AppCompatActivity {
                 ReadUserDetails readUserDetails = snapshot.getValue(ReadUserDetails.class);
                 if (readUserDetails != null){
                     namalengkap = readUserDetails.namalengkap;
-                    email = firebaseUser.getEmail();
-                    alamat = readUserDetails.alamat;
                     jeniskelamin = readUserDetails.jeniskelamin;
-                    profesi = readUserDetails.profesi;
+                    alamat = readUserDetails.alamat;
+                    email = firebaseUser.getEmail();
                     telepon= readUserDetails.telepon;
+                    profesi = readUserDetails.profesi;
 
                     txtnamalengkap.setText(namalengkap);
+                    txtjeniskelamin.setText(jeniskelamin);
                     txtalamat.setText(alamat);
                     txtemail.setText(email);
-                    txtjeniskelamin.setText(jeniskelamin);
                     txttelepon.setText(telepon);
                     txtprofesi.setText(profesi);
 
