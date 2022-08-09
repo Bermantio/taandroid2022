@@ -49,7 +49,7 @@
                 android:layout_below="@id/infaqatas"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
-                android:text="Data Penyetor :"
+                android:text="Data Penyetor"
                 android:textColor="@color/cardview_light_background"
                 android:textSize="23dp"
                 android:textStyle="bold" />
@@ -72,9 +72,9 @@
                 android:layout_below="@id/tanggaltransaksi"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
-                android:textSize="15dp"
                 android:text="@string/app_name"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/namalengkap"
@@ -135,12 +135,12 @@
                 android:id="@+id/txttelepon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
                 android:layout_below="@id/telepon"
+                android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 android:text="Nomor"
-                android:textSize="15dp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/profesi"
@@ -157,12 +157,12 @@
                 android:id="@+id/txtprofesi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
                 android:layout_below="@id/profesi"
+                android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
-                android:textSize="15dp"
+                android:text="Profesi"
                 android:textColor="@color/white"
-                android:text="Profesi"/>
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/program"
@@ -183,7 +183,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/backgroundwhitenormal"
-                android:hint="Program"
+                android:hint="Infaq"
                 android:inputType="text|number"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
@@ -289,9 +289,9 @@
                 android:layout_width="138dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/buktiinfaq"
+                android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="50dp"
-                android:layout_marginHorizontal="20dp"
                 android:background="@drawable/backgroundwhite"
                 android:text="KONFIRMASI"
                 android:textColor="#DA8B03"

@@ -159,7 +159,7 @@ public class UbahProfil extends AppCompatActivity {
                 if (readUserDetails != null){
                     namalengkap = readUserDetails.namalengkap;
                     alamat = readUserDetails.alamat;
-                    jeniskelamin = readUserDetails.jeniskelamin;
+                    //jeniskelamin = readUserDetails.jeniskelamin;
                     profesi = readUserDetails.profesi;
                     telepon= readUserDetails.telepon;
 
