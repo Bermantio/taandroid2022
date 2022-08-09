@@ -18,25 +18,21 @@ import java.util.Calendar;
 public class Tentang extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    TextView txttentanglazismu, txttentangpembayaran, txttentangasnaf, txtjam, txttanggal;
-    ImageView lazismuicon, asnaficon, pembayaranicon;
+    TextView txttentanglazismu, txttentangpembayaran, txttentangasnaf;
+    ImageView batalarah, lazismuicon, asnaficon, pembayaranicon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tentang);
 
-        txttanggal = (TextView)findViewById(R.id.txttanggal);
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat simpleDateTanggal = new SimpleDateFormat("dd MMMM yyyy");
-        String dateTanggal = simpleDateTanggal.format(calendar.getTime());
-        txttanggal.setText(dateTanggal);
-
-        txtjam = (TextView)findViewById(R.id.txtjam);
-        Calendar jam = Calendar.getInstance();
-        SimpleDateFormat simpleDateTime = new SimpleDateFormat("hh:mm a");
-        String dateTime = simpleDateTime.format(jam.getTime());
-        txtjam.setText(dateTime);
+        batalarah = (ImageView)findViewById(R.id.kembalitentang);
+        batalarah.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
 
         txttentanglazismu = (TextView)findViewById(R.id.txttentanglazismu);
         txttentanglazismu.setOnClickListener(new View.OnClickListener() {

@@ -43,27 +43,13 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/txtjudullazismu"
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/tentanglazismuatas"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/backgroundwhitenormal"
-                android:paddingTop="5dp"
-                android:text="LAZISMU"
-                android:textAlignment="center"
-                android:textColor="@color/cardview_dark_background"
-                android:textSize="23dp"
-                android:textStyle="bold" />
-
-            <TextView
                 android:id="@+id/txttentanglazismu"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtjudullazismu"
+                android:layout_below="@id/tentanglazismuatas"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-15dp"
+                android:layout_marginVertical="70dp"
+                android:textAlignment="center"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"

@@ -43,32 +43,64 @@
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/txtjudulpembayaran"
+            android:id="@+id/txtjudultunai"
             android:layout_width="350dp"
             android:layout_height="50dp"
             android:layout_below="@id/tentangpembayaranatas"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="50dp"
-            android:background="@drawable/backgroundwhitenormal"
+            android:background="@drawable/backgroundhijaunormal"
             android:paddingTop="5dp"
-            android:text="CARA PEMBAYARAN"
+            android:text="PEMBAYARAN TUNAI"
             android:textAlignment="center"
-            android:textColor="@color/cardview_dark_background"
+            android:textColor="@color/white"
             android:textSize="23dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/txttentangpembayaran"
+            android:id="@+id/txttunai"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/txtjudulpembayaran"
+            android:layout_below="@id/txtjudultunai"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="-15dp"
-            android:background="@drawable/backgroundwhitenormal"
+            android:background="@drawable/backgroundhijaunormal"
             android:paddingHorizontal="10dp"
             android:paddingVertical="10dp"
-            android:text="LAZISMU adalah lembaga zakat nasional dengan SK Menag No. 90 Tahun 2022, yang berkhidmat dalam pemberdayaan masyarakat melalui pendayagunaan dana zakat, infaq, wakaf dan dana kedermawanan lainnya baik dari perseorangan, lembaga, perusahaan dan instansi lainnya. Lazismu tidak menerima segala bentuk dana yang bersumber dari kejahatan. UU RI No. 8 Tahun 2010 Tentang Pencegahan dan Pemberantasan Tindak Pidana Pencucian Uang"
-            android:textColor="@color/cardview_dark_background"
+            android:text="Untuk pembayaran secara tunai, dapat dilakukan dengan cara mendatangi langsung kantor lazismu terdekat."
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtjudulnontunai"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/txttunai"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/backgroundorangepress"
+            android:paddingTop="5dp"
+            android:text="PEMBAYARAN NON TUNAI"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="23dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtnontunai"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtjudulnontunai"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="-15dp"
+            android:textAlignment="center"
+            android:background="@drawable/backgroundorangepress"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp"
+            android:text="Untuk pembayaran secara non tunai, dapat melalui transfer ke nomor rekening 7020 898 048 (BSI) atas nama BTM BLIGO. Untuk setiap transfer, mohon para pengirim menuiskan 'lazismu nama pengirim' di bagian berita atau keterangan"
+            android:textColor="@color/white"
             android:textSize="18dp"
             android:textStyle="bold" />
 

@@ -23,12 +23,12 @@
                 android:background="@color/white">
 
                 <ImageView
-                    android:id="@+id/lazistentang"
-                    android:layout_width="109dp"
-                    android:layout_height="69dp"
-                    android:layout_marginVertical="3dp"
-                    android:layout_marginLeft="10dp"
-                    android:background="@drawable/lazismukabpekalonganicon" />
+                    android:id="@+id/kembalitentang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/kembaliicondark" />
 
                 <TextView
                     android:id="@+id/judultentang"
@@ -41,31 +41,6 @@
                     android:textSize="23dp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/txttanggal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="10dp"
-                    android:paddingHorizontal="10dp"
-                    android:text="@string/app_name"
-                    android:textColor="@color/cardview_dark_background"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/txtjam"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/txttanggal"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginEnd="10dp"
-                    android:paddingHorizontal="10dp"
-                    android:text="@string/app_name"
-                    android:textColor="@color/cardview_dark_background"
-                    android:textSize="15dp" />
-
             </RelativeLayout>
 
             <TextView
@@ -77,10 +52,10 @@
                 android:layout_marginTop="60dp"
                 android:background="@drawable/backgroundwhite"
                 android:paddingLeft="10dp"
-                android:paddingTop="30dp"
+                android:paddingTop="35dp"
                 android:text="LAZISMU"
                 android:textColor="#F49F36"
-                android:textSize="30dp"
+                android:textSize="25dp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -98,14 +73,14 @@
                 android:layout_width="350dp"
                 android:layout_height="100dp"
                 android:layout_below="@id/txttentanglazismu"
-                android:layout_marginLeft="30dp"
+                android:layout_marginHorizontal="30dp"
                 android:layout_marginTop="60dp"
                 android:background="@drawable/backgroundwhite"
                 android:paddingLeft="10dp"
-                android:paddingTop="30dp"
+                android:paddingTop="35dp"
                 android:text="ASNAF"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="30dp"
+                android:textSize="25dp"
                 android:textStyle="bold" />
 
             <ImageView
@@ -123,14 +98,14 @@
                 android:layout_width="350dp"
                 android:layout_height="100dp"
                 android:layout_below="@id/txttentangasnaf"
-                android:layout_marginLeft="30dp"
+                android:layout_marginHorizontal="30dp"
                 android:layout_marginTop="60dp"
                 android:background="@drawable/backgroundwhite"
                 android:paddingLeft="10dp"
-                android:paddingTop="30dp"
+                android:paddingTop="35dp"
                 android:text="PEMBAYARAN"
                 android:textColor="#7CAA3C"
-                android:textSize="30dp"
+                android:textSize="25dp"
                 android:textStyle="bold" />
 
             <ImageView
