@@ -191,7 +191,7 @@ public class Register extends AppCompatActivity {
                     txtprofesi.requestFocus();
                 }
                 else {
-                    registerUser(password, namalengkap, alamat, email, jeniskelamin, telepon, profesi);
+                    registerUser(password, namalengkap, jeniskelamin, alamat, email, telepon, profesi);
                 }
             }
         });
