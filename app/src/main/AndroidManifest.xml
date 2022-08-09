@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lazismu">
         <activity
+            android:name=".KalkulatorZakatPertanian"
+            android:exported="false" />
+        <activity
             android:name=".UbahDetailAkun"
             android:exported="false" />
         <activity

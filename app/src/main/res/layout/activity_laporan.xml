@@ -68,24 +68,11 @@
 
             </RelativeLayout>
 
-            <TextView
-                android:id="@+id/namalengkap"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/laporanatas"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:paddingHorizontal="10dp"
-                android:text="Nama Lengkap"
-                android:textColor="@color/white"
-                android:textSize="20dp"
-                android:textStyle="bold" />
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/daftarlaporan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/namalengkap"
+                android:layout_below="@id/laporanatas"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"

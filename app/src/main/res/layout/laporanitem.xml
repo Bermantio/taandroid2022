@@ -19,21 +19,39 @@
         android:layout_marginVertical="10dp">
 
         <TextView
-            android:id="@+id/txtnama"
+            android:id="@+id/tanggal_penyaluran"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="10sp"
+            android:text="Tanggal"
             />
 
         <TextView
-            android:id="@+id/txtjeniskelamin"
+            android:id="@+id/name_program"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="10sp"
+            android:text="Nama Program"
             />
 
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:text="Nama Mustahik"
+            />
+        <TextView
+            android:id="@+id/alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:text="Alamat"
+            />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

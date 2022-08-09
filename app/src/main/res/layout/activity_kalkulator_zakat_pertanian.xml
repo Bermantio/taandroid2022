@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F49F36"
+    tools:context=".KalkulatorZakatPertanian">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <RelativeLayout
+                android:id="@+id/kalkulatorzakatatas"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/kembalizakat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:src="@drawable/kembaliicondark" />
+
+                <TextView
+                    android:id="@+id/judulkalkulatorzakatpertanian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="sans-serif"
+                    android:text="ZAKAT PERTANIAN"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/jumlahhasilpanen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/kalkulatorzakatatas"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Jumlah hasil panen (per kg)\t\t:"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/txtjumlahhasilpanen"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_below="@id/jumlahhasilpanen"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:inputType="text|number"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:text="0"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/jenispengairan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtjumlahhasilpanen"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Jenis Pengairan\t\t:"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <Spinner
+                android:id="@+id/txtjenispengairan"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_below="@id/jenispengairan"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                tools:ignore="RtlHardcoded"></Spinner>
+
+            <TextView
+                android:id="@+id/keterangan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtjenispengairan"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
+                android:text="Keterangan\t\t:"
+                android:textColor="@color/white"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/keterangan1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/keterangan"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
+                android:text="Jenis Pengairan menggunakan biaya jika menggunakan pompa air"
+                android:textColor="@color/white"
+                android:textSize="10dp" />
+            <TextView
+                android:id="@+id/keterangan2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/keterangan1"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="5dp"
+                android:text="Jenis Pengairan tidak menggunakan biaya jika menggunakan air hujan, sungai, dll"
+                android:textColor="@color/white"
+                android:textSize="10dp" />
+            <TextView
+                android:id="@+id/nishab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/keterangan2"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Nishab (kg)\t\t:"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/txtnishab"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_below="@id/nishab"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp"
+                android:text="542"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="15dp" />
+
+            <Button
+                android:id="@+id/hitung"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtnishab"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/backgroundwhite"
+                android:onClick="hitung"
+                android:text="HITUNG"
+                android:textColor="#DA8B03"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtstatuszakat"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_below="@id/hitung"
+                android:layout_centerInParent="true"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/backgroundorangenormal"
+                android:paddingVertical="10dp"
+                android:text="STATUS ZAKAT"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/keluarzakat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtstatuszakat"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Zakat yang harus dikeluarkan\t\t:"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/txthasil"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_below="@id/keluarzakat"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/backgroundwhitenormal"
+                android:paddingVertical="10dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="15dp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -309,7 +309,7 @@
                 android:layout_below="@id/txtberupa"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
-                android:text="Harga Beras di Tempat Penyetor\t\t:"
+                android:text="Harga Beras di Tempat Penyetor (per 2,5 kg)\t\t:"
                 android:textColor="@color/white"
                 android:textSize="15dp" />
 
