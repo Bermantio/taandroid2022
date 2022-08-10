@@ -1,10 +1,13 @@
 package com.example.lazismu;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresFeature;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -51,17 +54,6 @@ public class FormInfaq extends AppCompatActivity {
         txtprogram = (TextView) findViewById(R.id.txtprogram);
         txtberupa = (TextView) findViewById(R.id.txtberupa);
         txtnominal = (EditText) findViewById(R.id.txtnominal);
-        String tanggaltransaksi = txttanggaltransaksi.getText().toString();
-        String nama = txtnamalengkap.getText().toString();
-        String alamat = txtalamat.getText().toString();
-        String telepon = txttelepon.getText().toString();
-        String profesi = txtprofesi.getText().toString();
-        String program = txtprogram.getText().toString();
-        String berupa = txtberupa.getText().toString();
-        String nominal = txtnominal.getText().toString();
-        String keterangan = pilihdonasisebagai.getSelectedItem().toString();
-        dbDonasi don = new dbDonasi();
-
         authProfil = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = authProfil.getCurrentUser();
 
@@ -90,12 +82,29 @@ public class FormInfaq extends AppCompatActivity {
         confirminfaq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DonasiInput donasi = new DonasiInput(tanggaltransaksi,nama,alamat,telepon,profesi,program,keterangan,berupa,nominal);
-                don.add(donasi).addOnSuccessListener(suc->
-                {Toast.makeText(FormInfaq.this,"Sukses",Toast.LENGTH_LONG).show();
-                }).addOnFailureListener(er ->
-                {Toast.makeText(FormInfaq.this,"Gagal",Toast.LENGTH_LONG).show();
-                });
+
+                String nominal = txtnominal.getText().toString();
+                //String keterangan = pilihdonasisebagai.getSelectedItem().toString();
+
+                //if (TextUtils.isEmpty(keterangan)){
+               //     pilihdonasisebagai.requestFocus();
+                //}
+                if (TextUtils.isEmpty(nominal)){
+                    txtnominal.setError("Nominal belum diisi");
+                    txtnominal.requestFocus();
+                }
+                else {
+                    DonasiInput(nominal);
+                }
+
+
+
+                //DonasiInput donasi = new DonasiInput(tanggaltransaksi,nama,alamat,telepon,profesi,program,keterangan,berupa,nominal);
+                //don.add(donasi).addOnSuccessListener(suc->
+                //{Toast.makeText(FormInfaq.this,"Sukses",Toast.LENGTH_LONG).show();
+                //}).addOnFailureListener(er ->
+                //{Toast.makeText(FormInfaq.this,"Gagal",Toast.LENGTH_LONG).show();
+                //});
             }
         });
 
@@ -106,6 +115,14 @@ public class FormInfaq extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), Donasi.class));
             }
         });
+    }
+
+    private void DonasiInput(String nominal) {
+        FirebaseDatabase rootMode= FirebaseDatabase.getInstance();
+        DatabaseReference reference = rootMode.getReference("transaksinontunai");
+        DonasiInput addNewDonasi = new DonasiInput(nominal);
+        reference.setValue(addNewDonasi);
+        Toast.makeText(FormInfaq.this, "Sukses", Toast.LENGTH_SHORT).show();
     }
     private void showUserProfil(FirebaseUser firebaseUser){
         String userIDofRegistered = firebaseUser.getUid();
