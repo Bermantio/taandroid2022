@@ -84,17 +84,17 @@ public class FormInfaq extends AppCompatActivity {
             public void onClick(View view) {
 
                 String nominal = txtnominal.getText().toString();
-                //String keterangan = pilihdonasisebagai.getSelectedItem().toString();
+                String keterangan = pilihdonasisebagai.getSelectedItem().toString();
 
-                //if (TextUtils.isEmpty(keterangan)){
-               //     pilihdonasisebagai.requestFocus();
-                //}
+                if (TextUtils.isEmpty(keterangan)){
+                    pilihdonasisebagai.requestFocus();
+                }
                 if (TextUtils.isEmpty(nominal)){
                     txtnominal.setError("Nominal belum diisi");
                     txtnominal.requestFocus();
                 }
                 else {
-                    DonasiInput(nominal);
+                    DonasiInput(keterangan,nominal);
                 }
 
 
@@ -117,10 +117,10 @@ public class FormInfaq extends AppCompatActivity {
         });
     }
 
-    private void DonasiInput(String nominal) {
+    private void DonasiInput(String keterangan, String nominal) {
         FirebaseDatabase rootMode= FirebaseDatabase.getInstance();
         DatabaseReference reference = rootMode.getReference("transaksinontunai");
-        DonasiInput addNewDonasi = new DonasiInput(nominal);
+        DonasiInput addNewDonasi = new DonasiInput(keterangan,nominal);
         reference.setValue(addNewDonasi);
         Toast.makeText(FormInfaq.this, "Sukses", Toast.LENGTH_SHORT).show();
     }
