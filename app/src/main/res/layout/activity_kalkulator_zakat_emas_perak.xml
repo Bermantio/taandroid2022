@@ -35,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:fontFamily="sans-serif"
-                    android:text="ZAKAT EMAS DAN PERAK"
+                    android:text="EMAS DAN PERAK"
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="23dp"
                     android:textStyle="bold" />

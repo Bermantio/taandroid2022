@@ -54,8 +54,7 @@
                 android:paddingVertical="10dp"
                 android:text="Dalam mendistribusikan zakatmu dan infakmu, Lazismu memiliki pilar lingkungan sebagai lembaga yang komitmen dalam peningkatan kualitas lingkungan. Pilar ini bertujuan untuk kehidupan masyarakat dan ekosistem yang lebih baik dalam menjaga keseimbangan alam. Berikut perincian program lingkungan :"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/txtprogramlingkunganb"
@@ -69,8 +68,7 @@
                 android:paddingVertical="10dp"
                 android:text="1. Sayangi Daratmu"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogramlingkunganc"
@@ -84,8 +82,7 @@
                 android:paddingVertical="10dp"
                 android:text="2. Sayangi Lautmu"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogramlingkungand"
@@ -94,13 +91,13 @@
                 android:layout_below="@id/txtprogramlingkunganc"
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginTop="-10dp"
+                android:layout_marginBottom="15dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="3. Penanaman Pohon"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
         </RelativeLayout>
 

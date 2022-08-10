@@ -28,10 +28,10 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    TextView txtdonasi, txtprogram, txtlayanan, txttentang, txtkalkulatorzakat, txtbantuan, txtjam, txttanggal,
+    TextView txtdonasi, txtprogram, txtlayanan, txttentang, txtkalkulatorzakat, txtjam, txttanggal,
             selamatdatanguser;
     private String namalengkap;
-    ImageView donasiicon, programicon, layananicon, kalkulatorzakaticon, bantuanicon, tentangicon, keluaricon;
+    ImageView donasiicon, programicon, layananicon, kalkulatorzakaticon, tentangicon, keluaricon;
     private FirebaseAuth authProfil;
 
     @Override
@@ -114,22 +114,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),KalkulatorZakat.class));
-            }
-        });
-
-        txtbantuan = (TextView)findViewById(R.id.txtbantuan);
-        txtbantuan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),Bantuan.class));
-            }
-        });
-
-        bantuanicon = (ImageView)findViewById(R.id.bantuanicon);
-        bantuanicon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),Bantuan.class));
             }
         });
 

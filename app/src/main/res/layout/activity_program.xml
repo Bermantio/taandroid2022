@@ -8,6 +8,15 @@
     android:background="#F49F36"
     tools:context=".Program">
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/bottomnavigator">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
     <RelativeLayout
         android:id="@+id/programatas"
         android:layout_width="match_parent"
@@ -15,12 +24,12 @@
         android:background="@color/white">
 
         <ImageView
-            android:id="@+id/lazisprogram"
-            android:layout_width="109dp"
-            android:layout_height="69dp"
-            android:layout_marginVertical="3dp"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/lazismukabpekalonganicon" />
+            android:id="@+id/kembaliprogram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/kembaliicondark" />
 
         <TextView
             android:id="@+id/judulprogram"
@@ -33,31 +42,6 @@
             android:textSize="23dp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txttanggal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:paddingHorizontal="10dp"
-            android:text="@string/app_name"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="15dp" />
-
-        <TextView
-            android:id="@+id/txtjam"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txttanggal"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="1dp"
-            android:layout_marginEnd="10dp"
-            android:paddingHorizontal="10dp"
-            android:text="@string/app_name"
-            android:textColor="@color/cardview_dark_background"
-            android:textSize="15dp" />
-
     </RelativeLayout>
 
     <TextView
@@ -65,7 +49,7 @@
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_below="@id/programatas"
-        android:layout_marginLeft="65dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="60dp"
         android:background="@drawable/backgroundwhite"
         android:paddingHorizontal="10dp"
@@ -81,7 +65,7 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_below="@id/programatas"
-        android:layout_marginLeft="98dp"
+        android:layout_marginLeft="48dp"
         android:layout_marginTop="75dp"
         android:background="@drawable/backgroundwhite"
         android:src="@drawable/pendidikanicon" />
@@ -91,9 +75,9 @@
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_below="@id/programatas"
-        android:layout_marginLeft="60dp"
+        android:layout_marginRight="15dp"
         android:layout_marginTop="60dp"
-        android:layout_toRightOf="@id/txtprogrampendidikan"
+        android:layout_alignParentRight="true"
         android:background="@drawable/backgroundwhite"
         android:paddingHorizontal="10dp"
         android:paddingTop="65dp"
@@ -108,9 +92,9 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_below="@id/programatas"
-        android:layout_marginLeft="93dp"
+        android:layout_marginRight="50dp"
         android:layout_marginTop="75dp"
-        android:layout_toRightOf="@id/txtprogrampendidikan"
+        android:layout_alignParentRight="true"
         android:src="@drawable/kesehatanicon" />
 
     <TextView
@@ -118,7 +102,7 @@
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_below="@id/txtprogrampendidikan"
-        android:layout_marginLeft="65dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/backgroundwhite"
         android:paddingHorizontal="10dp"
@@ -134,7 +118,7 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_below="@id/txtprogramkesehatan"
-        android:layout_marginLeft="98dp"
+        android:layout_marginLeft="48dp"
         android:layout_marginTop="55dp"
         android:background="@drawable/backgroundwhite"
         android:src="@drawable/ekonomiicon" />
@@ -144,9 +128,9 @@
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_below="@id/txtprogramkesehatan"
-        android:layout_marginLeft="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="28dp"
         android:layout_marginTop="40dp"
-        android:layout_toRightOf="@id/txtprogramekonomi"
         android:background="@drawable/backgroundwhite"
         android:paddingHorizontal="8dp"
         android:paddingTop="65dp"
@@ -161,7 +145,8 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_below="@id/txtprogramkesehatan"
-        android:layout_marginLeft="93dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="58dp"
         android:layout_marginTop="55dp"
         android:layout_toRightOf="@id/txtprogramekonomi"
         android:src="@drawable/kemanusiaanicon" />
@@ -170,8 +155,9 @@
         android:id="@+id/txtprogramsosialdakwah"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:layout_below="@id/txtprogramekonomi"
-        android:layout_marginLeft="65dp"
+        android:layout_below="@id/txtprogramkesehatan"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"
         android:layout_marginTop="40dp"
         android:background="@drawable/backgroundwhite"
         android:paddingHorizontal="10dp"
@@ -186,9 +172,10 @@
         android:id="@+id/sosialdakwahicon"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_below="@id/txtprogramekonomi"
-        android:layout_marginLeft="98dp"
+        android:layout_below="@id/txtprogramkesehatan"
+        android:layout_marginRight="48dp"
         android:layout_marginTop="55dp"
+        android:layout_alignParentRight="true"
         android:background="@drawable/backgroundwhite"
         android:src="@drawable/sosialdakwahicon" />
 
@@ -196,10 +183,11 @@
         android:id="@+id/txtprogramlingkungan"
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:layout_below="@id/txtprogramkemanusiaan"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="40dp"
-        android:layout_toRightOf="@id/txtprogramsosialdakwah"
+        android:layout_below="@id/programatas"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="28dp"
+        android:layout_marginTop="60dp"
+        android:layout_toRightOf="@id/txtprogrampendidikan"
         android:background="@drawable/backgroundwhite"
         android:paddingHorizontal="8dp"
         android:paddingTop="65dp"
@@ -213,11 +201,16 @@
         android:id="@+id/lingkunganicon"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_below="@id/txtprogramkemanusiaan"
-        android:layout_marginLeft="93dp"
-        android:layout_marginTop="55dp"
-        android:layout_toRightOf="@id/txtprogramsosialdakwah"
+        android:layout_below="@id/programatas"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="58dp"
+        android:layout_marginTop="75dp"
+        android:layout_toRightOf="@id/txtprogrampendidikan"
         android:src="@drawable/lingkunganicon" />
+
+        </RelativeLayout>
+
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnavigator"

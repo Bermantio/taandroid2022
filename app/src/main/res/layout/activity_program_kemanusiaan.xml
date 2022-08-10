@@ -27,7 +27,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:fontFamily="sans-serif"
-                    android:text="PROGRAM KEMANUSIAAN"
+                    android:text="KEMANUSIAAN"
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="23dp"
                     android:textStyle="bold" />
@@ -43,34 +43,18 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/txtjudulkemanusiaan"
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/programkemanusiaanatas"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/backgroundwhitenormal"
-                android:paddingTop="5dp"
-                android:text="PROGRAM KEMANUSIAAN"
-                android:textAlignment="center"
-                android:textColor="@color/cardview_dark_background"
-                android:textSize="23dp"
-                android:textStyle="bold" />
-
-            <TextView
                 android:id="@+id/txtprogramkemanusiaana"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/programkemanusiaanatas"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="85dp"
+                android:layout_marginTop="55dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="Lazismu selalu hadir dalam membantu masalah sosial yang diakibatkan oleh faktor eksternal kehidupan mustahik. Penyaluran zakat dan donasi ke pilar kemanusiaan merupakan konsistensi Lazismu untuk terus membantu masyarakat yang terkena bencana tanpa memandang latar belakang. Berikut perincian program kemanusiaan :"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogramkemanusiaanb"
@@ -78,14 +62,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogramkemanusiaana"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-15dp"
+                android:layout_marginTop="-10dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="1. Indonesia Siaga"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogramkemanusiaanc"
@@ -93,14 +76,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogramkemanusiaanb"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-15dp"
+                android:layout_marginTop="-10dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="2. Muhammadiyah AID"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogramkemanusiaand"
@@ -108,14 +90,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogramkemanusiaanc"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-15dp"
+                android:layout_marginTop="-10dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="3. Gudang Kemanusiaan lazismu"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogramkemanusiaane"
@@ -123,14 +104,14 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogramkemanusiaand"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-15dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="15dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="4. Sekolah cerdas"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
         </RelativeLayout>
 

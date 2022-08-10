@@ -27,7 +27,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:fontFamily="sans-serif"
-                    android:text="PROGRAM KESEHATAN"
+                    android:text="KESEHATAN"
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="23dp"
                     android:textStyle="bold" />
@@ -43,34 +43,18 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/txtjudulkesehatan"
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/programkesehatanatas"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/backgroundwhitenormal"
-                android:paddingTop="5dp"
-                android:text="PROGRAM KESEHATAN"
-                android:textAlignment="center"
-                android:textColor="@color/cardview_dark_background"
-                android:textSize="23dp"
-                android:textStyle="bold" />
-
-            <TextView
                 android:id="@+id/txtprogramkesehatana"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/programkesehatanatas"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="85dp"
+                android:layout_marginTop="55dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="Program kesehatan memberikan layanan pencegahan, edukasi, pengobatan, pendampingan kepada mustahik yang membutuhkan. Terutama selama Pandemi Covid-19 menyerang. Lazismu terus melakukan kegiatan kesehatan di seluruh Indonesia. Berikut perincian program kesehatan :"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogramkesehatanb"
@@ -78,14 +62,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogramkesehatana"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-15dp"
+                android:layout_marginTop="-10dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="1. Peduli Kesehatan"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogramkesehatanc"
@@ -93,14 +76,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogramkesehatanb"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-15dp"
+                android:layout_marginTop="-10dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="2. Indonesia Mobile Clinic"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogramkesehatand"
@@ -108,14 +90,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogramkesehatanc"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-15dp"
+                android:layout_marginTop="-10dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="3. Rumah Singgah Pasien"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogramkesehatane"
@@ -123,14 +104,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogramkesehatand"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-15dp"
+                android:layout_marginTop="-10dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="4. ENDTB"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogramkesehatanf"
@@ -138,14 +118,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogramkesehatane"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-15dp"
+                android:layout_marginTop="-10dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="5. TIMBANG"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogramkesehatang"
@@ -159,8 +138,7 @@
                 android:paddingVertical="10dp"
                 android:text="6. Bebas Covid"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogramkesehatanh"
@@ -168,14 +146,14 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogramkesehatang"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-15dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="15dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="7. SAUM"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
         </RelativeLayout>
 

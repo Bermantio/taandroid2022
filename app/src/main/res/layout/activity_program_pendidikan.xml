@@ -27,7 +27,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:fontFamily="sans-serif"
-                    android:text="PROGRAM PENDIDIKAN"
+                    android:text="PENDIDIKAN"
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="23dp"
                     android:textStyle="bold" />
@@ -43,36 +43,18 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/txtjudulpendidikan"
-                android:layout_width="350dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/programpendidikanatas"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="50dp"
-                android:background="@drawable/backgroundwhitenormal"
-                android:paddingTop="5dp"
-                android:text="PROGRAM PENDIDIKAN"
-                android:textAlignment="center"
-                android:textColor="@color/cardview_dark_background"
-                android:textSize="23dp"
-                android:textStyle="bold" />
-
-            <TextView
                 android:id="@+id/txtprogrampendidikana"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/programpendidikanatas"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="85dp"
+                android:layout_marginTop="55dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
-                android:text="Program pendidikan di Lazismu sebagai
-                peningkatan mutu Sumber Daya Manusia dengan menjalankan berbagai program
-                di bidang pendidikan baik pemenuhan sarana ataupun biaya pendidikan. Selain dalam menjalankan amanat Undang-undang Dasar 1945 untuk berkontribusi dalam mencerdaskan kehidupan bangsa, program pendidikan lazismu untuk terus menghasilkan SDM yang memiliki inovasi dan keilmuan di dalam bidangnya dalam mendukung pembangunan negara. Berikut program yang termasuk dalam bidang pendidikan :"
+                android:text="Program pendidikan di Lazismu sebagai peningkatan mutu Sumber Daya Manusia dengan menjalankan berbagai program di bidang pendidikan baik pemenuhan sarana ataupun biaya pendidikan. Selain dalam menjalankan amanat Undang-undang Dasar 1945 untuk berkontribusi dalam mencerdaskan kehidupan bangsa, program pendidikan lazismu untuk terus menghasilkan SDM yang memiliki inovasi dan keilmuan di dalam bidangnya dalam mendukung pembangunan negara. Berikut program yang termasuk dalam bidang pendidikan :"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/txtprogrampendidikanb"
@@ -80,14 +62,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogrampendidikana"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-15dp"
+                android:layout_marginTop="-10dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="1. Beasiswa Mentari"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogrampendidikanc"
@@ -95,14 +76,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogrampendidikanb"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-15dp"
+                android:layout_marginTop="-10dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="2. Beasiswa Sang Surya"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogrampendidikand"
@@ -110,14 +90,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogrampendidikanc"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-15dp"
+                android:layout_marginTop="-10dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="3. Lazismu Goes To Campus"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogrampendidikane"
@@ -125,14 +104,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogrampendidikand"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-15dp"
+                android:layout_marginTop="-10dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="4. Peduli Guru"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogrampendidikanf"
@@ -140,14 +118,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogrampendidikane"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-15dp"
+                android:layout_marginTop="-10dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="5. MSPP"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogrampendidikang"
@@ -155,14 +132,13 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogrampendidikanf"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-15dp"
+                android:layout_marginTop="-10dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="6. Edutab-mu"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
             <TextView
                 android:id="@+id/txtprogrampendidikanh"
@@ -170,14 +146,14 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogrampendidikang"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-15dp"
+                android:layout_marginTop="-10dp"
+                android:layout_marginBottom="15dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="7. Save Our School"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:textSize="15dp"/>
 
         </RelativeLayout>
 

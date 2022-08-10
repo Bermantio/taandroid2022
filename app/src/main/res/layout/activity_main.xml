@@ -42,7 +42,6 @@
         android:paddingHorizontal="10dp"
         android:text="Selamat Datang"
         android:textColor="@color/white"
-        android:textSize="20dp"
         android:textStyle="bold" />
 
     <TextView
@@ -54,8 +53,7 @@
         android:layout_marginTop="1dp"
         android:paddingHorizontal="10dp"
         android:text="Nama Lengkap"
-        android:textColor="@color/white"
-        android:textSize="20dp"/>
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/txttanggal"
@@ -67,8 +65,7 @@
         android:layout_marginEnd="10dp"
         android:paddingHorizontal="10dp"
         android:text="@string/app_name"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/txtjam"
@@ -80,15 +77,14 @@
         android:layout_marginEnd="10dp"
         android:paddingHorizontal="10dp"
         android:text="@string/app_name"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/txtdonasi"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_below="@id/selamatdatanguser"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="60dp"
         android:background="@drawable/backgroundwhite"
         android:paddingHorizontal="10dp"
@@ -101,11 +97,11 @@
 
     <ImageView
         android:id="@+id/donasiicon"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         android:layout_below="@id/selamatdatanguser"
-        android:layout_marginLeft="73dp"
-        android:layout_marginTop="75dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="70dp"
         android:background="@drawable/backgroundwhite"
         android:src="@drawable/donasiicon" />
 
@@ -114,9 +110,9 @@
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_below="@id/selamatdatanguser"
-        android:layout_marginLeft="25dp"
+        android:layout_marginRight="15dp"
         android:layout_marginTop="60dp"
-        android:layout_toRightOf="@id/txtdonasi"
+        android:layout_alignParentRight="true"
         android:background="@drawable/backgroundwhite"
         android:paddingHorizontal="10dp"
         android:paddingTop="58dp"
@@ -131,19 +127,19 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_below="@id/selamatdatanguser"
-        android:layout_marginLeft="48dp"
+        android:layout_marginRight="38dp"
         android:layout_marginTop="70dp"
-        android:layout_toRightOf="@id/txtdonasi"
+        android:layout_alignParentRight="true"
         android:src="@drawable/calculatoricon" />
 
     <TextView
         android:id="@+id/txttentang"
         android:layout_width="90dp"
         android:layout_height="90dp"
-        android:layout_below="@id/selamatdatanguser"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="60dp"
-        android:layout_toRightOf="@id/txtkalkulatorzakat"
+        android:layout_below="@id/txtprogram"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/backgroundwhite"
         android:paddingHorizontal="10dp"
         android:paddingTop="65dp"
@@ -157,10 +153,9 @@
         android:id="@+id/tentangicon"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_below="@id/selamatdatanguser"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="75dp"
-        android:layout_toRightOf="@id/txtkalkulatorzakat"
+        android:layout_below="@id/txtprogram"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="43dp"
         android:src="@drawable/tentangicon" />
 
     <TextView
@@ -168,13 +163,13 @@
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_below="@id/txtdonasi"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:background="@drawable/backgroundwhite"
         android:paddingHorizontal="10dp"
         android:paddingTop="63dp"
-        android:textAlignment="center"
         android:text="PROGRAM"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="10dp"
         android:textStyle="bold" />
@@ -184,23 +179,24 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_below="@id/txtdonasi"
-        android:layout_marginLeft="73dp"
-        android:layout_marginTop="75dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
         android:src="@drawable/programicon" />
 
     <TextView
         android:id="@+id/txtlayanan"
         android:layout_width="90dp"
         android:layout_height="90dp"
-        android:layout_below="@id/txtkalkulatorzakat"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="60dp"
-        android:layout_toRightOf="@id/txtdonasi"
+        android:layout_below="@id/txtprogram"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentRight="true"
         android:background="@drawable/backgroundwhite"
-        android:textAlignment="center"
         android:paddingHorizontal="10dp"
         android:paddingTop="63dp"
         android:text="LAYANAN"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="10dp"
         android:textStyle="bold" />
@@ -209,38 +205,11 @@
         android:id="@+id/layananicon"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_below="@id/txtkalkulatorzakat"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="70dp"
-        android:layout_toRightOf="@id/txtprogram"
+        android:layout_below="@id/txtprogram"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentRight="true"
         android:src="@drawable/layananicon" />
-
-    <TextView
-        android:id="@+id/txtbantuan"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:layout_below="@id/txttentang"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="60dp"
-        android:layout_toRightOf="@id/txtlayanan"
-        android:background="@drawable/backgroundwhite"
-        android:paddingHorizontal="10dp"
-        android:paddingTop="65dp"
-        android:text="BANTUAN"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="10dp"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/bantuanicon"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_below="@id/txttentang"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="75dp"
-        android:layout_toRightOf="@id/txtlayanan"
-        android:src="@drawable/bantuanicon" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnavigator"

@@ -58,15 +58,15 @@
         android:textSize="30dp"
         android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/zakaticon"
-        android:layout_width="80dp"
-        android:layout_height="75dp"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@id/donasiatas"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="68dp"
-        android:background="@drawable/zakaticon" />
+            <ImageView
+                android:id="@+id/zakaticon"
+                android:layout_width="80dp"
+                android:layout_height="75dp"
+                android:layout_below="@id/donasiatas"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="68dp"
+                android:layout_marginRight="50dp"
+                android:background="@drawable/zakaticon" />
 
     <ImageView
         android:id="@+id/infozakaticon"

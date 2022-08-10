@@ -18,13 +18,21 @@ import java.util.Calendar;
 public class KalkulatorZakat extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    TextView txtjam, txttanggal, txtzakatpenghasilan, txtzakattabungan, txtzakatemasperak, txtzakatperdagangan, txtzakatpertanian;
-    ImageView zakatpenghasilanicon, zakattabunganicon, zakatemasperakicon, zakatperdaganganicon, zakatpertanianicon;
+    TextView txtzakatpenghasilan, txtzakattabungan, txtzakatemasperak, txtzakatperdagangan, txtzakatpertanian;
+    ImageView zakatpenghasilanicon, zakattabunganicon, zakatemasperakicon, zakatperdaganganicon, zakatpertanianicon,batal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kalkulator_zakat);
+
+        batal = (ImageView) findViewById(R.id.kembalikalkulator);
+        batal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            }
+        });
 
         txtzakatperdagangan = (TextView)findViewById(R.id.txtzakatperdagangan);
         txtzakatperdagangan.setOnClickListener(new View.OnClickListener() {
@@ -105,18 +113,6 @@ public class KalkulatorZakat extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),KalkulatorZakatTabungan.class));
             }
         });
-
-        txttanggal = (TextView)findViewById(R.id.txttanggal);
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat simpleDateTanggal = new SimpleDateFormat("dd MMMM yyyy");
-        String dateTanggal = simpleDateTanggal.format(calendar.getTime());
-        txttanggal.setText(dateTanggal);
-
-        txtjam = (TextView)findViewById(R.id.txtjam);
-        Calendar jam = Calendar.getInstance();
-        SimpleDateFormat simpleDateTime = new SimpleDateFormat("hh:mm a");
-        String dateTime = simpleDateTime.format(jam.getTime());
-        txtjam.setText(dateTime);
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomnavigator);
         bottomNavigationView.setSelectedItemId(R.id.beranda);
