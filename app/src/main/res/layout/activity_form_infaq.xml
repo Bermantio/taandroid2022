@@ -183,7 +183,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/backgroundwhitenormal"
-                android:hint="Infaq"
+                android:text="Infaq"
                 android:inputType="text|number"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp"
