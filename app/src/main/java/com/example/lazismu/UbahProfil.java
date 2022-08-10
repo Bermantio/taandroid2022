@@ -155,7 +155,7 @@ public class UbahProfil extends AppCompatActivity {
         referenceProfil.child(userIDofRegistered).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ReadUserDetails readUserDetails = snapshot.getValue(ReadUserDetails.class);
+                ReadWriteUserDetails readUserDetails = snapshot.getValue(ReadWriteUserDetails.class);
                 if (readUserDetails != null){
                     namalengkap = readUserDetails.namalengkap;
                     alamat = readUserDetails.alamat;

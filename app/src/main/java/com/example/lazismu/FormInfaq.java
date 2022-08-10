@@ -29,7 +29,7 @@ import java.util.Calendar;
 public class FormInfaq extends AppCompatActivity {
 
     private EditText txtnominal;
-    private String namalengkap, alamat, profesi, telepon, program, berupa;
+    private String namalengkap, alamat, profesi, telepon;
     ImageView batalarah;
     Button confirminfaq, batalbutton;
     Spinner pilihdonasisebagai;
@@ -50,6 +50,17 @@ public class FormInfaq extends AppCompatActivity {
         txtprofesi = (TextView) findViewById(R.id.txtprofesi);
         txtprogram = (TextView) findViewById(R.id.txtprogram);
         txtberupa = (TextView) findViewById(R.id.txtberupa);
+        txtnominal = (EditText) findViewById(R.id.txtnominal);
+        String tanggaltransaksi = txttanggaltransaksi.getText().toString();
+        String nama = txtnamalengkap.getText().toString();
+        String alamat = txtalamat.getText().toString();
+        String telepon = txttelepon.getText().toString();
+        String profesi = txtprofesi.getText().toString();
+        String program = txtprogram.getText().toString();
+        String berupa = txtberupa.getText().toString();
+        String nominal = txtnominal.getText().toString();
+        String keterangan = pilihdonasisebagai.getSelectedItem().toString();
+        dbDonasi don = new dbDonasi();
 
         authProfil = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = authProfil.getCurrentUser();
@@ -79,7 +90,12 @@ public class FormInfaq extends AppCompatActivity {
         confirminfaq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Donasi.class));
+                DonasiInput donasi = new DonasiInput(tanggaltransaksi,nama,alamat,telepon,profesi,program,keterangan,berupa,nominal);
+                don.add(donasi).addOnSuccessListener(suc->
+                {Toast.makeText(FormInfaq.this,"Sukses",Toast.LENGTH_LONG).show();
+                }).addOnFailureListener(er ->
+                {Toast.makeText(FormInfaq.this,"Gagal",Toast.LENGTH_LONG).show();
+                });
             }
         });
 
@@ -97,7 +113,7 @@ public class FormInfaq extends AppCompatActivity {
         referenceProfil.child(userIDofRegistered).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ReadUserDetails readUserDetails = snapshot.getValue(ReadUserDetails.class);
+                ReadWriteUserDetails readUserDetails = snapshot.getValue(ReadWriteUserDetails.class);
                 if (readUserDetails != null) {
                     namalengkap = readUserDetails.namalengkap;
                     alamat = readUserDetails.alamat;

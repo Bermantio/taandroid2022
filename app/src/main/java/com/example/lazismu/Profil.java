@@ -34,7 +34,7 @@ public class Profil extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     Button profil, akun;
     ArrayAdapter<CharSequence> adapter;
-    private TextView txtjam, txttanggal, txtnamalengkap, txtalamat, txtemail, txttelepon, txtprofesi, txtjeniskelamin;
+    private TextView txtnamalengkap, txtalamat, txtemail, txttelepon, txtprofesi, txtjeniskelamin;
     private String namalengkap,alamat,profesi,email,telepon,jeniskelamin;
     private FirebaseAuth authProfil;
     private ImageView fotoprofil;
@@ -61,18 +61,6 @@ public class Profil extends AppCompatActivity {
         else{
             showUserProfil(firebaseUser);
         }
-
-        txttanggal = (TextView)findViewById(R.id.txttanggal);
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat simpleDateTanggal = new SimpleDateFormat("dd MMMM yyyy");
-        String dateTanggal = simpleDateTanggal.format(calendar.getTime());
-        txttanggal.setText(dateTanggal);
-
-        txtjam = (TextView)findViewById(R.id.txtjam);
-        Calendar jam = Calendar.getInstance();
-        SimpleDateFormat simpleDateTime = new SimpleDateFormat("hh:mm a");
-        String dateTime = simpleDateTime.format(jam.getTime());
-        txtjam.setText(dateTime);
 
         fotoprofil = (ImageView) findViewById(R.id.fotoprofil);
         fotoprofil.setOnClickListener(new View.OnClickListener() {
@@ -130,7 +118,7 @@ public class Profil extends AppCompatActivity {
         referenceProfil.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ReadUserDetails readUserDetails = snapshot.getValue(ReadUserDetails.class);
+                ReadWriteUserDetails readUserDetails = snapshot.getValue(ReadWriteUserDetails.class);
                 if (readUserDetails != null){
                     namalengkap = readUserDetails.namalengkap;
                     jeniskelamin = readUserDetails.jeniskelamin;

@@ -67,24 +67,12 @@
         android:paddingVertical="10dp" />
 
     <TextView
-        android:id="@+id/lupalogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_below="@id/katasandi"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
-        android:text="Lupa detail login Anda?"
-        android:textColor="@color/cardview_dark_background"
-        android:textSize="14sp" />
-
-    <TextView
         android:id="@+id/lupapassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/katasandi"
-        android:layout_marginHorizontal="20dp"
         android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="10dp"
         android:text="Dapatkan bantuan untuk login"
         android:textColor="#DA8B03"

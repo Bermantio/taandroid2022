@@ -68,7 +68,7 @@ public class BantuanLogin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("tel:085602000001"));
+                    intent.setData(Uri.parse("tel:0285420650"));
                     startActivity(intent);
             }
         });
@@ -78,7 +78,7 @@ public class BantuanLogin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse("tel:085602000001"));
+                intent.setData(Uri.parse("tel:0285420650"));
                 startActivity(intent);
             }
         });

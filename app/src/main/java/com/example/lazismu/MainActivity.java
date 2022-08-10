@@ -213,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
         referenceProfil.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ReadUserDetails readUserDetails = snapshot.getValue(ReadUserDetails.class);
+                ReadWriteUserDetails readUserDetails = snapshot.getValue(ReadWriteUserDetails.class);
                 if (readUserDetails != null){
                     namalengkap = readUserDetails.namalengkap;
 

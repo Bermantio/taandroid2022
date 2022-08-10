@@ -17,24 +17,11 @@ import java.util.Calendar;
 public class Riwayat extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    TextView txtjam, txttanggal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_riwayat);
-
-        txttanggal = (TextView)findViewById(R.id.txttanggal);
-        Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat simpleDateTanggal = new SimpleDateFormat("dd MMMM yyyy");
-        String dateTanggal = simpleDateTanggal.format(calendar.getTime());
-        txttanggal.setText(dateTanggal);
-
-        txtjam = (TextView)findViewById(R.id.txtjam);
-        Calendar jam = Calendar.getInstance();
-        SimpleDateFormat simpleDateTime = new SimpleDateFormat("hh:mm a");
-        String dateTime = simpleDateTime.format(jam.getTime());
-        txtjam.setText(dateTime);
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomnavigator);
         bottomNavigationView.setSelectedItemId(R.id.riwayatnavigasi);
