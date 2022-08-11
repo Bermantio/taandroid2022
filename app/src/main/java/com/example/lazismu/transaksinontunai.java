@@ -1,7 +1,7 @@
 package com.example.lazismu;
 
 public class transaksinontunai {
-    public String tanggaltransaksi, nama,alamat,nomor,profesi,program,keterangan,berupa,nominal;
+    public String tanggaltransaksi, nama,alamat,nomor,profesi,program,keterangan,berupa,nominal,status;
 
     public transaksinontunai(){}
 
@@ -15,6 +15,7 @@ public class transaksinontunai {
         this.keterangan = keterangan;
         this.berupa = berupa;
         this.nominal = nominal;
+        this.status = status;
     }
 
     public String getTanggaltransaksi() {
@@ -87,5 +88,9 @@ public class transaksinontunai {
 
     public void setNominal(String nominal) {
         this.nominal = nominal;
+    }
+
+    public String getStatus() {
+        return status;
     }
 }

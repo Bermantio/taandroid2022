@@ -23,7 +23,7 @@ public class RiwayatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.riwayatitem,parent,false);
-        return  new RiwayatVH(view);
+        return new RiwayatVH(view);
     }
 
     @Override
@@ -34,6 +34,7 @@ public class RiwayatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         vh.name_program.setText(emp.getProgram());
         vh.berupa.setText(emp.getBerupa());
         vh.jumlahtransaksi.setText(emp.getNominal());
+        vh.status.setText(emp.getStatus());
     }
 
     @Override

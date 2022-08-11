@@ -44,7 +44,6 @@ public class Riwayat extends AppCompatActivity {
         dao = new DAOTransaksiNonTunai();
         loadData();
 
-
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomnavigator);
         bottomNavigationView.setSelectedItemId(R.id.riwayatnavigasi);
 
