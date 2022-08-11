@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -49,7 +50,41 @@ public class KalkulatorZakatPertanian extends AppCompatActivity {
     public void hitung(View view) {
         jumlahhasilpanen = Double.parseDouble(txtjumlahhasilpanen.getText().toString());
         nishab = Double.parseDouble(txtnishab.getText().toString());
-        String jenispengairan = txtjenispengairan.getSelectedItem().toString();
+        txtjenispengairan.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i){
+                    case 0 : // for item 1
+                        hasil = jumlahhasilpanen * 0.005;
+                        if (nishab < hasil) {
+                            txtstatuszakat.setText("WAJIB MEMBAYAR ZAKAT");
+                            txthasil.setText("" + hasil);
+                        } else {
+                            txtstatuszakat.setText("TIDAK WAJIB MEMBAYAR ZAKAT");
+                            txthasil.setText("" + hasil);
+                        }
+                        break;
+
+                    case 1 :
+                        hasil = jumlahhasilpanen * 0.1;
+                        if (nishab < hasil) {
+                            txtstatuszakat.setText("WAJIB MEMBAYAR ZAKAT");
+                            txthasil.setText("" + hasil);
+                        } else {
+                            txtstatuszakat.setText("TIDAK WAJIB MEMBAYAR ZAKAT");
+                            txthasil.setText("" + hasil);
+                        }
+                        break;
+
+                    /* you can have any number of case statements */
+                    default :
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+        /*String jenispengairan = txtjenispengairan.getSelectedItem().toString();
         if (jenispengairan != "Dengan Biaya") {
             hasil = jumlahhasilpanen * 0.005;
             if (nishab < hasil) {
@@ -69,6 +104,6 @@ public class KalkulatorZakatPertanian extends AppCompatActivity {
                 txtstatuszakat.setText("TIDAK WAJIB MEMBAYAR ZAKAT");
                 txthasil.setText("" + hasil);
             }
-        }
+        }*/
     }
 }
