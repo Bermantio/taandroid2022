@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F49F36"
-    tools:context=".FormInfaq">
+    tools:context=".FormZakatTabungan">
 
     <ScrollView
         android:layout_width="fill_parent"
@@ -16,13 +16,13 @@
             android:layout_height="fill_parent">
 
             <RelativeLayout
-                android:id="@+id/infaqatas"
+                android:id="@+id/zakattabunganatas"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:background="@color/white">
 
                 <ImageView
-                    android:id="@+id/kembaliinfaq"
+                    android:id="@+id/kembalizakattabungan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -30,12 +30,12 @@
                     android:src="@drawable/kembaliicondark" />
 
                 <TextView
-                    android:id="@+id/judulinfaq"
+                    android:id="@+id/judulzakattabungan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:fontFamily="sans-serif"
-                    android:text="INFAQ"
+                    android:text="TABUNGAN"
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="23dp"
                     android:textStyle="bold" />
@@ -43,10 +43,10 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/datadiriinfaq"
+                android:id="@+id/datadirizakattabungan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/infaqatas"
+                android:layout_below="@id/zakattabunganatas"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 android:text="Data Penyetor"
@@ -58,7 +58,7 @@
                 android:id="@+id/tanggaltransaksi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/datadiriinfaq"
+                android:layout_below="@id/datadirizakattabungan"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Tanggal Transaksi\t\t:"
@@ -72,9 +72,9 @@
                 android:layout_below="@id/tanggaltransaksi"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="5dp"
+                android:textSize="15dp"
                 android:text="@string/app_name"
-                android:textColor="@color/white"
-                android:textSize="15dp" />
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/namalengkap"
@@ -94,8 +94,8 @@
                 android:layout_below="@id/namalengkap"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="5dp"
-                android:textColor="@color/white"
-                android:textSize="15dp" />
+                android:textSize="15dp"
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/alamat"
@@ -133,11 +133,11 @@
                 android:id="@+id/txttelepon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/telepon"
                 android:layout_marginHorizontal="20dp"
+                android:layout_below="@id/telepon"
                 android:layout_marginTop="5dp"
-                android:textColor="@color/white"
-                android:textSize="15dp" />
+                android:textSize="15dp"
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/profesi"
@@ -181,7 +181,7 @@
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
-                android:text="Infaq"
+                android:text="Zakat Tabungan"
                 android:textSize="15dp" />
 
             <TextView
@@ -266,22 +266,21 @@
                 android:textSize="15dp"/>
 
             <EditText
-                android:id="@+id/buktiinfaq"
+                android:id="@+id/buktizakattabungan"
                 android:layout_width="match_parent"
                 android:layout_height="43dp"
                 android:layout_below="@id/uploadbukti"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/backgroundwhitenormal"
-                android:inputType="textPersonName"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp" />
 
             <Button
-                android:id="@+id/confirminfaq"
+                android:id="@+id/confirmzakattabungan"
                 android:layout_width="138dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/buktiinfaq"
+                android:layout_below="@id/buktizakattabungan"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="50dp"
@@ -295,7 +294,7 @@
                 android:id="@+id/batal"
                 android:layout_width="138dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/buktiinfaq"
+                android:layout_below="@id/buktizakattabungan"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="50dp"

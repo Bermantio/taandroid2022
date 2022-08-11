@@ -65,7 +65,7 @@
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:layout_below="@id/namalengkap"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/kotakisi"
                 android:hint="Masukkan Nama Lengkap"
                 android:inputType="textPersonName"/>
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtnamalengkap"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Jenis Kelamin\t\t:" />
 
             <Spinner
@@ -85,7 +85,7 @@
                 android:layout_height="43dp"
                 android:layout_below="@id/jeniskelamin"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/kotakisi"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
@@ -97,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/pilihjeniskelamin"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Alamat\t\t:" />
 
             <EditText
@@ -106,7 +106,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/alamat"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/kotakisi"
                 android:hint="Masukkan Alamat"
                 android:inputType="textPersonName"
@@ -119,7 +119,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtalamat"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Email\t\t:" />
 
             <EditText
@@ -128,7 +128,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/email"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/kotakisi"
                 android:hint="Masukkan Email"
                 android:inputType="textPersonName"
@@ -141,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtemail"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Nomor Telepon/HP/WhatsApp\t\t:" />
 
             <EditText
@@ -150,7 +150,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/telepon"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/kotakisi"
                 android:hint="Masukkan Nomor"
                 android:inputType="text|number"
@@ -163,7 +163,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txttelepon"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Password \t\t:" />
 
             <EditText
@@ -172,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/password"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/kotakisi"
                 android:drawableRight="@drawable/visibility_off"
                 android:hint="Masukkan Password"
@@ -186,7 +186,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtpassword"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Ulangi Password \t\t:" />
 
             <EditText
@@ -198,7 +198,7 @@
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:layout_below="@id/ulangipassword"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/kotakisi"
                 android:hint="Masukkan Password"
                 android:inputType="textPassword"/>
@@ -209,7 +209,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtulangipassword"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Profesi \t\t:" />
 
             <EditText
@@ -218,7 +218,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/profesi"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/kotakisi"
                 android:hint="Masukkan Profesi"
                 android:inputType="textPersonName"
@@ -251,21 +251,6 @@
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/copyright"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/daftar"
-                android:layout_alignParentBottom="true"
-                android:layout_marginVertical="10dp"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="10dp"
-                android:layout_centerHorizontal="true"
-                android:text="copyright"
-                android:textColor="@color/cardview_dark_background"
-                android:textSize="15dp" />
-
 
         </RelativeLayout>
 

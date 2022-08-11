@@ -49,7 +49,7 @@
                 android:layout_below="@id/shadaqahatas"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
-                android:text="Data Penyetor :"
+                android:text="Data Penyetor"
                 android:textColor="@color/cardview_light_background"
                 android:textSize="23dp"
                 android:textStyle="bold" />
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/datadirishadaqah"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Tanggal Transaksi\t\t:"
                 android:textColor="@color/white"
                 android:textSize="15dp" />
@@ -71,10 +71,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tanggaltransaksi"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:textSize="15dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/app_name"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/namalengkap"
@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txttanggaltransaksi"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Nama Lengkap\t\t:"
                 android:textColor="@color/white"
                 android:textSize="15dp" />
@@ -93,9 +93,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/namalengkap"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:textSize="15dp"
-                android:text="Nama Lengkap"
                 android:textColor="@color/white" />
 
             <TextView
@@ -104,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtnamalengkap"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Alamat\t\t:"
                 android:textSize="15dp"
                 android:textColor="@color/white"/>
@@ -115,8 +114,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_below="@id/alamat"
-                android:layout_marginTop="15dp"
-                android:text="Alamat"
+                android:layout_marginTop="5dp"
                 android:textSize="15dp"
                 android:textColor="@color/white"/>
 
@@ -126,7 +124,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtalamat"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Nomor Telepon/HP/WhatsApp \t\t:"
                 android:textSize="15dp"
                 android:textColor="@color/white"/>
@@ -137,8 +135,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_below="@id/telepon"
-                android:layout_marginTop="15dp"
-                android:text="Nomor"
+                android:layout_marginTop="5dp"
                 android:textSize="15dp"
                 android:textColor="@color/white"/>
 
@@ -148,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txttelepon"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Profesi \t\t:"
                 android:textColor="@color/white"
                 android:textSize="15dp" />
@@ -159,10 +156,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_below="@id/profesi"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:textSize="15dp"
-                android:textColor="@color/white"
-                android:text="Profesi"/>
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/program"
@@ -170,7 +166,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprofesi"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Program\t\t:"
                 android:textColor="@color/white"
                 android:textSize="15dp" />
@@ -181,11 +177,10 @@
                 android:layout_height="43dp"
                 android:layout_below="@id/program"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/backgroundwhitenormal"
-                android:inputType="text|number"
                 android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp"
+                android:paddingVertical="10dp"
                 android:text="Shadaqah"
                 android:textSize="15dp" />
 
@@ -195,7 +190,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogram"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/white"
                 android:text="Donasi sebagai\t\t:" />
 
@@ -205,7 +200,7 @@
                 android:layout_height="43dp"
                 android:layout_below="@id/donasisebagai"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
@@ -217,7 +212,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/pilihdonasisebagai"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Berupa\t\t:"
                 android:textColor="@color/white" />
 
@@ -227,7 +222,7 @@
                 android:layout_height="43dp"
                 android:layout_below="@id/berupa"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
@@ -239,7 +234,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtberupa"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Dengan Nilai\t\t:"
                 android:textColor="@color/white"
                 android:textSize="15dp" />
@@ -250,7 +245,7 @@
                 android:layout_height="43dp"
                 android:layout_below="@id/nominal"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:hint="Masukkan Nilai"
                 android:inputType="text|number"
@@ -264,7 +259,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtnominal"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/white"
                 android:text="Upload Bukti Transaksi\t\t:"
                 android:textSize="15dp"/>
@@ -275,9 +270,8 @@
                 android:layout_height="43dp"
                 android:layout_below="@id/uploadbukti"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginVertical="20dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/backgroundwhitenormal"
-                android:hint="Upload Bukti Transaksi"
                 android:inputType="textPersonName"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp" />
@@ -287,9 +281,9 @@
                 android:layout_width="138dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/buktishadaqah"
+                android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="50dp"
-                android:layout_marginHorizontal="20dp"
                 android:background="@drawable/backgroundwhite"
                 android:text="KONFIRMASI"
                 android:textColor="#DA8B03"

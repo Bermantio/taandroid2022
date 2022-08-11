@@ -51,10 +51,11 @@
                 android:layout_marginTop="55dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
-                android:paddingVertical="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="13dp"
                 android:text="Program ekonomi bertujuan untuk meningkatkan kesejahteraan penerima manfaat Zakat ataupun donasi lainnya. Dalam program ini melaksanakan pola pemberdayaan, pelatihan serta pendampingan wirausaha. Tidak hanya UMKM, tetapi program ekonomi menyasar kepada pemberian modal serta akses pasar baik di peternakan, pertanian serta akses pasar lainnya. Program yang menjadi bagian dari Pilar Ekonomi adalah :"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="15dp"/>
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/txtprogramekonomib"
@@ -62,10 +63,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogramekonomia"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-10dp"
+                android:layout_marginTop="-15dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
-                android:paddingVertical="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="13dp"
                 android:text="1. Pemberdayaan UMKM"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="15dp" />
@@ -76,13 +78,14 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogramekonomib"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-10dp"
+                android:layout_marginTop="-15dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
-                android:paddingVertical="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="13dp"
                 android:text="2. Peternakan Masyarakat Mandiri"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="15dp"/>
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/txtprogramekonomid"
@@ -90,13 +93,14 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogramekonomic"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-10dp"
+                android:layout_marginTop="-15dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
-                android:paddingVertical="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="13dp"
                 android:text="3. Tani Bangkit"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="15dp"/>
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/txtprogramekonomie"
@@ -104,13 +108,14 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogramekonomid"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-10dp"
+                android:layout_marginTop="-15dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
-                android:paddingVertical="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="13dp"
                 android:text="4. Ketahanan Pangan"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="15dp"/>
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/txtprogramekonomif"
@@ -118,14 +123,15 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogramekonomie"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="-10dp"
+                android:layout_marginTop="-15dp"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
-                android:paddingVertical="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="13dp"
                 android:text="5. Keuangan Mikro"
                 android:textColor="@color/cardview_dark_background"
-                android:textSize="15dp"/>
+                android:textSize="15dp" />
 
         </RelativeLayout>
 

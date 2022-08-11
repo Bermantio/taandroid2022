@@ -35,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:fontFamily="sans-serif"
-                    android:text="ZAKAT PENGHASILAN"
+                    android:text="PENGHASILAN"
                     android:textColor="@color/cardview_dark_background"
                     android:textSize="23dp"
                     android:textStyle="bold" />
@@ -49,7 +49,7 @@
                 android:layout_below="@id/zakatpenghasilanatas"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
-                android:text="Data Penyetor :"
+                android:text="Data Penyetor"
                 android:textColor="@color/cardview_light_background"
                 android:textSize="23dp"
                 android:textStyle="bold" />
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/datadirizakatpenghasilan"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Tanggal Transaksi\t\t:"
                 android:textColor="@color/white"
                 android:textSize="15dp" />
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tanggaltransaksi"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:textSize="15dp"
                 android:text="@string/app_name"
                 android:textColor="@color/white" />
@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txttanggaltransaksi"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Nama Lengkap\t\t:"
                 android:textColor="@color/white"
                 android:textSize="15dp" />
@@ -93,39 +93,17 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/namalengkap"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:textSize="15dp"
-                android:text="Nama Lengkap"
                 android:textColor="@color/white" />
-
-            <TextView
-                android:id="@+id/jeniskelamin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txtnamalengkap"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:textSize="15dp"
-                android:textColor="@color/white"
-                android:text="Jenis Kelamin\t\t:" />
-
-            <TextView
-                android:id="@+id/pilihjeniskelamin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/jeniskelamin"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:textSize="15dp"
-                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/alamat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/pilihjeniskelamin"
+                android:layout_below="@id/txtnamalengkap"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Alamat\t\t:"
                 android:textSize="15dp"
                 android:textColor="@color/white"/>
@@ -136,30 +114,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_below="@id/alamat"
-                android:layout_marginTop="15dp"
-                android:text="Alamat"
-                android:textSize="15dp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txtalamat"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:text="Email\t\t:"
-                android:textSize="15dp"
-                android:textColor="@color/white"/>
-
-            <TextView
-                android:id="@+id/txtemail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_below="@id/email"
-                android:layout_marginTop="15dp"
-                android:text="Email"
+                android:layout_marginTop="5dp"
                 android:textSize="15dp"
                 android:textColor="@color/white"/>
 
@@ -167,9 +122,9 @@
                 android:id="@+id/telepon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtemail"
+                android:layout_below="@id/txtalamat"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Nomor Telepon/HP/WhatsApp \t\t:"
                 android:textSize="15dp"
                 android:textColor="@color/white"/>
@@ -180,8 +135,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_below="@id/telepon"
-                android:layout_marginTop="15dp"
-                android:text="Nomor"
+                android:layout_marginTop="5dp"
                 android:textSize="15dp"
                 android:textColor="@color/white"/>
 
@@ -191,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txttelepon"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Profesi \t\t:"
                 android:textColor="@color/white"
                 android:textSize="15dp" />
@@ -202,8 +156,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/profesi"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                android:text="Profesi"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/white"
                 android:textSize="15dp" />
 
@@ -213,7 +166,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprofesi"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Program\t\t:"
                 android:textColor="@color/white"
                 android:textSize="15dp" />
@@ -224,12 +177,11 @@
                 android:layout_height="43dp"
                 android:layout_below="@id/program"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/backgroundwhitenormal"
-                android:hint="Program"
-                android:inputType="text|number"
                 android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp"
+                android:paddingVertical="10dp"
+                android:text="Zakat Penghasilan"
                 android:textSize="15dp" />
 
             <TextView
@@ -238,7 +190,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprogram"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Donasi sebagai\t\t:"
                 android:textColor="@color/white" />
 
@@ -248,7 +200,7 @@
                 android:layout_height="43dp"
                 android:layout_below="@id/donasisebagai"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
@@ -260,7 +212,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/pilihdonasisebagai"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Berupa\t\t:"
                 android:textColor="@color/white" />
 
@@ -270,11 +222,10 @@
                 android:layout_height="43dp"
                 android:layout_below="@id/berupa"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/backgroundwhitenormal"
-                android:inputType="textPersonName"
                 android:paddingHorizontal="10dp"
-                android:paddingVertical="5dp"
+                android:paddingVertical="10dp"
                 android:text="Uang"
                 android:textSize="15dp" />
 
@@ -284,7 +235,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtberupa"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:text="Nominal\t\t:"
                 android:textColor="@color/white"
                 android:textSize="15dp" />
@@ -295,7 +246,7 @@
                 android:layout_height="43dp"
                 android:layout_below="@id/nominal"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:hint="Masukkan Nominal"
                 android:inputType="text|number"
@@ -309,7 +260,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtnominal"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/white"
                 android:text="Upload Bukti Transaksi\t\t:"
                 android:textSize="15dp"/>
@@ -320,10 +271,8 @@
                 android:layout_height="43dp"
                 android:layout_below="@id/uploadbukti"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginVertical="20dp"
+                android:layout_marginTop="5dp"
                 android:background="@drawable/backgroundwhitenormal"
-                android:hint="Upload Bukti Transaksis"
-                android:inputType="textPersonName"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="5dp" />
 
@@ -332,9 +281,9 @@
                 android:layout_width="138dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/buktizakatpenghasilan"
+                android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="50dp"
-                android:layout_marginHorizontal="20dp"
                 android:background="@drawable/backgroundwhite"
                 android:text="KONFIRMASI"
                 android:textColor="#DA8B03"

@@ -11,13 +11,45 @@ import android.widget.TextView;
 
 public class FormZakat extends AppCompatActivity {
 
-    ImageView batalarah, zakatpenghasilanicon, zakatfitrahicon;
-    TextView txtzakatpenghasilan, txtzakatfitrah;
+    ImageView batalarah, zakatpenghasilanicon, zakatfitrahicon, zakattabunganicon, zakatperdaganganicon;
+    TextView txtzakatpenghasilan, txtzakatfitrah, txtzakatperdagangan, txtzakattabungan;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_zakat);
+
+        txtzakatperdagangan = (TextView)findViewById(R.id.txtzakatperdagangan);
+        txtzakatperdagangan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),FormZakatPerdagangan.class));
+            }
+        });
+
+        zakatperdaganganicon = (ImageView)findViewById(R.id.zakatperdaganganicon);
+        zakatperdaganganicon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),FormZakatPerdagangan.class));
+            }
+        });
+
+        txtzakattabungan = (TextView)findViewById(R.id.txtzakattabungan);
+        txtzakattabungan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),FormZakatTabungan.class));
+            }
+        });
+
+        zakattabunganicon = (ImageView)findViewById(R.id.zakattabunganicon);
+        zakattabunganicon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),FormZakatTabungan.class));
+            }
+        });
 
         txtzakatpenghasilan = (TextView)findViewById(R.id.txtzakatpenghasilan);
         txtzakatpenghasilan.setOnClickListener(new View.OnClickListener() {

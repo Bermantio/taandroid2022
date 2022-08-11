@@ -69,6 +69,8 @@
         <entry key="..\:/Users/windows 10/AndroidStudioProjects/lazismu/app/src/main/res/layout/activity_form_zakat.xml" value="0.22" />
         <entry key="..\:/Users/windows 10/AndroidStudioProjects/lazismu/app/src/main/res/layout/activity_form_zakat_fitrah.xml" value="0.1947463768115942" />
         <entry key="..\:/Users/windows 10/AndroidStudioProjects/lazismu/app/src/main/res/layout/activity_form_zakat_penghasilan.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/windows 10/AndroidStudioProjects/lazismu/app/src/main/res/layout/activity_form_zakat_perdagangan.xml" value="0.18614130434782608" />
+        <entry key="..\:/Users/windows 10/AndroidStudioProjects/lazismu/app/src/main/res/layout/activity_form_zakat_tabungan.xml" value="0.18614130434782608" />
         <entry key="..\:/Users/windows 10/AndroidStudioProjects/lazismu/app/src/main/res/layout/activity_kalkulator_zakat.xml" value="0.22" />
         <entry key="..\:/Users/windows 10/AndroidStudioProjects/lazismu/app/src/main/res/layout/activity_kalkulator_zakat_emas_perak.xml" value="0.25" />
         <entry key="..\:/Users/windows 10/AndroidStudioProjects/lazismu/app/src/main/res/layout/activity_kalkulator_zakat_penghasilan.xml" value="0.22" />
@@ -88,7 +90,7 @@
         <entry key="..\:/Users/windows 10/AndroidStudioProjects/lazismu/app/src/main/res/layout/activity_penyaluran.xml" value="0.1" />
         <entry key="..\:/Users/windows 10/AndroidStudioProjects/lazismu/app/src/main/res/layout/activity_profil.xml" value="0.25" />
         <entry key="..\:/Users/windows 10/AndroidStudioProjects/lazismu/app/src/main/res/layout/activity_program.xml" value="0.2" />
-        <entry key="..\:/Users/windows 10/AndroidStudioProjects/lazismu/app/src/main/res/layout/activity_program_ekonomi.xml" value="0.25" />
+        <entry key="..\:/Users/windows 10/AndroidStudioProjects/lazismu/app/src/main/res/layout/activity_program_ekonomi.xml" value="0.33" />
         <entry key="..\:/Users/windows 10/AndroidStudioProjects/lazismu/app/src/main/res/layout/activity_program_kemanusiaan.xml" value="0.19293478260869565" />
         <entry key="..\:/Users/windows 10/AndroidStudioProjects/lazismu/app/src/main/res/layout/activity_program_kesehatan.xml" value="0.19293478260869565" />
         <entry key="..\:/Users/windows 10/AndroidStudioProjects/lazismu/app/src/main/res/layout/activity_program_lingkungan.xml" value="0.22" />

@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class FormZakatPenghasilan extends AppCompatActivity {
+public class FormZakatTabungan extends AppCompatActivity {
 
     ImageView batalarah;
     private EditText txtnominal;
@@ -40,7 +40,7 @@ public class FormZakatPenghasilan extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_form_zakat_penghasilan);
+        setContentView(R.layout.activity_form_zakat_tabungan);
 
         txtnamalengkap = (TextView) findViewById(R.id.txtnamalengkap);
         txtalamat = (TextView) findViewById(R.id.txtalamat);
@@ -75,7 +75,7 @@ public class FormZakatPenghasilan extends AppCompatActivity {
             }
         });
 
-        confirmzakat = (Button) findViewById(R.id.confirmzakatpenghasilan);
+        confirmzakat = (Button) findViewById(R.id.confirmzakattabungan);
         confirmzakat.setOnClickListener(v-> {
 
             String tanggaltransaksi = txttanggaltransaksi.getText().toString();
@@ -90,14 +90,14 @@ public class FormZakatPenghasilan extends AppCompatActivity {
 
             transaksinontunai emp = new transaksinontunai(tanggaltransaksi, nama,alamat,nomor,profesi,program,keterangan,berupa,nominal);
             dao.add(emp).addOnSuccessListener(suc->
-            {Toast.makeText(FormZakatPenghasilan.this,"Transaksi Sukses, Mohon Tunggu Konfirmasi",Toast.LENGTH_LONG).show();
+            {Toast.makeText(FormZakatTabungan.this,"Transaksi Sukses, Mohon Tunggu Konfirmasi",Toast.LENGTH_LONG).show();
             }).addOnFailureListener(er ->
-            {Toast.makeText(FormZakatPenghasilan.this,"Transaksi Gagal",Toast.LENGTH_LONG).show();
+            {Toast.makeText(FormZakatTabungan.this,"Transaksi Gagal",Toast.LENGTH_LONG).show();
             });
 
         });
 
-        batalarah = (ImageView) findViewById(R.id.kembalizakatpenghasilan);
+        batalarah = (ImageView) findViewById(R.id.kembalizakattabungan);
         batalarah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -127,7 +127,7 @@ public class FormZakatPenghasilan extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(FormZakatPenghasilan.this, "Ada galat", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FormZakatTabungan.this, "Ada galat", Toast.LENGTH_SHORT).show();
             }
         });
     }

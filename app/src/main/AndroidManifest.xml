@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.lazismu">
 
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +12,12 @@
         android:roundIcon="@mipmap/ic_lazismu_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lazismu">
+        <activity
+            android:name=".FormZakatTabungan"
+            android:exported="false" />
+        <activity
+            android:name=".FormZakatPerdagangan"
+            android:exported="false" />
         <activity
             android:name=".KalkulatorZakatPertanian"
             android:exported="false" />
@@ -125,4 +131,5 @@
         </activity>
         <activity android:name=".Login" />
     </application>
+
 </manifest>
