@@ -60,7 +60,7 @@ public class UbahProfil extends AppCompatActivity {
         authProfil = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = authProfil.getCurrentUser();
 
-        showUserProfil(firebaseUser);
+        //showUserProfil(firebaseUser);
 
         simpan = (Button) findViewById(R.id.simpan);
         simpan.setOnClickListener(new View.OnClickListener() {
@@ -149,7 +149,7 @@ public class UbahProfil extends AppCompatActivity {
         }
     }
 
-    private void showUserProfil(FirebaseUser firebaseUser) {
+    /*private void showUserProfil(FirebaseUser firebaseUser) {
         String userIDofRegistered = firebaseUser.getUid();
         DatabaseReference referenceProfil = FirebaseDatabase.getInstance().getReference("Registered Users");
         referenceProfil.child(userIDofRegistered).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -175,5 +175,5 @@ public class UbahProfil extends AppCompatActivity {
                 Toast.makeText(UbahProfil.this,"Ada galat", Toast.LENGTH_SHORT).show();
             }
         });
-    }
+    }*/
 }

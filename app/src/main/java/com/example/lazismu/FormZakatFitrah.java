@@ -1,5 +1,6 @@
 package com.example.lazismu;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,24 +14,49 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class FormZakatFitrah extends AppCompatActivity {
 
-    EditText txtanggota, txthargaberas;
+    EditText txtanggota, txthargaberas, txtketerangan;
     Double anggota, hargaberas, nominal;
     ImageView batalarah;
-    Button batalbutton;
+    private String namalengkap, alamat, profesi, telepon;
+    Button confirmzakat, batalbutton;
     Spinner txtberupa;
     ArrayAdapter<CharSequence> adapter;
-    TextView txttanggaltransaksi, txtnominal;
+    TextView txtnominal, txttanggaltransaksi, txtnamalengkap, txtalamat, txttelepon, txtprofesi, txtprogram;
+    private FirebaseAuth authProfil;
+    private FirebaseUser firebaseUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_form_zakat_fitrah);
+
+        txtnamalengkap = (TextView) findViewById(R.id.txtnamalengkap);
+        txtalamat = (TextView) findViewById(R.id.txtalamat);
+        txttelepon = (TextView) findViewById(R.id.txttelepon);
+        txtprofesi = (TextView) findViewById(R.id.txtprofesi);
+        txtprogram = (TextView) findViewById(R.id.txtprogram);
+        txtketerangan = (EditText) findViewById(R.id.txtketerangan);
+        authProfil = FirebaseAuth.getInstance();
+        FirebaseUser firebaseUser = authProfil.getCurrentUser();
+
+        showUserProfil(firebaseUser);
+
+        DAOTransaksiNonTunai dao = new DAOTransaksiNonTunai();
 
         txtanggota = (EditText) findViewById(R.id.txtanggota);
         txthargaberas = (EditText) findViewById(R.id.txthargaberas);
@@ -84,6 +110,28 @@ public class FormZakatFitrah extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         txtberupa.setAdapter(adapter);
 
+        confirmzakat = (Button) findViewById(R.id.confirmzakatfitrah);
+        confirmzakat.setOnClickListener(v-> {
+
+            String tanggaltransaksi = txttanggaltransaksi.getText().toString();
+            String nama = txtnamalengkap.getText().toString();
+            String alamat = txtalamat.getText().toString();
+            String nomor = txttelepon.getText().toString();
+            String profesi = txtprofesi.getText().toString();
+            String program = txtprogram.getText().toString();
+            String berupa = txtberupa.getSelectedItem().toString();
+            String nominal = txtnominal.getText().toString();
+            String keterangan = txtketerangan.getText().toString();
+
+            transaksinontunai emp = new transaksinontunai(tanggaltransaksi, nama,alamat,nomor,profesi,program,keterangan,berupa,nominal);
+            dao.add(emp).addOnSuccessListener(suc->
+            {Toast.makeText(FormZakatFitrah.this,"Transaksi Sukses, Mohon Tunggu Konfirmasi",Toast.LENGTH_LONG).show();
+            }).addOnFailureListener(er ->
+            {Toast.makeText(FormZakatFitrah.this,"Transaksi Gagal",Toast.LENGTH_LONG).show();
+            });
+
+        });
+
         batalbutton = (Button) findViewById(R.id.batal);
         batalbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +163,35 @@ public class FormZakatFitrah extends AppCompatActivity {
             number2 = 0;
         }
 
-        return Double.toString(number1 * number2 * 2.5);
+        Double hasil = number1*number2*2.5;
+        Double h = new Double(hasil);
+        int value = h.intValue();
+        return Integer.toString(value);
+    }
+    private void showUserProfil(FirebaseUser firebaseUser){
+        String userIDofRegistered = firebaseUser.getUid();
+        DatabaseReference referenceProfil = FirebaseDatabase.getInstance().getReference("Registered Users");
+        referenceProfil.child(userIDofRegistered).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                ReadWriteUserDetails readUserDetails = snapshot.getValue(ReadWriteUserDetails.class);
+                if (readUserDetails != null) {
+                    namalengkap = readUserDetails.namalengkap;
+                    alamat = readUserDetails.alamat;
+                    profesi = readUserDetails.profesi;
+                    telepon = readUserDetails.telepon;
+
+                    txtnamalengkap.setText(namalengkap);
+                    txtalamat.setText(alamat);
+                    txttelepon.setText(telepon);
+                    txtprofesi.setText(profesi);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(FormZakatFitrah.this, "Ada galat", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

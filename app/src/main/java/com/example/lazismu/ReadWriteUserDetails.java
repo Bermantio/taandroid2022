@@ -11,4 +11,5 @@ public class ReadWriteUserDetails {
         this.telepon = telepon;
         this.profesi = profesi;
     }
+
 }
