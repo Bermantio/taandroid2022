@@ -1,6 +1,7 @@
 package com.example.lazismu;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -16,6 +17,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.cast.framework.media.ImagePicker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -29,6 +31,8 @@ import com.squareup.picasso.Picasso;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class Profil extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
@@ -37,7 +41,7 @@ public class Profil extends AppCompatActivity {
     private TextView txtnamalengkap, txtalamat, txtemail, txttelepon, txtprofesi, txtjeniskelamin;
     private String namalengkap,alamat,profesi,email,telepon,jeniskelamin;
     private FirebaseAuth authProfil;
-    private ImageView fotoprofil;
+    CircleImageView fotoprofil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,11 +66,18 @@ public class Profil extends AppCompatActivity {
             showUserProfil(firebaseUser);
         }
 
-        fotoprofil = (ImageView) findViewById(R.id.fotoprofil);
+        fotoprofil = (CircleImageView) findViewById(R.id.fotoprofil);
         fotoprofil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Profil.this, UploadFotoProfil.class));
+                /*ImagePicker.Companion.getFile(Profil.this)
+                        .galleryOnly()
+                        .cameraOnly()
+                        .crop()	    			//Crop image(Optional), Check Customization for more option
+                        //.compress(1024)			//Final image size will be less than 1 MB(Optional)
+                        .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
+                        .start();*/
             }
         });
 
@@ -112,6 +123,13 @@ public class Profil extends AppCompatActivity {
         });
     }
 
+    /*@Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Uri uri = data.getData();
+        fotoprofil.setImageURI(uri);
+    }*/
+
     private void showUserProfil(FirebaseUser firebaseUser) {
         String userID = firebaseUser.getUid();
         DatabaseReference referenceProfil = FirebaseDatabase.getInstance().getReference("Registered Users");
@@ -134,9 +152,9 @@ public class Profil extends AppCompatActivity {
                     txttelepon.setText(telepon);
                     txtprofesi.setText(profesi);
 
-                    Uri uri = firebaseUser.getPhotoUrl();
+                   Uri uri = firebaseUser.getPhotoUrl();
 
-                    Picasso.with(Profil.this).load(uri).into(fotoprofil);
+                   Picasso.with(Profil.this).load(uri).into(fotoprofil);
                 }
                 else{
                     Toast.makeText(Profil.this,"Ada galat", Toast.LENGTH_SHORT).show();

@@ -34,7 +34,7 @@
             android:layout_width="138dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/unggahfoto"
-            android:layout_marginHorizontal="100dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginVertical="20dp"
             android:background="@drawable/backgroundorangenormal"
             android:text="PILIH"
@@ -48,8 +48,7 @@
             android:layout_height="250dp"
             android:layout_below="@id/pilihfoto"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="15dp"
-            android:background="@drawable/profilmenu" />
+            android:layout_marginVertical="15dp" />
 
         <Button
             android:id="@+id/simpanfoto"
