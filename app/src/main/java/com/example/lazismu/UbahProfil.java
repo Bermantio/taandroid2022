@@ -35,7 +35,7 @@ import com.google.firebase.database.ValueEventListener;
 public class UbahProfil extends AppCompatActivity {
 
     private EditText txtpassword, txtulangipassword, txtnamalengkap, txtalamat,txttelepon, txtprofesi;
-    private String namalengkap,alamat,profesi,telepon,jeniskelamin,password,ulangipassword;
+    private String namalengkap,alamat,profesi,telepon,jeniskelamin;
     Button simpan, batal;
     Spinner spinner;
     ArrayAdapter<CharSequence> adapter;
@@ -80,16 +80,21 @@ public class UbahProfil extends AppCompatActivity {
     }
 
     private void updateProfil(FirebaseUser firebaseUser) {
+        String namalengkap = txtnamalengkap.getText().toString();
+        String alamat = txtalamat.getText().toString();
+        String telepon = txttelepon.getText().toString();
+        String profesi = txtprofesi.getText().toString();
+        String jeniskelamin = spinner.getSelectedItem().toString();
         if (TextUtils.isEmpty(namalengkap)){
             txtnamalengkap.setError("Nama Lengkap belum diisi");
             txtnamalengkap.requestFocus();
         }
+        else if (TextUtils.isEmpty(jeniskelamin)){
+            spinner.requestFocus();
+        }
         else if (TextUtils.isEmpty(alamat)){
             txtalamat.setError("Alamat belum diisi");
             txtalamat.requestFocus();
-        }
-        else if (TextUtils.isEmpty(jeniskelamin)){
-            spinner.requestFocus();
         }
         else if (TextUtils.isEmpty(telepon)){
             txttelepon.setError("Telepon belum diisi");
@@ -108,13 +113,8 @@ public class UbahProfil extends AppCompatActivity {
             txtprofesi.requestFocus();
         }
         else {
-            namalengkap = txtnamalengkap.getText().toString();
-            alamat = txtalamat.getText().toString();
-            telepon = txttelepon.getText().toString();
-            profesi = txtprofesi.getText().toString();
-            jeniskelamin = spinner.getSelectedItem().toString();
 
-            ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails ( namalengkap, alamat, telepon, profesi, jeniskelamin);
+            ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails ( namalengkap, jeniskelamin, alamat, telepon, profesi);
 
             DatabaseReference referenceProfil = FirebaseDatabase.getInstance().getReference("Registered Users");
 

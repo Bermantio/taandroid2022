@@ -36,6 +36,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Register extends AppCompatActivity {
 
     private EditText txtpassword, txtulangipassword, txtnamalengkap, txtalamat, txtemail, txttelepon, txtprofesi;
+    private String namalengkap,alamat,profesi,telepon,jeniskelamin,password,ulangipassword;
     Button daftar, batal;
     Spinner spinner;
     ArrayAdapter<CharSequence> adapter;
