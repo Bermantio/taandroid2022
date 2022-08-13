@@ -191,7 +191,7 @@ public class Register extends AppCompatActivity {
                     txtprofesi.requestFocus();
                 }
                 else {
-                    registerUser(password, namalengkap, jeniskelamin, alamat, email, telepon, profesi);
+                    registerUser(namalengkap, jeniskelamin, alamat, email, telepon, password, profesi);
                 }
             }
         });
@@ -205,7 +205,7 @@ public class Register extends AppCompatActivity {
         });
     }
 
-    private void registerUser(String password, String namalengkap, String alamat, String email, String telepon, String profesi, String jeniskelamin) {
+    private void registerUser(String namalengkap, String jeniskelamin, String alamat, String email, String telepon, String password, String profesi) {
     FirebaseAuth auth = FirebaseAuth.getInstance();
     auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
         @Override
@@ -213,7 +213,7 @@ public class Register extends AppCompatActivity {
             if (task.isSuccessful()){
                 FirebaseUser firebaseUser = auth.getCurrentUser();
 
-                ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails ( namalengkap, alamat, telepon, profesi, jeniskelamin);
+                ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails ( namalengkap, jeniskelamin, alamat, telepon, profesi);
 
                 DatabaseReference referenceProfil = FirebaseDatabase.getInstance().getReference("Registered Users");
 
@@ -236,12 +236,12 @@ public class Register extends AppCompatActivity {
                 try{
                     throw task.getException();
                 } catch (FirebaseAuthInvalidCredentialsException e){
-                    txtemail.setError("Email invalid atau sudah digunakan");
-                    txtemail.requestFocus();
+                    Log.e(TAG, e.getMessage());
+                    Toast.makeText(Register.this, e.getMessage(), Toast.LENGTH_LONG).show();
                 }
                 catch (FirebaseAuthUserCollisionException e){
-                    txtemail.setError("User lain sudah terdaftar dengan email ini");
-                    txtemail.requestFocus();
+                    Log.e(TAG, e.getMessage());
+                    Toast.makeText(Register.this, e.getMessage(), Toast.LENGTH_LONG).show();
                 }
                 catch (Exception e){
                     Log.e(TAG, e.getMessage());
