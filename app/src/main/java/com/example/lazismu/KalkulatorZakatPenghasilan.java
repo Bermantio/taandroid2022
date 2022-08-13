@@ -55,11 +55,11 @@ public class KalkulatorZakatPenghasilan extends AppCompatActivity {
         Double h = new Double(hasil);
         int value = h.intValue();
         if (nishabi<hasil){
-            txtstatuszakat.setText("WAJIB MEMBAYAR ZAKAT");
+            txtstatuszakat.setText("WAJIB ZAKAT");
             txthasil.setText("Rp. "+value);
         }
         else {
-            txtstatuszakat.setText("TIDAK WAJIB MEMBAYAR ZAKAT");
+            txtstatuszakat.setText("TIDAK WAJIB ZAKAT");
             txthasil.setText("Rp. " + value);
         }
     }
