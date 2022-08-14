@@ -14,8 +14,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
@@ -27,6 +31,8 @@ public class Riwayat extends AppCompatActivity {
     RecyclerView recyclerView;
     RiwayatAdapter adapter;
     DAOTransaksiNonTunai dao;
+    /*private FirebaseAuth authProfil = FirebaseAuth.getInstance();
+    FirebaseUser firebaseUser = authProfil.getCurrentUser();*/
 
     BottomNavigationView bottomNavigationView;
 
@@ -37,6 +43,7 @@ public class Riwayat extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.daftarriwayat);
         recyclerView.setHasFixedSize(true);
+
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
         adapter = new RiwayatAdapter(this);
@@ -69,6 +76,22 @@ public class Riwayat extends AppCompatActivity {
             }
         });
     }
+
+    /*private void setUpRecyclerView(FirebaseUser firebaseUser) {
+        String userID = firebaseUser.getUid();
+        Query query = FirebaseDatabase.getInstance().getReference(transaksinontunai).child("Registered Users").child(userID);
+
+        FirebaseRecyclerOptions<Results> options = new FirebaseRecyclerOptions.Builder<Results>()
+                .setQuery(query, Results.class)
+                .build();
+
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(manager);
+        adapter = new RiwayatAdapter(this);
+        recyclerView.setAdapter(adapter);
+        dao = new DAOTransaksiNonTunai();
+        loadData();
+    }*/
 
     private void loadData() {
         dao.get().addValueEventListener(new ValueEventListener() {
