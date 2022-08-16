@@ -40,6 +40,7 @@ public class BantuanLogin extends AppCompatActivity {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=6285741347979"));
                     startActivity(intent);
+                    finish();
                 }
                 else{
                     Toast.makeText(BantuanLogin.this,"Whatsapp belum terinstall",Toast.LENGTH_SHORT).show();
@@ -56,6 +57,7 @@ public class BantuanLogin extends AppCompatActivity {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setData(Uri.parse("http://api.whatsapp.com/send?phone=6285741347979"));
                     startActivity(intent);
+                    finish();
                 }
                 else{
                     Toast.makeText(BantuanLogin.this,"Whatsapp belum terinstall",Toast.LENGTH_SHORT).show();
@@ -70,6 +72,7 @@ public class BantuanLogin extends AppCompatActivity {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setData(Uri.parse("tel:0285420650"));
                     startActivity(intent);
+                finish();
             }
         });
 
@@ -80,6 +83,7 @@ public class BantuanLogin extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("tel:0285420650"));
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -88,6 +92,7 @@ public class BantuanLogin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(BantuanLogin.this, MapsActivity.class));
+                finish();
             }
         });
 
@@ -96,6 +101,7 @@ public class BantuanLogin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(BantuanLogin.this, MapsActivity.class));
+                finish();
             }
         });
     }
