@@ -55,8 +55,8 @@ public class KalkulatorZakatTabungan extends AppCompatActivity {
             txtstatuszakat.setText("WAJIB MEMBAYAR ZAKAT");
             txthasil.setText("Rp. " + value);
         } else {
-            txtstatuszakat.setText("TIDAK WAJIB MEMBAYAR ZAKAT");
-            txthasil.setText("Rp. "+ value);
+            txtstatuszakat.setText("TIDAK WAJIB ZAKAT");
+            txthasil.setText("-");
         }
     }
 }

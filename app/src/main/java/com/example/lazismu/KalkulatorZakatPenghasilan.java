@@ -60,7 +60,7 @@ public class KalkulatorZakatPenghasilan extends AppCompatActivity {
         }
         else {
             txtstatuszakat.setText("TIDAK WAJIB ZAKAT");
-            txthasil.setText("Rp. " + value);
+            txthasil.setText("-");
         }
     }
 }

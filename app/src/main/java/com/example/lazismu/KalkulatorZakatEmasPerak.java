@@ -52,7 +52,7 @@ public class KalkulatorZakatEmasPerak extends AppCompatActivity {
             txthasil.setText("Rp. " + value);
         } else {
             txtstatuszakat.setText("TIDAK WAJIB ZAKAT");
-            txthasil.setText("Rp. " + value);
+            txthasil.setText("-");
         }
     }
 }

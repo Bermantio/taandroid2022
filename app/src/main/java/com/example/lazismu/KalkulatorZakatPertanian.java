@@ -58,7 +58,7 @@ public class KalkulatorZakatPertanian extends AppCompatActivity {
                 txthasil.setText(value+" kg" );
             } else {
                 txtstatuszakat.setText("TIDAK WAJIB ZAKAT");
-                txthasil.setText(value+" kg" );
+                txthasil.setText("-");
             }
         }
         else {
@@ -70,7 +70,7 @@ public class KalkulatorZakatPertanian extends AppCompatActivity {
                 txthasil.setText(value+" kg" );
             } else {
                 txtstatuszakat.setText("TIDAK WAJIB ZAKAT");
-                txthasil.setText(value+" kg");
+                txthasil.setText("-");
             }
         }
     }
