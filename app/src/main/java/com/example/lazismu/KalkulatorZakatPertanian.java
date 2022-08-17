@@ -53,7 +53,7 @@ public class KalkulatorZakatPertanian extends AppCompatActivity {
             hasil = jumlahhasilpanen * 0.005;
             Double h = new Double(hasil);
             int value = h.intValue();
-            if (nishab < hasil) {
+            if (nishab < jumlahhasilpanen) {
                 txtstatuszakat.setText("WAJIB ZAKAT");
                 txthasil.setText(value+" kg" );
             } else {
@@ -65,7 +65,7 @@ public class KalkulatorZakatPertanian extends AppCompatActivity {
             hasil = jumlahhasilpanen * 0.1;
             Double h = new Double(hasil);
             int value = h.intValue();
-            if (nishab < hasil) {
+            if (nishab < jumlahhasilpanen) {
                 txtstatuszakat.setText("WAJIB ZAKAT");
                 txthasil.setText(value+" kg" );
             } else {

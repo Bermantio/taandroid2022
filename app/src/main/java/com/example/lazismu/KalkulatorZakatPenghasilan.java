@@ -16,7 +16,7 @@ public class KalkulatorZakatPenghasilan extends AppCompatActivity {
     EditText txtpendapatanlain, txtpendapatan, txthutang, txthargaemas;
     Button hitung;
     TextView txtnishab, txthasil,txtstatuszakat;
-    Double pendapatan, pendapatanlain, hutang, hasil, nishabi, hargaemas;
+    Double pendapatan, pendapatanlain, hutang, hasil, nishabi, hargaemas, penghasilan;
     ImageView batalarah;
 
     @Override
@@ -52,9 +52,10 @@ public class KalkulatorZakatPenghasilan extends AppCompatActivity {
         int nishab = n.intValue();
         txtnishab.setText("Rp. "+nishab);
         hasil = (pendapatan + pendapatanlain - hutang) * 0.025;
+        penghasilan = pendapatan + pendapatanlain - hutang;
         Double h = new Double(hasil);
         int value = h.intValue();
-        if (nishabi<hasil){
+        if (nishabi<penghasilan){
             txtstatuszakat.setText("WAJIB ZAKAT");
             txthasil.setText("Rp. "+value);
         }

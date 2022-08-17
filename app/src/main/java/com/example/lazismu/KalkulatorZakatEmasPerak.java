@@ -47,7 +47,7 @@ public class KalkulatorZakatEmasPerak extends AppCompatActivity {
         hasil = jumlahemas * 0.025;
         Double h = new Double(hasil);
         int value = h.intValue();
-        if ( nishabi < hasil) {
+        if ( nishabi < jumlahemas) {
             txtstatuszakat.setText("WAJIB ZAKAT");
             txthasil.setText("Rp. " + value);
         } else {

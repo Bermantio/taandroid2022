@@ -15,7 +15,7 @@ public class KalkulatorZakatTabungan extends AppCompatActivity {
     EditText txtsaldotabungan, txtbunga, txthargaemas;
     Button hitung;
     TextView txtnishab, txthasil, txtstatuszakat;
-    Double saldotabungan, bunga, hasil, nishabi, hargaemas;
+    Double saldotabungan, bunga, hasil, nishabi, hargaemas,tabungan;
     ImageView batalarah;
 
     @Override
@@ -49,9 +49,10 @@ public class KalkulatorZakatTabungan extends AppCompatActivity {
         int nishab = n.intValue();
         txtnishab.setText("Rp. " + nishab);
         hasil = (saldotabungan - bunga) * 0.025;
+        tabungan = saldotabungan - bunga;
         Double h = new Double(hasil);
         int value = h.intValue();
-        if (nishabi < hasil) {
+        if (nishabi < tabungan) {
             txtstatuszakat.setText("WAJIB MEMBAYAR ZAKAT");
             txthasil.setText("Rp. " + value);
         } else {
