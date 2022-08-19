@@ -178,9 +178,7 @@
                 android:layout_below="@id/program"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/backgroundwhitenormal"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="10dp"
+                android:textColor="@color/white"
                 android:text="Zakat Perdagangan"
                 android:textSize="15dp" />
 
@@ -223,9 +221,7 @@
                 android:layout_below="@id/berupa"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/backgroundwhitenormal"
-                android:paddingHorizontal="10dp"
-                android:paddingVertical="10dp"
+                android:textColor="@color/white"
                 android:text="Uang"
                 android:textSize="15dp" />
 
