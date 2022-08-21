@@ -39,6 +39,11 @@ public class Login extends AppCompatActivity {
 
         authProfil = FirebaseAuth.getInstance();
 
+        if (authProfil.getCurrentUser() != null) {
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        }
+
         daftar = (TextView)findViewById(R.id.buatakunbaru);
         daftar.setOnClickListener(new View.OnClickListener() {
             @Override

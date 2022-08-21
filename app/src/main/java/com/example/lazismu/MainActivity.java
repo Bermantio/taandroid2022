@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
             // authenticate with your backend server, if you have one. Use
             // FirebaseUser.getIdToken() instead.
             String uid = user.getUid();
+        } else {
+            startActivity(new Intent(this, Login.class));
+            finish();
         }
 
         txttanggal = (TextView)findViewById(R.id.txttanggal);
