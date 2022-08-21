@@ -79,6 +79,10 @@ public class FormInfaq extends AppCompatActivity {
 
         confirminfaq = (Button) findViewById(R.id.confirminfaq);
         confirminfaq.setOnClickListener(v-> {
+            if (!ConnectionManager.isInternetAvailable()) {
+                Toast.makeText(this, "Tidak ada koneksi internet", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
                 String tanggaltransaksi = txttanggaltransaksi.getText().toString();
                 String nama = txtnamalengkap.getText().toString();

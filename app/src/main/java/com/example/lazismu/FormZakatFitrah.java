@@ -112,6 +112,10 @@ public class FormZakatFitrah extends AppCompatActivity {
 
         confirmzakat = (Button) findViewById(R.id.confirmzakatfitrah);
         confirmzakat.setOnClickListener(v-> {
+            if (!ConnectionManager.isInternetAvailable()) {
+                Toast.makeText(this, "Tidak ada koneksi internet", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
             String tanggaltransaksi = txttanggaltransaksi.getText().toString();
             String nama = txtnamalengkap.getText().toString();
