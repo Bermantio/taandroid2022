@@ -17,6 +17,7 @@ public class RiwayatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         this.context = ctx;
     }
     public void setItems (ArrayList<transaksinontunai> emp){
+        list.clear();
         list.addAll(emp);
     }
     @NonNull

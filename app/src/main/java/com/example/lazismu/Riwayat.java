@@ -8,11 +8,17 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCanceledListener;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,12 +31,14 @@ import com.google.firebase.database.ValueEventListener;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class Riwayat extends AppCompatActivity {
 
     RecyclerView recyclerView;
     RiwayatAdapter adapter;
     DAOTransaksiNonTunai dao;
+    private SwipeRefreshLayout swipeLayout;
     /*private FirebaseAuth authProfil = FirebaseAuth.getInstance();
     FirebaseUser firebaseUser = authProfil.getCurrentUser();*/
 
@@ -43,6 +51,24 @@ public class Riwayat extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.daftarriwayat);
         recyclerView.setHasFixedSize(true);
+
+        swipeLayout = findViewById(R.id.swipe_riwayat);
+        swipeLayout.setOnRefreshListener(() -> {
+            dao.get().get().addOnSuccessListener(this, (snapshot) -> {
+                ArrayList<transaksinontunai> emps = new ArrayList<>();
+                for(DataSnapshot data : snapshot.getChildren())
+                {
+                    transaksinontunai emp = data.getValue(transaksinontunai.class);
+                    emps.add(emp);
+                }
+                adapter.setItems(emps);
+                adapter.notifyDataSetChanged();
+                swipeLayout.setRefreshing(false);
+            }).addOnFailureListener(this, e -> {
+                Toast.makeText(Riwayat.this,"Ada Galat",Toast.LENGTH_LONG).show();
+                swipeLayout.setRefreshing(false);
+            }).addOnCanceledListener(this, () -> swipeLayout.setRefreshing(false));
+        });
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
@@ -94,6 +120,7 @@ public class Riwayat extends AppCompatActivity {
     }*/
 
     private void loadData() {
+        swipeLayout.setRefreshing(true);
         dao.get().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -105,11 +132,13 @@ public class Riwayat extends AppCompatActivity {
                 }
                 adapter.setItems(emps);
                 adapter.notifyDataSetChanged();
+                swipeLayout.setRefreshing(false);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(Riwayat.this,"Ada Galat",Toast.LENGTH_LONG).show();
+                swipeLayout.setRefreshing(false);
             }
         });
     }
