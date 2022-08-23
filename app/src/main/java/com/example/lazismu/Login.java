@@ -1,6 +1,5 @@
 package com.example.lazismu;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,7 +7,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.MotionEvent;
 import android.view.View;
@@ -17,11 +15,14 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
+import com.example.lazismu.retrofit.RetrofitService;
+import com.example.lazismu.retrofit.response.LoginResponse;
+import com.example.lazismu.sharedpreference.SharedPreferenceHelper;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Login extends AppCompatActivity {
 
@@ -37,9 +38,8 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        authProfil = FirebaseAuth.getInstance();
-
-        if (authProfil.getCurrentUser() != null) {
+        SharedPreferenceHelper sp = new SharedPreferenceHelper(getApplicationContext());
+        if (!sp.getToken().isEmpty()) {
             startActivity(new Intent(this, MainActivity.class));
             finish();
         }
@@ -121,21 +121,30 @@ public class Login extends AppCompatActivity {
     }
 
     private void LoginUser(String password, String email) {
-        authProfil.signInWithEmailAndPassword(email,password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            FirebaseUser firebaseUser = authProfil.getCurrentUser();
-                            // Sign in success, update UI with the signed-in user's information
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                            finish();
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(Login.this,"Username atau Password Anda salah",Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
+        String deviceName = String.valueOf(System.currentTimeMillis());
+        RetrofitService.getLoginApiService().login(email, password, deviceName).enqueue(new Callback<LoginResponse>() {
+            @Override
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                LoginResponse res = response.body();
+                SharedPreferenceHelper sp = new SharedPreferenceHelper(getApplicationContext());
 
+                if (res == null || res.getToken() == null) {
+                    Toast.makeText(Login.this,"Username atau Password Anda salah",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                sp.setToken(res.getToken());
+                sp.setUser(res.getUser());
+
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                finish();
+            }
+
+            @Override
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
+                Toast.makeText(Login.this,"Terjadi kesalahan saat login",Toast.LENGTH_SHORT).show();
+                t.printStackTrace();
+            }
+        });
     }
 }

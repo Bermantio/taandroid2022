@@ -1,7 +1,6 @@
 package com.example.lazismu;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,13 +10,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.cast.framework.media.ImagePicker;
+import com.example.lazismu.retrofit.response.User;
+import com.example.lazismu.sharedpreference.SharedPreferenceHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,9 +24,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
-
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -59,12 +53,15 @@ public class Profil extends AppCompatActivity {
         authProfil = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = authProfil.getCurrentUser();
 
-        if (firebaseUser==null){
-            Toast.makeText(Profil.this,"Ada galat", Toast.LENGTH_SHORT).show();
+        SharedPreferenceHelper sp = new SharedPreferenceHelper(this);
+        User user = sp.getUser();
+
+        if (user == null) {
+            sp.clear();
+            startActivity(new Intent(this, Login.class));
+            finish();
         }
-        else{
-            showUserProfil(firebaseUser);
-        }
+        showUserProfil(user);
 
         fotoprofil = (CircleImageView) findViewById(R.id.fotoprofil);
         fotoprofil.setOnClickListener(new View.OnClickListener() {
@@ -130,41 +127,12 @@ public class Profil extends AppCompatActivity {
         fotoprofil.setImageURI(uri);
     }*/
 
-    private void showUserProfil(FirebaseUser firebaseUser) {
-        String userID = firebaseUser.getUid();
-        DatabaseReference referenceProfil = FirebaseDatabase.getInstance().getReference("Registered Users");
-        referenceProfil.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ReadWriteUserDetails readUserDetails = snapshot.getValue(ReadWriteUserDetails.class);
-                if (readUserDetails != null){
-                    namalengkap = readUserDetails.namalengkap;
-                    jeniskelamin = readUserDetails.jeniskelamin;
-                    alamat = readUserDetails.alamat;
-                    email = firebaseUser.getEmail();
-                    telepon= readUserDetails.telepon;
-                    profesi = readUserDetails.profesi;
-
-                    txtnamalengkap.setText(namalengkap);
-                    txtjeniskelamin.setText(jeniskelamin);
-                    txtalamat.setText(alamat);
-                    txtemail.setText(email);
-                    txttelepon.setText(telepon);
-                    txtprofesi.setText(profesi);
-
-                   Uri uri = firebaseUser.getPhotoUrl();
-
-                   Picasso.with(Profil.this).load(uri).into(fotoprofil);
-                }
-                else{
-                    Toast.makeText(Profil.this,"Ada galat", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(Profil.this,"Ada galat", Toast.LENGTH_SHORT).show();
-            }
-        });
+    private void showUserProfil(User user) {
+        txtnamalengkap.setText(user.getName());
+        txtjeniskelamin.setText(user.getGender());
+        txtalamat.setText(user.getAddress());
+        txtemail.setText(user.getEmail());
+        txttelepon.setText(user.getPhoneNumber());
+        txtprofesi.setText(user.getProfession());
     }
 }

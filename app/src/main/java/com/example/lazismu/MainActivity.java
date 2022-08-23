@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.lazismu.sharedpreference.SharedPreferenceHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -32,49 +34,28 @@ public class MainActivity extends AppCompatActivity {
             selamatdatanguser;
     private String namalengkap;
     ImageView donasiicon, programicon, layananicon, kalkulatorzakaticon, tentangicon, keluaricon;
-    private FirebaseAuth authProfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        authProfil = FirebaseAuth.getInstance();
-        FirebaseUser firebaseUser = authProfil.getCurrentUser();
-
-        if (firebaseUser==null){
-            Toast.makeText(MainActivity.this,"Ada galat", Toast.LENGTH_SHORT).show();
-        }
-        else{
-            showUserProfil(firebaseUser);
-        }
-
-        keluaricon = (ImageView) findViewById(R.id.kembalimenu);
-        keluaricon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                authProfil.signOut();
-                signOutUser();
-            }
-        });
-
-        selamatdatanguser = (TextView)findViewById(R.id.selamatdatanguser);
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            // Name, email address, and profile photo Url
-            String name = user.getDisplayName();
-
-            // Check if user's email is verified
-            boolean emailVerified = user.isEmailVerified();
-
-            // The user's ID, unique to the Firebase project. Do NOT use this value to
-            // authenticate with your backend server, if you have one. Use
-            // FirebaseUser.getIdToken() instead.
-            String uid = user.getUid();
-        } else {
+        SharedPreferenceHelper sp = new SharedPreferenceHelper(getApplicationContext());
+        if (sp.getToken().isEmpty() || sp.getUser() == null) {
+            sp.clear();
             startActivity(new Intent(this, Login.class));
             finish();
         }
+
+        keluaricon = (ImageView) findViewById(R.id.kembalimenu);
+        keluaricon.setOnClickListener(v -> {
+            sp.clear();
+            startActivity(new Intent(this, Login.class));
+            finish();
+        });
+
+        selamatdatanguser = (TextView)findViewById(R.id.selamatdatanguser);
+        selamatdatanguser.setText(sp.getUser().getName());
 
         txttanggal = (TextView)findViewById(R.id.txttanggal);
         Calendar calendar = Calendar.getInstance();
