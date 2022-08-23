@@ -2,6 +2,7 @@ package com.example.lazismu.retrofit;
 
 import com.example.lazismu.retrofit.response.DonationListResponse;
 import com.example.lazismu.retrofit.response.DonationResponse;
+import com.example.lazismu.retrofit.response.ReportListResponse;
 
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
@@ -29,4 +30,7 @@ public interface AuthorizedRemoteApi {
 
     @GET("datanontunai")
     Call<DonationListResponse> getDonations();
+
+    @GET("datapenyaluran")
+    Call<ReportListResponse> getReports();
 }

@@ -8,39 +8,30 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCanceledListener;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
+import com.example.lazismu.retrofit.RetrofitService;
+import com.example.lazismu.retrofit.response.DataItem;
+import com.example.lazismu.retrofit.response.DonationListResponse;
+import com.example.lazismu.retrofit.response.User;
+import com.example.lazismu.sharedpreference.SharedPreferenceHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.Iterator;
 import java.util.List;
+import java.util.function.Consumer;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Riwayat extends AppCompatActivity {
 
     RecyclerView recyclerView;
     RiwayatAdapter adapter;
-    DAOTransaksiNonTunai dao;
     private SwipeRefreshLayout swipeLayout;
-    /*private FirebaseAuth authProfil = FirebaseAuth.getInstance();
-    FirebaseUser firebaseUser = authProfil.getCurrentUser();*/
 
     BottomNavigationView bottomNavigationView;
 
@@ -49,33 +40,27 @@ public class Riwayat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_riwayat);
 
+        SharedPreferenceHelper sp = new SharedPreferenceHelper(this);
+        User user = sp.getUser();
+        String token = sp.getToken();
+
+        if (user == null || token == null) {
+            sp.clear();
+            startActivity(new Intent(this, Login.class));
+            finish();
+        }
+
         recyclerView = findViewById(R.id.daftarriwayat);
         recyclerView.setHasFixedSize(true);
 
         swipeLayout = findViewById(R.id.swipe_riwayat);
-        swipeLayout.setOnRefreshListener(() -> {
-            dao.get().get().addOnSuccessListener(this, (snapshot) -> {
-                ArrayList<transaksinontunai> emps = new ArrayList<>();
-                for(DataSnapshot data : snapshot.getChildren())
-                {
-                    transaksinontunai emp = data.getValue(transaksinontunai.class);
-                    emps.add(emp);
-                }
-                adapter.setItems(emps);
-                adapter.notifyDataSetChanged();
-                swipeLayout.setRefreshing(false);
-            }).addOnFailureListener(this, e -> {
-                Toast.makeText(Riwayat.this,"Ada Galat",Toast.LENGTH_LONG).show();
-                swipeLayout.setRefreshing(false);
-            }).addOnCanceledListener(this, () -> swipeLayout.setRefreshing(false));
-        });
+        swipeLayout.setOnRefreshListener(() -> loadData(token, user.getName()));
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
         adapter = new RiwayatAdapter(this);
         recyclerView.setAdapter(adapter);
-        dao = new DAOTransaksiNonTunai();
-        loadData();
+        loadData(token, user.getName());
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomnavigator);
         bottomNavigationView.setSelectedItemId(R.id.riwayatnavigasi);
@@ -103,40 +88,29 @@ public class Riwayat extends AppCompatActivity {
         });
     }
 
-    /*private void setUpRecyclerView(FirebaseUser firebaseUser) {
-        String userID = firebaseUser.getUid();
-        Query query = FirebaseDatabase.getInstance().getReference(transaksinontunai).child("Registered Users").child(userID);
-
-        FirebaseRecyclerOptions<Results> options = new FirebaseRecyclerOptions.Builder<Results>()
-                .setQuery(query, Results.class)
-                .build();
-
-        LinearLayoutManager manager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(manager);
-        adapter = new RiwayatAdapter(this);
-        recyclerView.setAdapter(adapter);
-        dao = new DAOTransaksiNonTunai();
-        loadData();
-    }*/
-
-    private void loadData() {
+    private void loadData(String token, String username) {
         swipeLayout.setRefreshing(true);
-        dao.get().addValueEventListener(new ValueEventListener() {
+        RetrofitService.getAuthorizedApiService(token).getDonations().enqueue(new Callback<DonationListResponse>() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ArrayList<transaksinontunai> emps = new ArrayList<>();
-                for(DataSnapshot data : snapshot.getChildren())
-                {
-                    transaksinontunai emp = data.getValue(transaksinontunai.class);
-                    emps.add(emp);
+            public void onResponse(Call<DonationListResponse> call, Response<DonationListResponse> response) {
+                DonationListResponse res = response.body();
+                if (res == null) {
+                    Toast.makeText(Riwayat.this,"Ada galat",Toast.LENGTH_SHORT).show();
+                    return;
                 }
-                adapter.setItems(emps);
+                List<DataItem> temp = new ArrayList<>();
+                for (DataItem item: res.getData()) {
+                    if (item.getNameZakki().equals(username)) temp.add(item);
+                }
+
+                adapter.setItems(new ArrayList<>(temp));
                 adapter.notifyDataSetChanged();
                 swipeLayout.setRefreshing(false);
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            public void onFailure(Call<DonationListResponse> call, Throwable t) {
+                t.printStackTrace();
                 Toast.makeText(Riwayat.this,"Ada Galat",Toast.LENGTH_LONG).show();
                 swipeLayout.setRefreshing(false);
             }
