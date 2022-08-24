@@ -7,6 +7,7 @@ import com.example.lazismu.retrofit.response.ReportListResponse;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -25,7 +26,7 @@ public interface AuthorizedRemoteApi {
             @Part("keterangan") String description,
             @Part("berupa") String donationForm,
             @Part("jumlah_transaksi") String transactionAmount,
-            @Part("image") RequestBody proofOfPayment
+            @Part MultipartBody.Part image
     );
 
     @GET("datanontunai")

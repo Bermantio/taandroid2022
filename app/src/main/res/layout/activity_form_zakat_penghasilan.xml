@@ -261,7 +261,7 @@
                 android:text="Upload Bukti Transaksi\t\t:"
                 android:textSize="15dp"/>
 
-            <EditText
+            <TextView
                 android:id="@+id/buktizakatpenghasilan"
                 android:layout_width="match_parent"
                 android:layout_height="43dp"
@@ -272,7 +272,7 @@
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
                 android:text="Tidak Ada Bukti Transaksi"
-                android:textSize="15dp"/>
+                android:textSize="15dp" />
 
             <Button
                 android:id="@+id/confirmzakatpenghasilan"

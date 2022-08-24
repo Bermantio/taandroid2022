@@ -1,9 +1,13 @@
 package com.example.lazismu;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -14,6 +18,11 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.lazismu.retrofit.RetrofitService;
+import com.example.lazismu.retrofit.response.DonationResponse;
+import com.example.lazismu.retrofit.response.User;
+import com.example.lazismu.sharedpreference.SharedPreferenceHelper;
+import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -22,8 +31,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import kotlin.Unit;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FormZakatPenghasilan extends AppCompatActivity {
 
@@ -33,9 +51,24 @@ public class FormZakatPenghasilan extends AppCompatActivity {
     Button confirmzakat, batalbutton;
     Spinner pilihdonasisebagai;
     ArrayAdapter<CharSequence> adapter;
-    TextView txttanggaltransaksi, txtnamalengkap, txtalamat, txttelepon, txtprofesi, txtprogram, txtberupa;
-    private FirebaseAuth authProfil;
-    private FirebaseUser firebaseUser;
+    TextView txttanggaltransaksi, txtnamalengkap, txtalamat, txttelepon, txtprofesi, txtprogram, txtberupa, txtbuktizakat;
+
+    private Uri uri;
+
+    ActivityResultLauncher<Intent> pickPicture = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                int resultCode = result.getResultCode();
+                Intent data = result.getData();
+                if (resultCode == Activity.RESULT_OK) {
+                    Uri fileUri = data.getData();
+                    uri = fileUri;
+                    txtbuktizakat.setText("Bukti Transaksi Terpilih");
+                } else if (resultCode == ImagePicker.RESULT_ERROR) {
+                    Toast.makeText(this, "Terjadi galat", Toast.LENGTH_SHORT).show();
+                }
+            }
+    );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,12 +82,18 @@ public class FormZakatPenghasilan extends AppCompatActivity {
         txtprogram = (TextView) findViewById(R.id.txtprogram);
         txtberupa = (TextView) findViewById(R.id.txtberupa);
         txtnominal = (EditText) findViewById(R.id.txtnominal);
-        authProfil = FirebaseAuth.getInstance();
-        FirebaseUser firebaseUser = authProfil.getCurrentUser();
 
-        showUserProfil(firebaseUser);
+        SharedPreferenceHelper sp = new SharedPreferenceHelper(this);
+        User user = sp.getUser();
+        String token = sp.getToken();
 
-        DAOTransaksiNonTunai dao = new DAOTransaksiNonTunai();
+        if (user == null || token == null) {
+            sp.clear();
+            startActivity(new Intent(this, Login.class));
+            finish();
+        }
+
+        showUserProfil(user);
 
         txttanggaltransaksi = (TextView)findViewById(R.id.txttanggaltransaksi);
         Calendar calendar = Calendar.getInstance();
@@ -66,6 +105,16 @@ public class FormZakatPenghasilan extends AppCompatActivity {
         adapter = ArrayAdapter.createFromResource(this, R.array.donasisebagai, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         pilihdonasisebagai.setAdapter(adapter);
+
+        txtbuktizakat = findViewById(R.id.buktizakatpenghasilan);
+        txtbuktizakat.setOnClickListener(view -> {
+            ImagePicker.with(this)
+                    .crop()
+                    .createIntent(intent -> {
+                        pickPicture.launch(intent);
+                        return Unit.INSTANCE;
+                    });
+        });
 
         batalbutton = (Button) findViewById(R.id.batal);
         batalbutton.setOnClickListener(new View.OnClickListener() {
@@ -82,21 +131,31 @@ public class FormZakatPenghasilan extends AppCompatActivity {
                 return;
             }
 
-            String tanggaltransaksi = txttanggaltransaksi.getText().toString();
-            String nama = txtnamalengkap.getText().toString();
-            String alamat = txtalamat.getText().toString();
-            String nomor = txttelepon.getText().toString();
-            String profesi = txtprofesi.getText().toString();
-            String program = txtprogram.getText().toString();
-            String berupa = txtberupa.getText().toString();
-            String nominal = txtnominal.getText().toString();
-            String keterangan = pilihdonasisebagai.getSelectedItem().toString();
+            RequestBody reqBody = RequestBody.create(new File(uri.getPath()), MediaType.parse("application/image"));
+            MultipartBody.Part image = MultipartBody.Part.createFormData("image", "bukti.jpg", reqBody);
 
-            transaksinontunai emp = new transaksinontunai(tanggaltransaksi, nama,alamat,nomor,profesi,program,keterangan,berupa,nominal);
-            dao.add(emp).addOnSuccessListener(suc->
-            {Toast.makeText(FormZakatPenghasilan.this,"Transaksi Sukses, Mohon Tunggu Konfirmasi",Toast.LENGTH_LONG).show();
-            }).addOnFailureListener(er ->
-            {Toast.makeText(FormZakatPenghasilan.this,"Transaksi Gagal",Toast.LENGTH_LONG).show();
+            RetrofitService.getAuthorizedApiService(token).postDonation(
+                    txttanggaltransaksi.getText().toString(),
+                    txtnamalengkap.getText().toString(),
+                    txtalamat.getText().toString(),
+                    user.getPhoneNumber(),
+                    txtprofesi.getText().toString(),
+                    txtprogram.getText().toString(),
+                    pilihdonasisebagai.getSelectedItem().toString(),
+                    txtberupa.getText().toString(),
+                    txtnominal.getText().toString(),
+                    image
+            ).enqueue(new Callback<DonationResponse>() {
+                @Override
+                public void onResponse(Call<DonationResponse> call, Response<DonationResponse> response) {
+                    Toast.makeText(FormZakatPenghasilan.this, "Transaksi Sukses, Mohon Tunggu Konfirmasi", Toast.LENGTH_LONG).show();
+                }
+
+                @Override
+                public void onFailure(Call<DonationResponse> call, Throwable t) {
+                    t.printStackTrace();
+                    Toast.makeText(FormZakatPenghasilan.this, "Transaksi Gagal", Toast.LENGTH_LONG).show();
+                }
             });
 
         });
@@ -109,30 +168,10 @@ public class FormZakatPenghasilan extends AppCompatActivity {
             }
         });
     }
-    private void showUserProfil(FirebaseUser firebaseUser){
-        String userIDofRegistered = firebaseUser.getUid();
-        DatabaseReference referenceProfil = FirebaseDatabase.getInstance().getReference("Registered Users");
-        referenceProfil.child(userIDofRegistered).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ReadWriteUserDetails readUserDetails = snapshot.getValue(ReadWriteUserDetails.class);
-                if (readUserDetails != null) {
-                    namalengkap = readUserDetails.namalengkap;
-                    alamat = readUserDetails.alamat;
-                    profesi = readUserDetails.profesi;
-                    telepon = readUserDetails.telepon;
-
-                    txtnamalengkap.setText(namalengkap);
-                    txtalamat.setText(alamat);
-                    txttelepon.setText(telepon);
-                    txtprofesi.setText(profesi);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(FormZakatPenghasilan.this, "Ada galat", Toast.LENGTH_SHORT).show();
-            }
-        });
+    private void showUserProfil(User user){
+        txtnamalengkap.setText(user.getName());
+        txtalamat.setText(user.getAddress());
+        txttelepon.setText(user.getPhoneNumber());
+        txtprofesi.setText(user.getProfession());
     }
 }
