@@ -141,6 +141,8 @@ public class FormZakatPerdagangan extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<DonationResponse> call, Response<DonationResponse> response) {
                     Toast.makeText(FormZakatPerdagangan.this, "Transaksi Sukses, Mohon Tunggu Konfirmasi", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(FormZakatPerdagangan.this, Riwayat.class));
+                    finish();
                 }
 
                 @Override

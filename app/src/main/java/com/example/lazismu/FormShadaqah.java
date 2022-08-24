@@ -142,6 +142,8 @@ public class FormShadaqah extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<DonationResponse> call, Response<DonationResponse> response) {
                     Toast.makeText(FormShadaqah.this,"Transaksi Sukses, Mohon Tunggu Konfirmasi",Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(FormShadaqah.this, Riwayat.class));
+                    finish();
                 }
 
                 @Override

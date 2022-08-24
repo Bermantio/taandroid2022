@@ -151,6 +151,8 @@ public class FormInfaq extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<DonationResponse> call, Response<DonationResponse> response) {
                     Toast.makeText(FormInfaq.this, "Transaksi Sukses, Mohon Tunggu Konfirmasi", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(FormInfaq.this, Riwayat.class));
+                    finish();
                 }
 
                 @Override
