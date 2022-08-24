@@ -3,6 +3,29 @@ package com.example.lazismu.retrofit.response;
 import com.google.gson.annotations.SerializedName;
 
 public class User{
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public void setNotelepon(String notelepon) {
+		this.notelepon = notelepon;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setProfesi(String profesi) {
+		this.profesi = profesi;
+	}
+
+	public void setJenisKelamin(String jenisKelamin) {
+		this.jenisKelamin = jenisKelamin;
+	}
+
+	public void setAlamat(String alamat) {
+		this.alamat = alamat;
+	}
 
 	@SerializedName("image")
 	private String image;

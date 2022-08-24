@@ -18,6 +18,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.lazismu.retrofit.RetrofitService;
+import com.example.lazismu.retrofit.response.ProfileUpdateResponse;
+import com.example.lazismu.retrofit.response.User;
+import com.example.lazismu.sharedpreference.SharedPreferenceHelper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -31,6 +35,16 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.io.File;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import okio.ByteString;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class UbahProfil extends AppCompatActivity {
 
@@ -57,16 +71,22 @@ public class UbahProfil extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        authProfil = FirebaseAuth.getInstance();
-        FirebaseUser firebaseUser = authProfil.getCurrentUser();
+        SharedPreferenceHelper sp = new SharedPreferenceHelper(this);
+        User user = sp.getUser();
+        String token = sp.getToken();
 
-        //showUserProfil(firebaseUser);
+        if (user == null) {
+            sp.clear();
+            startActivity(new Intent(this, Login.class));
+            finish();
+        }
+        showUserProfil(user);
 
         simpan = (Button) findViewById(R.id.simpan);
         simpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                updateProfil(firebaseUser);
+                updateProfil(user, token, sp);
             }
             });
 
@@ -79,12 +99,21 @@ public class UbahProfil extends AppCompatActivity {
         });
     }
 
-    private void updateProfil(FirebaseUser firebaseUser) {
+    private void updateProfil(User user, String token, SharedPreferenceHelper sp) {
+        int userId = user.getId();
         String namalengkap = txtnamalengkap.getText().toString();
         String alamat = txtalamat.getText().toString();
         String telepon = txttelepon.getText().toString();
         String profesi = txtprofesi.getText().toString();
         String jeniskelamin = spinner.getSelectedItem().toString();
+        RequestBody empty = RequestBody.create(ByteString.EMPTY, MediaType.parse("application/image"));
+
+        user.setName(namalengkap);
+        user.setAlamat(alamat);
+        user.setNotelepon(telepon);
+        user.setProfesi(profesi);
+        user.setJenisKelamin(jeniskelamin);
+
         if (TextUtils.isEmpty(namalengkap)){
             txtnamalengkap.setError("Nama Lengkap belum diisi");
             txtnamalengkap.requestFocus();
@@ -113,67 +142,47 @@ public class UbahProfil extends AppCompatActivity {
             txtprofesi.requestFocus();
         }
         else {
+            Toast.makeText(UbahProfil.this,"Profil berhasil disimpan",Toast.LENGTH_SHORT).show();
+            sp.setUser(user);
 
-            ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails ( namalengkap, jeniskelamin, alamat, telepon, profesi);
-
-            DatabaseReference referenceProfil = FirebaseDatabase.getInstance().getReference("Registered Users");
-
-            String userID = firebaseUser.getUid();
-
-            referenceProfil.child(userID).setValue(writeUserDetails).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if (task.isSuccessful()){
-
-                        UserProfileChangeRequest profilUpdates = new UserProfileChangeRequest.Builder().
-                                setDisplayName(namalengkap).build();
-                        firebaseUser.updateProfile(profilUpdates);
-
-                        Toast.makeText(UbahProfil.this,"Profil berhasil disimpan",Toast.LENGTH_SHORT).show();
-
-                        Intent intent = new Intent(UbahProfil.this, Profil.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(intent);
-                        finish();
-                    }
-                    else {
-                        try{
-                            throw task.getException();
-                        }
-                        catch (Exception e){
-                            Toast.makeText(UbahProfil.this, e.getMessage(), Toast.LENGTH_LONG).show();
-                        }
-                    }
-                }
-            });
+            Intent intent = new Intent(UbahProfil.this, Profil.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            finish();
+//            RetrofitService.getAuthorizedApiService(token).updateProfile(
+//                    userId,
+//                    namalengkap,
+//                    jeniskelamin,
+//                    alamat,
+//                    telepon,
+//                    profesi,
+//                    MultipartBody.Part.createFormData("image", "", empty)
+//            ).enqueue(new Callback<ProfileUpdateResponse>() {
+//                @Override
+//                public void onResponse(Call<ProfileUpdateResponse> call, Response<ProfileUpdateResponse> response) {
+//                    Toast.makeText(UbahProfil.this,"Profil berhasil disimpan",Toast.LENGTH_SHORT).show();
+//                    sp.setUser(user);
+//
+//                    Intent intent = new Intent(UbahProfil.this, Profil.class);
+//                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+//                    startActivity(intent);
+//                    finish();
+//                }
+//
+//                @Override
+//                public void onFailure(Call<ProfileUpdateResponse> call, Throwable t) {
+//                    t.printStackTrace();
+//                    Toast.makeText(UbahProfil.this, t.getMessage(), Toast.LENGTH_LONG).show();
+//                }
+//            });
         }
     }
 
-    /*private void showUserProfil(FirebaseUser firebaseUser) {
-        String userIDofRegistered = firebaseUser.getUid();
-        DatabaseReference referenceProfil = FirebaseDatabase.getInstance().getReference("Registered Users");
-        referenceProfil.child(userIDofRegistered).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ReadWriteUserDetails readUserDetails = snapshot.getValue(ReadWriteUserDetails.class);
-                if (readUserDetails != null){
-                    namalengkap = readUserDetails.namalengkap;
-                    alamat = readUserDetails.alamat;
-                    //jeniskelamin = readUserDetails.jeniskelamin;
-                    profesi = readUserDetails.profesi;
-                    telepon= readUserDetails.telepon;
-
-                    txtnamalengkap.setText(namalengkap);
-                    txtalamat.setText(alamat);
-                    //spinner.setText(jeniskelamin);
-                    txttelepon.setText(telepon);
-                    txtprofesi.setText(profesi);
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(UbahProfil.this,"Ada galat", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }*/
+    private void showUserProfil(User user) {
+        txtnamalengkap.setText(user.getName());
+        txtalamat.setText(user.getAddress());
+        //spinner.setText(jeniskelamin);
+        txttelepon.setText(user.getPhoneNumber());
+        txtprofesi.setText(user.getProfession());
+    }
 }

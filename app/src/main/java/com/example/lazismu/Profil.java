@@ -50,9 +50,6 @@ public class Profil extends AppCompatActivity {
         txtjeniskelamin = findViewById(R.id.pilihjeniskelamin);
         fotoprofil = findViewById(R.id.fotoprofil);
 
-        authProfil = FirebaseAuth.getInstance();
-        FirebaseUser firebaseUser = authProfil.getCurrentUser();
-
         SharedPreferenceHelper sp = new SharedPreferenceHelper(this);
         User user = sp.getUser();
 
@@ -119,13 +116,6 @@ public class Profil extends AppCompatActivity {
             }
         });
     }
-
-    /*@Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        Uri uri = data.getData();
-        fotoprofil.setImageURI(uri);
-    }*/
 
     private void showUserProfil(User user) {
         txtnamalengkap.setText(user.getName());
