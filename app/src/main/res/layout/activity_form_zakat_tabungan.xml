@@ -46,7 +46,7 @@
                 android:id="@+id/datadirizakattabungan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/zakattabunganatas"
+                android:layout_below="@id/txtcarapembayaran"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 android:text="Data Penyetor"
@@ -62,7 +62,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Tanggal Transaksi\t\t:"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <TextView
@@ -84,7 +84,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Nama Lengkap\t\t:"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <TextView
@@ -106,7 +106,7 @@
                 android:layout_marginTop="10dp"
                 android:text="Alamat\t\t:"
                 android:textSize="15dp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/txtalamat"
@@ -127,7 +127,7 @@
                 android:layout_marginTop="10dp"
                 android:text="Nomor Telepon/HP/WhatsApp \t\t:"
                 android:textSize="15dp"
-                android:textColor="@color/white"/>
+                android:textColor="@color/black"/>
 
             <TextView
                 android:id="@+id/txttelepon"
@@ -147,7 +147,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Profesi \t\t:"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <TextView
@@ -168,13 +168,13 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Program\t\t:"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/txtprogram"
                 android:layout_width="match_parent"
-                android:layout_height="43dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/program"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="5dp"
@@ -190,7 +190,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Donasi sebagai\t\t:"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <Spinner
                 android:id="@+id/pilihdonasisebagai"
@@ -212,12 +212,12 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Berupa\t\t:"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/txtberupa"
                 android:layout_width="match_parent"
-                android:layout_height="43dp"
+                android:layout_height="wrap_content"
                 android:layout_below="@id/berupa"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="5dp"
@@ -233,7 +233,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Nominal\t\t:"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <EditText
@@ -257,7 +257,7 @@
                 android:layout_below="@id/txtnominal"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:text="Upload Bukti Transaksi\t\t:"
                 android:textSize="15dp"/>
 
@@ -281,6 +281,7 @@
                 android:layout_below="@id/buktizakattabungan"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp"
                 android:background="@drawable/backgroundwhite"
                 android:text="KONFIRMASI"
                 android:textColor="#DA8B03"
@@ -291,6 +292,7 @@
                 android:id="@+id/batal"
                 android:layout_width="138dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
                 android:layout_below="@id/buktizakattabungan"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
@@ -305,15 +307,14 @@
                 android:id="@+id/txtcarapembayaran"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/confirmzakattabungan"
+                android:layout_below="@id/zakattabunganatas"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="50dp"
                 android:textAlignment="center"
                 android:background="@drawable/backgroundorange"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
-                android:text="Silahkan transfer ke nomor rekening 7020 898 048 (BSI) atas nama BTM BLIGO. Untuk setiap transfer, mohon para pengirim menuiskan 'lazismu nama pengirim' di bagian berita atau keterangan"
+                android:text="Silahkan transfer terlebih dahulu ke nomor rekening 7020 898 048 (BSI) atas nama BTM BLIGO. Untuk setiap transfer, mohon para pengirim menuiskan 'lazismu nama pengirim' di bagian berita atau keterangan. Setelah transfer isi form berikut"
                 android:textColor="@color/white"
                 android:textSize="15dp"
                 android:textStyle="bold" />

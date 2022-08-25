@@ -93,49 +93,5 @@
         android:textSize="20dp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/atau"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/masuk"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="ATAU"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold"/>
-
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="3dp"
-        android:layout_below="@id/masuk"
-        android:layout_marginTop="40dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginRight="30dp"
-        android:layout_toLeftOf="@id/atau"
-        android:background="@color/black" />
-
-    <View
-        android:id="@+id/view"
-        android:layout_width="wrap_content"
-        android:layout_height="3dp"
-        android:layout_below="@id/masuk"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="30dp"
-        android:layout_toRightOf="@id/atau"
-        android:background="@color/black" />
-
-    <TextView
-        android:id="@+id/buatakunbaru"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/atau"
-        android:layout_centerHorizontal="true"
-        android:layout_marginVertical="30dp"
-        android:text="Buat Akun Baru"
-        android:textColor="#DA8B03"
-        android:textSize="20dp" />
-
 
 </RelativeLayout>
