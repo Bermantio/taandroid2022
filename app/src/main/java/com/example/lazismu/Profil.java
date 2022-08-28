@@ -118,6 +118,9 @@ public class Profil extends AppCompatActivity {
     }
 
     private void showUserProfil(User user) {
+        Picasso.with(this)
+                .load(Uri.parse("https://lazizmukabpekalongan2.ik3d.site/run_app/storage/app/public/datausers/" + user.getImage()))
+                .into(fotoprofil);
         txtnamalengkap.setText(user.getName());
         txtjeniskelamin.setText(user.getGender());
         txtalamat.setText(user.getAddress());
