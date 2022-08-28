@@ -163,7 +163,6 @@
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingHorizontal="10dp"
                 android:paddingVertical="10dp"
-                android:text="0"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="15dp" />
 
@@ -218,7 +217,6 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/backgroundwhitenormal"
                 android:paddingVertical="10dp"
-                android:text="0"
                 android:textAlignment="center"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="15dp" />

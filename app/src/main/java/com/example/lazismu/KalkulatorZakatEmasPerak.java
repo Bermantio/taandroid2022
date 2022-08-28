@@ -14,7 +14,7 @@ public class KalkulatorZakatEmasPerak extends AppCompatActivity {
     EditText txtjumlahemas, txthargaemas;
     Button hitung;
     TextView txtnishab, txthasil, txtstatuszakat;
-    Double jumlahemas, hasil, nishabi, hargaemas;
+    Double jumlahemas, hasil, nishabi, hargaemas, emas;
     ImageView batalarah;
 
     @Override
@@ -40,6 +40,9 @@ public class KalkulatorZakatEmasPerak extends AppCompatActivity {
     public void hitung(View view) {
         jumlahemas = Double.parseDouble(txtjumlahemas.getText().toString());
         hargaemas = Double.parseDouble(txthargaemas.getText().toString());
+        emas = jumlahemas * hargaemas;
+        Double m = new Double(emas);
+        int nilaiemas = m.intValue();
         nishabi = hargaemas * 85;
         Double n = new Double(nishabi);
         int nishab = n.intValue();
@@ -47,7 +50,7 @@ public class KalkulatorZakatEmasPerak extends AppCompatActivity {
         hasil = jumlahemas * 0.025;
         Double h = new Double(hasil);
         int value = h.intValue();
-        if ( nishabi < jumlahemas) {
+        if ( nishabi < nilaiemas) {
             txtstatuszakat.setText("WAJIB ZAKAT");
             txthasil.setText("Rp. " + value);
         } else {
