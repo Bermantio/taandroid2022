@@ -136,7 +136,7 @@
         android:id="@+id/txttentang"
         android:layout_width="90dp"
         android:layout_height="90dp"
-        android:layout_below="@id/txtprogram"
+        android:layout_below="@id/txtdonasi"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="20dp"
@@ -153,7 +153,7 @@
         android:id="@+id/tentangicon"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_below="@id/txtprogram"
+        android:layout_below="@id/txtdonasi"
         android:layout_marginLeft="38dp"
         android:layout_marginTop="43dp"
         android:src="@drawable/tentangicon" />
@@ -162,9 +162,9 @@
         android:id="@+id/txtprogram"
         android:layout_width="90dp"
         android:layout_height="90dp"
-        android:layout_below="@id/txtdonasi"
+        android:layout_below="@id/selamatdatanguser"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/backgroundwhite"
         android:paddingHorizontal="10dp"
         android:paddingTop="63dp"
@@ -178,9 +178,9 @@
         android:id="@+id/programicon"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_below="@id/txtdonasi"
+        android:layout_below="@id/selamatdatanguser"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="73dp"
         android:src="@drawable/programicon" />
 
     <TextView
@@ -188,10 +188,8 @@
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:layout_below="@id/txtprogram"
-        android:layout_marginRight="15dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="20dp"
-        android:layout_alignParentRight="true"
         android:background="@drawable/backgroundwhite"
         android:paddingHorizontal="10dp"
         android:paddingTop="63dp"
@@ -206,9 +204,8 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:layout_below="@id/txtprogram"
-        android:layout_marginRight="35dp"
         android:layout_marginTop="40dp"
-        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
         android:src="@drawable/layananicon" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

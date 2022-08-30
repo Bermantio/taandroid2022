@@ -15,10 +15,6 @@
         android:roundIcon="@mipmap/ic_lazismu_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lazismu">
-        <activity
-            android:name=".UploadBukti"
-            android:exported="false" />
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key" />
@@ -34,12 +30,6 @@
             android:exported="false" />
         <activity
             android:name=".KalkulatorZakatPertanian"
-            android:exported="false" />
-        <activity
-            android:name=".UbahDetailAkun"
-            android:exported="false" />
-        <activity
-            android:name=".UploadFotoProfil"
             android:exported="false" />
         <activity
             android:name=".KalkulatorZakatPerdagangan"
@@ -127,12 +117,6 @@
             android:exported="false" />
         <activity
             android:name=".Donasi"
-            android:exported="false" />
-        <activity
-            android:name=".Register"
-            android:exported="false" />
-        <activity
-            android:name=".UbahProfil"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"

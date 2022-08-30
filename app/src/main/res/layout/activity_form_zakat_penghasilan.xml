@@ -56,130 +56,136 @@
 
             <TextView
                 android:id="@+id/tanggaltransaksi"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/datadirizakatpenghasilan"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Tanggal Transaksi\t\t:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/txttanggaltransaksi"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tanggaltransaksi"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_below="@id/datadirizakatpenghasilan"
+                android:layout_toRightOf="@id/tanggaltransaksi"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
                 android:textSize="15dp"
                 android:text="@string/app_name"
                 android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/namalengkap"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txttanggaltransaksi"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Nama Lengkap\t\t:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/txtnamalengkap"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/namalengkap"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_below="@id/tanggaltransaksi"
+                android:layout_toRightOf="@id/namalengkap"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
                 android:textSize="15dp"
                 android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/alamat"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtnamalengkap"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Alamat\t\t:"
                 android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/txtalamat"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_below="@id/alamat"
-                android:layout_marginTop="5dp"
+                android:layout_below="@id/namalengkap"
+                android:layout_toRightOf="@id/alamat"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
                 android:textSize="15dp"
                 android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/telepon"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtalamat"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
-                android:text="Nomor Telepon/HP/WhatsApp \t\t:"
-                android:textSize="15dp"
-                android:textColor="@color/black"/>
+                android:text="Telepon \t\t:"
+                android:textColor="@color/white"
+                android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/txttelepon"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_below="@id/telepon"
-                android:layout_marginTop="5dp"
+                android:layout_below="@id/alamat"
+                android:layout_toRightOf="@id/telepon"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
                 android:textSize="15dp"
                 android:textColor="@color/white"/>
 
             <TextView
                 android:id="@+id/profesi"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txttelepon"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Profesi \t\t:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/txtprofesi"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/profesi"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_below="@id/telepon"
+                android:layout_toRightOf="@id/telepon"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/white"
                 android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/program"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtprofesi"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Program\t\t:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/txtprogram"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/program"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="5dp"
-                android:textColor="@color/white"
+                android:layout_below="@id/profesi"
+                android:layout_toRightOf="@id/program"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
                 android:text="Zakat Penghasilan"
+                android:textColor="@color/white"
                 android:textSize="15dp" />
 
             <TextView
@@ -190,7 +196,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Donasi sebagai\t\t:"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
 
             <Spinner
                 android:id="@+id/pilihdonasisebagai"
@@ -206,21 +212,22 @@
 
             <TextView
                 android:id="@+id/berupa"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/pilihdonasisebagai"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Berupa\t\t:"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/txtberupa"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/berupa"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="5dp"
+                android:layout_below="@id/pilihdonasisebagai"
+                android:layout_toRightOf="@id/berupa"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/white"
                 android:text="Uang"
                 android:textSize="15dp" />
@@ -233,7 +240,7 @@
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 android:text="Nominal\t\t:"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="15dp" />
 
             <EditText
@@ -257,7 +264,7 @@
                 android:layout_below="@id/txtnominal"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:text="Upload Bukti Transaksi\t\t:"
                 android:textSize="15dp"/>
 
