@@ -11,18 +11,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.lazismu.retrofit.response.User;
 import com.example.lazismu.sharedpreference.SharedPreferenceHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -64,32 +57,9 @@ public class Profil extends AppCompatActivity {
         fotoprofil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Profil.this, UploadFotoProfil.class));
-                /*ImagePicker.Companion.getFile(Profil.this)
-                        .galleryOnly()
-                        .cameraOnly()
-                        .crop()	    			//Crop image(Optional), Check Customization for more option
-                        //.compress(1024)			//Final image size will be less than 1 MB(Optional)
-                        .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
-                        .start();*/
+//                startActivity(new Intent(Profil.this, UploadFotoProfil.class));
             }
         });
-
-        /*profil = (Button) findViewById(R.id.profil);
-        profil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Profil.this, UbahProfil.class));
-            }
-        });
-
-        akun = (Button) findViewById(R.id.akun);
-        akun.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Profil.this, UbahDetailAkun.class));
-            }
-        });*/
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomnavigator);
         bottomNavigationView.setSelectedItemId(R.id.profilnavigasi);

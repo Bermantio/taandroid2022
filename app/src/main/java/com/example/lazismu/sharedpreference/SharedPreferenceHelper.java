@@ -6,9 +6,6 @@ import android.content.SharedPreferences;
 import com.example.lazismu.retrofit.response.User;
 import com.google.gson.Gson;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class SharedPreferenceHelper {
 
     private static final String SHARED_PREFERENCES = "shared_preferences";

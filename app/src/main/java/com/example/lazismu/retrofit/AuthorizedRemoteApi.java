@@ -6,9 +6,7 @@ import com.example.lazismu.retrofit.response.ProfileUpdateResponse;
 import com.example.lazismu.retrofit.response.ReportListResponse;
 
 import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 import retrofit2.Call;
-import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;

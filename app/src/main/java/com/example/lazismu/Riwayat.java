@@ -19,9 +19,7 @@ import com.example.lazismu.sharedpreference.SharedPreferenceHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.function.Consumer;
 
 import retrofit2.Call;
 import retrofit2.Callback;

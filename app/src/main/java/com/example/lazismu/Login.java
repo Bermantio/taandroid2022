@@ -44,14 +44,6 @@ public class Login extends AppCompatActivity {
             finish();
         }
 
-        /*daftar = (TextView)findViewById(R.id.buatakunbaru);
-        daftar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Login.this, Register.class));
-            }
-        });*/
-
         bantuan = (TextView)findViewById(R.id.lupapassword);
         bantuan.setOnClickListener(new View.OnClickListener() {
             @Override

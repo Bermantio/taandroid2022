@@ -2,7 +2,6 @@ package com.example.lazismu.retrofit.response;
 
 import java.util.List;
 
-import com.google.firebase.database.core.Repo;
 import com.google.gson.annotations.SerializedName;
 
 public class Data{

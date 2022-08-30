@@ -1,31 +1,20 @@
 package com.example.lazismu;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.lazismu.sharedpreference.SharedPreferenceHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -175,31 +164,4 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void showUserProfil(FirebaseUser firebaseUser) {
-        String userID = firebaseUser.getUid();
-        DatabaseReference referenceProfil = FirebaseDatabase.getInstance().getReference("Registered Users");
-        referenceProfil.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                ReadWriteUserDetails readUserDetails = snapshot.getValue(ReadWriteUserDetails.class);
-                if (readUserDetails != null){
-                    namalengkap = readUserDetails.namalengkap;
-
-                    selamatdatanguser.setText(namalengkap);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(MainActivity.this,"Ada galat", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void signOutUser() {
-        Intent login = new Intent(MainActivity.this, Login.class);
-        login.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(login);
-        finish();
-    }
 }

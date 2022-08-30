@@ -8,9 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.lazismu.retrofit.response.DataItem;
 import com.example.lazismu.retrofit.response.ReportData;
-import com.google.firebase.database.core.Repo;
 
 import java.util.ArrayList;
 
