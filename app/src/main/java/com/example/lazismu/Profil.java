@@ -27,7 +27,6 @@ public class Profil extends AppCompatActivity {
     ArrayAdapter<CharSequence> adapter;
     private TextView txtnamalengkap, txtalamat, txtemail, txttelepon, txtprofesi, txtjeniskelamin;
     private String namalengkap,alamat,profesi,email,telepon,jeniskelamin;
-    private FirebaseAuth authProfil;
     CircleImageView fotoprofil;
 
     @Override
